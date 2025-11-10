@@ -1,0 +1,33 @@
+footer {
+    width: 100%;               /* make footer take full width */
+    display: flex;             /* make it a flex container */
+    justify-content: flex-start; /* align children to left */
+    align-items: center;       /* vertically center the icon-box */
+    padding: 0px 20px;        /* optional padding */
+    
+}
+
+.icon-box {
+    margin-left: 0;
+}
+
+.circle-box {
+    background-color: #8D8D8D;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+}
+
+.icon-box-content h4 {
+    color: #1A1A1A;
+    font-weight: bold;
+}
+
+.icon-box-content p {
+    color: #5A5A5A;
+    font-size: 8px;
+} 
+
+
+
+
