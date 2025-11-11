@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 276 253.8">
+  <!-- Generator: Adobe Illustrator 29.3.1, SVG Export Plug-In . SVG Version: 2.1.0 Build 151)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: none;
+      }
+
+      .st1 {
+        fill: #52575d;
+        stroke: #52575d;
+        stroke-miterlimit: 10;
+        stroke-width: 7.7px;
+      }
+
+      .st2 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <ellipse class="st0" cx="134.9" cy="116.8" rx="202.1" ry="128.9"/>
+    </clipPath>
+  </defs>
+  <g class="st2">
+    <path class="st1" d="M136.1,26.9c88.2,0,88.2,133.8,0,133.8s-88.2-133.8,0-133.8ZM18.1,261c9.4-150.2,233.8-150.8,242.5.6l-14,.6c-7.6-133.2-205.7-133.2-213.9-.6l-14-.6h-.6ZM136.7,41c-69.5,0-69.5,105.2,0,105.2s69.5-105.2,0-105.2Z"/>
+  </g>
+</svg>
