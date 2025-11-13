@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Suncorp Groups Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- HEADER NAVBAR -->
+    <header class="header">
+
+      <a href="index.html">
+      <div class="header-left">
+        <h1 class="logo">SUNCORP</h1>
+        <div class="logo-dot"></div>
+      </div>
+      </a>
+
+      <div class="header-center"></div>
+
+      <div class="header-right">
+        <!-- Search -->
+        <div class="search-container-header">
+          <img
+            src="asset/icons/search_tool.svg"
+            alt="Search"
+            class="icon search-icon"
+          />
+          <input type="text" class="search-input" placeholder="Search..." />
+        </div>
+
+        <!-- Help -->
+        <button class="icon-btn" title="Help">
+          <img
+            src="asset/icons/help_icon.svg"
+            style="height: 28px; width: 28px"
+            alt="Help"
+            class="icon"
+          />
+        </button>
+
+        <!-- Notifications -->
+        <button class="icon-btn" title="Notifications">
+          <img
+            src="asset/icons/notification_icon.svg"
+            style="height: 28px; width: 28px"
+            alt="Notifications"
+            class="icon"
+          />
+        </button>
+
+        <!-- Settings -->
+        <button class="icon-btn" title="Settings">
+          <img
+            src="asset/icons/cog.svg"
+            alt="Settings"
+            style="height: 35px; width: 35px"
+            class="icon"
+          />
+        </button>
+
+        <!-- Divider -->
+        <div class="header-divider"></div>
+
+        <!-- User Profile with name and dropdown -->
+        <div class="user-profile">
+          <img
+            src="asset/icons/user.svg"
+            alt="User Profile"
+            style="height: 24px; width: 24px"
+            class="icon user-avatar"
+          />
+          <span class="user-name">Sharon Quinn Grady</span>
+          <img
+            style="transform: rotate(90deg); height: 16px"
+            src="asset/icons/arrow_icon.svg"
+            alt="Dropdown"
+            class="icon dropdown-arrow"
+          />
+        </div>
+
+        <!-- Apps / Nine Dots Icon -->
+        <button class="icon-btn" title="Apps">
+          <span style="height: 24px; width: 24px" class="material-icons"
+            >apps</span
+          >
+        </button>
+      </div>
+    </header>
+
+    <!-- MAIN CONTAINER -->
+    <div class="container">
+      <!-- SIDEBAR NAVIGATION -->
+      <aside class="sidebar">
+        <nav class="nav-menu">
+          <!-- 1. Hamburger/Menu Icon -->
+           <a href="index.html">
+          <button class="nav-item" title="Menu">
+            <img src="asset/icons/menu.svg" alt="Menu" class="icons" />
+          </button>
+          </a>
+
+          <!-- 2. Home Icon -->
+           <a href="14.html">
+          <button class="nav-item" title="Home">
+            <span class="material-icons">house</span>
+          </button></a>
+
+
+          <!-- 3. Apps Icon -->
+           <a href="19.html">
+          <button class="nav-item" title="Applications">
+            <div
+              class="nav-label"
+              style="
+                font-size: 9.85px;
+                color: var(--dark-bg);
+                text-align: center;
+              "
+            >
+              Apps
+            </div>
+            <img
+              src="asset/icons/applications_icon.svg"
+              alt="Apps"
+              class="icons"
+            />
+          </button></a>
+
+          <!-- Divider -->
+          <hr class="nav-divider" />
+
+          <!-- 4. List Icon -->
+          <button class="nav-item" title="List">
+            <div
+              class="nav-label"
+              style="
+                font-size: 9.85px;
+                color: var(--dark-bg);
+                text-align: center;
+              "
+            >
+              Links
+            </div>
+            <img
+              src="asset/icons/my_claims_icons.svg"
+              style="height: 30px; width: 30px"
+              alt="List"
+              class="icons"
+            />
+          </button>
+
+          <!-- 5. Share Icon -->
+          <button class="nav-item" title="Share">
+            <img
+              src="asset/icons/referral_icon.svg"
+              style="height: 30px; width: 30px"
+              alt="Share"
+              class="icons"
+            />
+          </button>
+
+          <!-- 6. Refresh/Sync Icon -->
+          <button class="nav-item" title="Refresh">
+            <img
+              src="asset/icons/audit_icon.svg"
+              style="height: 30px; width: 30px"
+              alt="Refresh"
+              class="icons"
+            />
+          </button>
+
+          <!-- 7. Settings/Gear Icon -->
+          <button class="nav-item" title="Settings">
+            <img
+              src="asset/icons/cog.svg"
+              alt="Settings"
+              style="height: 35px; width: 35px"
+              class="icons"
+            />
+          </button>
+        </nav>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <main class="main-content">
+        <!-- PAGE HEADER -->
+        <div class="page-header">
+          <h2 class="page-title">Groups</h2>
+        </div>
+
+        <!-- SEARCH AND ACTION BAR -->
+        <div class="search-action-bar">
+          <div class="search-container">
+            <div class="main-header-search-stl">
+              <img
+                src="asset/icons/search_tool.svg"
+                alt="Search"
+                class="icon search-icon"
+                style="color: #005fa3"
+              />
+              <input
+                type="text"
+                class="search-input"
+                placeholder="Type to Search"
+              />
+            </div>
+            <span class="search-count">Total 7 Rules</span>
+          </div>
+
+          <div class="action-buttons">
+            <a href="index.html">
+            <button class="btn btn-back">
+              <img
+                src="asset/icons/back_arrow_icon.svg"
+                alt="Back"
+                class="icon"
+              />
+              Back Home
+            </button>
+            </a>
+            <button class="btn btn-config">Global Config</button>
+            <button class="btn btn-delete">Delete Rules</button>
+            <button class="btn btn-new">New Rule</button>
+          </div>
+        </div>
+
+        <!-- TABLE SECTION -->
+        <div class="table-container">
+          <div class="table-main-container">
+            <table class="rules-table">
+              <thead style="border-bottom: 1px solid var(--text)">
+                <tr>
+                  <th
+                    style="
+                      border-top: 1px solid var(--secondary);
+                      border-right: 1px solid var(--secondary);
+                      border-left: 1px solid var(--secondary);
+                    "
+                    class="col-checkbox"
+                  ></th>
+                  <th
+                    style="
+                      border-top: 1px solid var(--secondary);
+                      border-right: 1px solid var(--secondary);
+                      border-left: 1px solid var(--secondary);
+                    "
+                    class="col-tags"
+                  >
+                    Names
+                  </th>
+                  <th
+                    style="
+                      border-top: 1px solid var(--secondary);
+                      border-right: 1px solid var(--secondary);
+                      border-left: 1px solid var(--secondary);
+                    "
+                    class="col-tags"
+                  >
+                    Group Tags
+                  </th>
+                  <th
+                    style="
+                      border-top: 1px solid var(--secondary);
+                      border-right: 1px solid var(--secondary);
+                      border-left: 1px solid var(--secondary);
+                    "
+                    class="col-rule"
+                  >
+                    Rule
+                  </th>
+                  <th class="col-actions">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  style="
+                    border-top: 1px solid var(--secondary);
+                    border-right: 1px solid var(--secondary);
+                    border-left: 1px solid var(--secondary);
+                    border-bottom: 1px solid var(--secondary);
+                  "
+                >
+                  <td
+                    style="
+                      border-right: 1px solid var(--secondary);
+                      border-left: 1px solid var(--secondary);
+                      border-bottom: 1px solid var(--secondary);
+                    "
+                  >
+                    <input type="checkbox" />
+                  </td>
+                  <td
+                    style="
+                      border-right: 1px solid var(--secondary);
+                      border-left: 1px solid var(--secondary);
+                      border-bottom: 1px solid var(--secondary);
+                    "
+                  >
+                    <a href="#" class="rule-link"
+                      >Damage Whilst Driven - At Fault - Motor PI</a
+                    >
+                  </td>
+                  <td
+                    style="
+                      border-right: 1px solid var(--secondary);
+                      border-left: 1px solid var(--secondary);
+                      border-bottom: 1px solid var(--secondary);
+                    "
+                  >
+                    <span class="tag-text">PI | Motor + 14 others</span>
+                    <span class="material-icons tag-dropdown">expand_more</span>
+                    <a href="#" class="rule-edit">Edit</a>
+                  </td>
+                  <td
+                    style="
+                      border-right: 1px solid var(--secondary);
+                      border-left: 1px solid var(--secondary);
+                      border-bottom: 1px solid var(--secondary);
+                    "
+                  >
+                    <span class="rule-label">High value vehicle</span>
+                    <span class="rule-secondary"
+                      >Entity of interest + 11 other
+                      <span class="material-icons tag-dropdown"
+                        >expand_more</span
+                      ></span
+                    >
+                  </td>
+                  <td class="actions-cell">
+                    <button class="action-btn" title="Edit">
+                      <img
+                        src="asset/icons/edit_icon.svg"
+                        style="height: 36px; width: 36px"
+                        alt="Edit"
+                        class="icons"
+                      />
+                    </button>
+                    <button class="action-btn" title="Duplicate">
+                      <img
+                        src="asset/icons/audit_icon.svg"
+                        style="height: 21px; width: 21px"
+                        alt="Duplicate"
+                        class="icons"
+                      />
+                    </button>
+                    <button class="action-btn" title="Delete">
+                      <img
+                        src="asset/icons/trash_iconsvg.svg"
+                        style="height: 36px; width: 36px"
+                        alt="Delete"
+                        class="icons"
+                      />
+                    </button>
+                    <button class="action-btn" title="More">
+                      <span class="material-icons">more_vert</span>
+                    </button>
+                  </td>
+                </tr>
+                <tr
+                  style="
+                    border-top: 1px solid var(--secondary);
+                    border-right: 1px solid var(--secondary);
+                    border-left: 1px solid var(--secondary);
+                    border-bottom: 1px solid var(--secondary);
+                  "
+                >
+                  <td
+                    style="
+                      border-top: 0.1px solid var(--secondary);
+                      border-right: 0.1px solid var(--secondary);
+                      border-left: 0.1px solid var(--secondary);
+                      border-bottom: 0.1px solid var(--secondary);
+                    "
+                  >
+                    <input type="checkbox" />
+                  </td>
+
+                  <td
+                    style="
+                      border-top: 0.1px solid var(--secondary);
+                      border-right: 0.1px solid var(--secondary);
+                      border-left: 0.1px solid var(--secondary);
+                      border-bottom: 0.1px solid var(--secondary);
+                    "
+                  >
+                    <a href="#" class="rule-link">Telegram Crypto Flip</a>
+                  </td>
+                  <td
+                    style="
+                      border-top: 0.1px solid var(--secondary);
+                      border-right: 0.1px solid var(--secondary);
+                      border-left: 0.1px solid var(--secondary);
+                      border-bottom: 0.1px solid var(--secondary);
+                    "
+                  >
+                    <span class="tag-text">PI | Motor + 14 others</span>
+                    <span class="material-icons tag-dropdown">expand_more</span>
+                    <a href="#" class="rule-edit">Edit</a>
+                  </td>
+                  <td
+                    style="
+                      border-top: 0.1px solid var(--secondary);
+                      border-right: 0.1px solid var(--secondary);
+                      border-left: 0.1px solid var(--secondary);
+                      border-bottom: 0.1px solid var(--secondary);
+                    "
+                  >
+                    <span class="rule-label">High value vehicle</span>
+                    <span class="rule-secondary"
+                      >Entity of interest + 11 other
+                      <span class="material-icons tag-dropdown"
+                        >expand_more</span
+                      ></span
+                    >
+                  </td>
+                  <td class="actions-cell">
+                    <button class="action-btn" title="Edit">
+                      <img
+                        src="asset/icons/edit_icon.svg"
+                        style="height: 36px; width: 36px"
+                        alt="Edit"
+                        class="icons"
+                      />
+                    </button>
+                    <button class="action-btn" title="Duplicate">
+                      <img
+                        src="asset/icons/audit_icon.svg"
+                        style="height: 21px; width: 21px"
+                        alt="Duplicate"
+                        class="icons"
+                      />
+                    </button>
+                    <button class="action-btn" title="Delete">
+                      <img
+                        src="asset/icons/trash_iconsvg.svg"
+                        style="height: 36px; width: 36px"
+                        alt="Delete"
+                        class="icons"
+                      />
+                    </button>
+                    <button class="action-btn" title="More">
+                      <span class="material-icons">more_vert</span>
+                    </button>
+                  </td>
+                </tr>
+                <tr
+                  style="
+                    border-top: 1px solid var(--secondary);
+                    border-right: 1px solid var(--secondary);
+                    border-left: 1px solid var(--secondary);
+                    border-bottom: 1px solid var(--secondary);
+                  "
+                >
+                  <td
+                    style="
+                      border-top: 1px solid var(--secondary);
+                      border-right: 1px solid var(--secondary);
+                      border-left: 1px solid var(--secondary);
+                      border-bottom: 1px solid var(--secondary);
+                    "
+                  >
+                    <input type="checkbox" />
+                  </td>
+                  <td
+                    style="
+                      border-top: 1px solid var(--secondary);
+                      border-right: 1px solid var(--secondary);
+                      border-left: 1px solid var(--secondary);
+                      border-bottom: 1px solid var(--secondary);
+                    "
+                  >
+                    <a href="#" class="rule-link">Catastrophe All</a>
+                  </td>
+                  <td
+                    style="
+                      border-top: 1px solid var(--secondary);
+                      border-right: 1px solid var(--secondary);
+                      border-left: 1px solid var(--secondary);
+                      border-bottom: 1px solid var(--secondary);
+                    "
+                  >
+                    <span class="tag-text">PI | Motor + 14 others</span>
+                    <span class="material-icons tag-dropdown">expand_more</span
+                    ><a href="#" class="rule-edit">Edit</a>
+                  </td>
+                  <td
+                    style="
+                      border-top: 1px solid var(--secondary);
+                      border-right: 1px solid var(--secondary);
+                      border-left: 1px solid var(--secondary);
+                      border-bottom: 1px solid var(--secondary);
+                    "
+                  >
+                    <span class="rule-label">High value vehicle</span>
+                    <span class="rule-secondary"
+                      >Entity of interest + 11 other<span
+                        class="material-icons tag-dropdown"
+                        >expand_more</span
+                      ></span
+                    >
+                  </td>
+                  <td class="actions-cell">
+                    <button class="action-btn" title="Edit">
+                      <img
+                        src="asset/icons/edit_icon.svg"
+                        style="height: 36px; width: 36px"
+                        alt="Edit"
+                        class="icons"
+                      />
+                    </button>
+                    <button class="action-btn" title="Duplicate">
+                      <img
+                        src="asset/icons/audit_icon.svg"
+                        style="height: 21px; width: 21px"
+                        alt="Duplicate"
+                        class="icons"
+                      />
+                    </button>
+                    <button class="action-btn" title="Delete">
+                      <img
+                        src="asset/icons/trash_iconsvg.svg"
+                        style="height: 36px; width: 36px"
+                        alt="Delete"
+                        class="icons"
+                      />
+                    </button>
+                    <button class="action-btn" title="More">
+                      <span class="material-icons">more_vert</span>
+                    </button>
+                  </td>
+                </tr>
+                <tr
+                  style="
+                    border-top: 1px solid var(--secondary);
+                    border-right: 1px solid var(--secondary);
+                    border-left: 1px solid var(--secondary);
+                    border-bottom: 1px solid var(--secondary);
+                  "
+                >
+                  <td
+                    style="
+                      border-top: 1px solid var(--secondary);
+                      border-right: 1px solid var(--secondary);
+                      border-left: 1px solid var(--secondary);
+                      border-bottom: 1px solid var(--secondary);
+                    "
+                  >
+                    <input type="checkbox" />
+                  </td>
+                  <td
+                    style="
+                      border-top: 1px solid var(--secondary);
+                      border-right: 1px solid var(--secondary);
+                      border-left: 1px solid var(--secondary);
+                      border-bottom: 1px solid var(--secondary);
+                    "
+                  >
+                    <a href="#" class="rule-link"
+                      >Accidental Loss or Damage property PI</a
+                    >
+                  </td>
+                  <td
+                    style="
+                      border-top: 1px solid var(--secondary);
+                      border-right: 1px solid var(--secondary);
+                      border-left: 1px solid var(--secondary);
+                      border-bottom: 1px solid var(--secondary);
+                    "
+                  >
+                    <span class="tag-text">PI | Motor + 14 others</span>
+                    <span class="material-icons tag-dropdown">expand_more</span>
+                    <a href="#" class="rule-edit">Edit</a>
+                  </td>
+                  <td
+                    style="
+                      border-top: 1px solid var(--secondary);
+                      border-right: 1px solid var(--secondary);
+                      border-left: 1px solid var(--secondary);
+                      border-bottom: 1px solid var(--secondary);
+                    "
+                  >
+                    <span class="rule-label">High value vehicle</span>
+                    <span class="rule-secondary"
+                      >Entity of interest + 11 other<span
+                        class="material-icons tag-dropdown"
+                        >expand_more</span
+                      ></span
+                    >
+                  </td>
+                  <td class="actions-cell">
+                    <button class="action-btn" title="Edit">
+                      <img
+                        src="asset/icons/edit_icon.svg"
+                        style="height: 36px; width: 36px"
+                        alt="Edit"
+                        class="icons"
+                      />
+                    </button>
+                    <button class="action-btn" title="Duplicate">
+                      <img
+                        src="asset/icons/audit_icon.svg"
+                        style="height: 21px; width: 21px"
+                        alt="Duplicate"
+                        class="icons"
+                      />
+                    </button>
+                    <button class="action-btn" title="Delete">
+                      <img
+                        src="asset/icons/trash_iconsvg.svg"
+                        style="height: 36px; width: 36px"
+                        alt="Delete"
+                        class="icons"
+                      />
+                    </button>
+                    <button class="action-btn" title="More">
+                      <span class="material-icons">more_vert</span>
+                    </button>
+                  </td>
+                </tr>
+                <tr
+                  style="
+                    border-top: 1px solid var(--secondary);
+                    border-right: 1px solid var(--secondary);
+                    border-left: 1px solid var(--secondary);
+                    border-bottom: 1px solid var(--secondary);
+                  "
+                >
+                  <td
+                    style="
+                      border-top: 1px solid var(--secondary);
+                      border-right: 1px solid var(--secondary);
+                      border-left: 1px solid var(--secondary);
+                      border-bottom: 1px solid var(--secondary);
+                    "
+                  >
+                    <input type="checkbox" />
+                  </td>
+                  <td
+                    style="
+                      border-top: 1px solid var(--secondary);
+                      border-right: 1px solid var(--secondary);
+                      border-left: 1px solid var(--secondary);
+                      border-bottom: 1px solid var(--secondary);
+                    "
+                  >
+                    <a href="#" class="rule-link">Theft Property</a>
+                  </td>
+                  <td
+                    style="
+                      border-top: 1px solid var(--secondary);
+                      border-right: 1px solid var(--secondary);
+                      border-left: 1px solid var(--secondary);
+                      border-bottom: 1px solid var(--secondary);
+                    "
+                  >
+                    <span class="tag-text">PI | Motor + 14 others</span>
+                    <span class="material-icons tag-dropdown">expand_more</span>
+                    <a href="#" class="rule-edit">Edit</a>
+                  </td>
+                  <td
+                    style="
+                      border-top: 1px solid var(--secondary);
+                      border-right: 1px solid var(--secondary);
+                      border-left: 1px solid var(--secondary);
+                      border-bottom: 1px solid var(--secondary);
+                    "
+                  >
+                    <span class="rule-label">High value vehicle</span>
+                    <span class="rule-secondary"
+                      >Entity of interest + 11 other
+                      <span class="material-icons tag-dropdown"
+                        >expand_more</span
+                      ></span
+                    >
+                  </td>
+                  <td class="actions-cell">
+                    <button class="action-btn" title="Edit">
+                      <img
+                        src="asset/icons/edit_icon.svg"
+                        style="height: 36px; width: 36px"
+                        alt="Edit"
+                        class="icons"
+                      />
+                    </button>
+                    <button class="action-btn" title="Duplicate">
+                      <img
+                        src="asset/icons/audit_icon.svg"
+                        style="height: 21px; width: 21px"
+                        alt="Duplicate"
+                        class="icons"
+                      />
+                    </button>
+                    <button class="action-btn" title="Delete">
+                      <img
+                        src="asset/icons/trash_iconsvg.svg"
+                        style="height: 36px; width: 36px"
+                        alt="Delete"
+                        class="icons"
+                      />
+                    </button>
+                    <button class="action-btn" title="More">
+                      <span class="material-icons">more_vert</span>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+          <div class="footer-status">
+            <span class="status-indicator"></span>
+            <div
+              style="
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+              "
+            >
+              <span class="status-text">KBS Intelligence</span>
+              <span class="footer-meta"
+                >KBBS (Aust) Pty Ltd ABN 31 100 028 322</span
+              >
+            </div>
+          </div>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>

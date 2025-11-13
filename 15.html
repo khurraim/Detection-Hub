@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/base.css">
     <link rel="stylesheet" href="assets/css/layout.css">
-    <link rel="stylesheet" href="assets/css/13.css">
+    <link rel="stylesheet" href="assets/css/15.css">
     <!-- <link rel="stylesheet" href="assets/css/footer.css"> -->
 </head>
 
@@ -85,6 +85,228 @@
         <div class="column-right">
 
             <!-- Body Code Begins Here -->
+
+            <h2 class="w-100 ft-32 fw-500 text-left my-5">High Value Vehicle</h2>
+
+            <div class="d-flex justify-end w-100 mb-5 ">
+                <button class="new-rule-btn">New Rule</button>
+            </div>
+
+
+
+            <div class="tabs w-100 d-flex justify-evenly text-center">
+                <div class="tab active w-100 rounded-t-2xl rounded-no-tr" data-tab="define-rules">Define Rules</div>
+                <div class="tab w-100" data-tab="rule-conditions">Rule Conditions</div>
+                <div class="tab w-100" data-tab="rule-tags">Rule Tags</div>
+                <div class="tab w-100 rounded-t-2xl rounded-no-tl" data-tab="audit-history">Audit History</div>
+            </div>
+
+            <div class="tab-content w-100 mb-5">
+                <!-- Define Rules Tab -->
+                <div class="tab-pane active" id="define-rules">
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Edit Rule Icon</th>
+                                <th>Edit Rule Name</th>
+                                <th>Edit Rule Description</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr class="py-5 px-3">
+
+                                <td>
+
+                                    <div class="d-flex justify-start align-center">
+                                        <img src="/assets/images/15/Vector (3).png" alt="" class="mx-2">
+                                        <img src="/assets/images/15/mi_edit.png" alt="" class="mx-2">
+                                    </div>
+
+                                </td>
+
+                                <td>
+                                    <div class="d-flex justify-start align-center">
+                                        High Value Vehicle <img src="/assets/images/15/mi_edit.png" alt="" class="mx-2">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex justify-start align-center">
+                                        This rule identifies Motor claims where there is a risk of a staged accident
+                                        because no other vehicle was involved
+                                        <img src="/assets/images/15/mi_edit.png" alt="" class="mx-2">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex justify-center content-center">
+                                        <img src="/assets/images/15/mingcute_delete-line.png" alt="">
+
+                                    </div>
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <div class="d-flex justify-center content-center">
+                                        <button class="save-btn">Save</button>
+                                    </div>
+
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Rule Conditions Tab -->
+                <div class="tab-pane" id="rule-conditions">
+
+                    <table id="table-rule-conditions">
+                        <thead>
+                            <tr>
+                                <th>Edit Group Definitions</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr class="py-5 px-3">
+
+                                <td>
+
+                                    <div class="d-flex justify-start align-center">
+                                        <div class="condition-row">
+                                            <select>
+                                                <option>Single vehicle accident</option>
+                                                <option>Multiple vehicle accident</option>
+                                                <option>Hit and run</option>
+                                            </select>
+
+                                            <button class="operator">is</button>
+
+                                            <select>
+                                                <option>True</option>
+                                                <option>False</option>
+                                            </select>
+
+                                            <div class="points">
+                                                Points <span>50</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </td>
+
+
+
+                                <td>
+                                    <div class="d-flex justify-center content-center">
+                                        <img src="/assets/images/15/mingcute_delete-line.png" alt="">
+
+                                    </div>
+
+                                </td>
+                            </tr>
+
+                            <tr class="py-5 px-3">
+
+                                <td>
+
+                                    <div class="d-flex justify-start align-center">
+                                        <div class="condition-row">
+                                            <select>
+                                                <option>Single vehicle accident</option>
+                                                <option>Multiple vehicle accident</option>
+                                                <option>Hit and run</option>
+                                            </select>
+
+                                            <button class="operator">is</button>
+
+                                            <select>
+                                                <option>True</option>
+                                                <option>False</option>
+                                            </select>
+
+                                            <div class="points">
+                                                Points <span>50</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </td>
+
+
+
+                                <td>
+                                    <div class="d-flex justify-center content-center">
+                                        <img src="/assets/images/15/mingcute_delete-line.png" alt="">
+
+                                    </div>
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td></td>
+                                <td><button class="new-rule-btn">Create New Condition </button></td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td></td>
+
+                                <td>
+                                    <div class="d-flex justify-center content-center">
+                                        <button class="save-btn">Save</button>
+                                    </div>
+
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                </div>
+
+                <!-- Rule Tags Tab -->
+                <div class="tab-pane" id="rule-tags">
+                    <h2>Rule Tags</h2>
+                    <p>Content for Rule Tags will appear here.</p>
+                </div>
+
+                <!-- Audit History Tab -->
+                <div class="tab-pane" id="audit-history">
+                    <h2>Audit History</h2>
+                    <p>Content for Audit History will appear here.</p>
+                </div>
+            </div>
+
+            <script>
+                // Tab switching logic
+                const tabs = document.querySelectorAll('.tab');
+                const panes = document.querySelectorAll('.tab-pane');
+
+                tabs.forEach(tab => {
+                    tab.addEventListener('click', () => {
+                        // Remove active states
+                        tabs.forEach(t => t.classList.remove('active'));
+                        panes.forEach(p => p.classList.remove('active'));
+
+                        // Add active to clicked tab and related content
+                        tab.classList.add('active');
+                        document.getElementById(tab.getAttribute('data-tab')).classList.add('active');
+                    });
+                });
+            </script>
+
+
+
 
             <!-- Body Code Ends Here -->
 
