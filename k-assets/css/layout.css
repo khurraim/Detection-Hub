@@ -2,6 +2,7 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+
 /*
 -----------------------------------------
 HEADER CSS BEGINS HERE 
@@ -49,6 +50,7 @@ header {
   width: 100%;
   padding: 8px 0;
   font-size: 15px;
+
 }
 
 .search-input::placeholder {
@@ -59,7 +61,10 @@ header {
   outline: none;
 }
 
+
+
 .icons-container {
+  border-right: 1px solid #fff;
   padding: 0px 10px;
 }
 
@@ -67,10 +72,11 @@ header {
   margin: 0 10px;
 }
 
+
 .profile-container {
   display: flex;
   align-items: center;
-  color: var(--secondary-text);
+  color: #fff;
   padding: 0px 10px;
 }
 
@@ -78,18 +84,21 @@ header {
   margin: 0px 10px;
 }
 
+
+
 /*
 -----------------------------------------
 SIDEBAR & BODY CSS BEGINS HERE 
 -----------------------------------------
 */
 
+
 .body-container {
   display: flex;
   flex-direction: row;
   gap: 20px;
   padding: 20px;
-  background-color: #e9e8e8;
+  background-color: #E9E8E8;
   min-height: 300px;
   height: calc(100vh - 64px);
 }
@@ -101,6 +110,7 @@ SIDEBAR & BODY CSS BEGINS HERE
   align-items: flex-start;
   padding: 15px;
   border-radius: 8px;
+
 }
 
 .body-container .column-left img {
@@ -110,21 +120,24 @@ SIDEBAR & BODY CSS BEGINS HERE
 .body-container .column-left .sidebar-icons {
   display: flex;
   flex-direction: column;
+  
 }
 
 .body-container .column-left .sidebar-icons hr {
   height: 1px;
-  color: #9e9e9e;
+  color: #9E9E9E;
   width: 100%;
 }
 
 .body-container .column-right {
   flex: 1;
-
+  
   flex-direction: column;
   border-radius: 8px;
   /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
 }
+
+
 
 /*
 -----------------------------------------
@@ -133,30 +146,31 @@ FOOTER CSS BEGINS HERE
 */
 
 footer {
-  width: 100%; /* make footer take full width */
-  display: flex; /* make it a flex container */
-  justify-content: flex-start; /* align children to left */
-  align-items: center; /* vertically center the icon-box */
-  padding: 0px 20px; /* optional padding */ 
+    width: 100%;               /* make footer take full width */
+    display: flex;             /* make it a flex container */
+    justify-content: flex-start; /* align children to left */
+    align-items: center;       /* vertically center the icon-box */
+    padding: 0px 20px;        /* optional padding */
+    
 }
 
 .icon-box {
-  margin-left: 0;
+    margin-left: 0;
 }
 
 .circle-box {
-  background-color: #8d8d8d;
-  height: 35px;
-  width: 35px;
-  border-radius: 50%;
+    background-color: #8D8D8D;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
 }
 
 .icon-box-content h4 {
-  color: #1a1a1a;
-  font-weight: bold;
+    color: #1A1A1A;
+    font-weight: bold;
 }
 
 .icon-box-content p {
-  color: #5a5a5a;
-  font-size: 8px;
-}
+    color: #5A5A5A;
+    font-size: 8px;
+} 

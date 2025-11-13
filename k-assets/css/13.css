@@ -1,0 +1,311 @@
+
+
+
+/* Icons Styles */
+
+
+
+
+
+
+
+.body-container .detection-hub-hero {
+   background: url('../images/detection-hub-bg.png') no-repeat center center;
+            background-size: cover; /* This ensures the image covers the container */
+            height: 370px; /* Increased height for better visibility */
+            width: 100%;
+            border-radius: 12px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+}
+
+
+.detection-hub-header {
+    margin: 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block; */
+}
+
+.detection-hub-header h1 {
+    
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #fff;
+    text-align: center;
+}
+
+/* .button-group {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #FEEE50;
+    color: #1A1A1A;
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+} */
+
+.button-group {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 10px 15px;
+    background-color: #FEEE50;
+    color: #1A1A1A;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    width: 216px;
+}
+
+.btn:hover {
+    background-color: #FFD700; /* Slightly darker yellow on hover */
+}
+
+
+
+/* Hide the CSS arrow if image loads */
+/* .btn img {
+    width: 16px;
+    height: 16px;
+    display: block;
+} */
+
+
+
+/* Cards Section Styles */
+.cards-section {
+  width: 100%;
+    margin: 30px auto;
+}
+
+.cards-row {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    
+    background: white;
+    padding-top: 20px;
+    padding-bottom: 32px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 18px;
+    text-align: center;
+    
+    border: 1px solid #e0e0e0;
+    height: 280px;
+    width: 100%;
+}
+
+.card .card-image {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.card .spacer {
+  height: 30px;
+}
+
+.card .gradient-circle {
+  display: flex;
+  flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    /* This will center it within the flex container */
+    margin: auto;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(#FEEE50, #FFFFFF); 
+
+  border-radius: 50%;
+}
+
+.number {
+    
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #1A1A1A;
+    line-height: 30px;
+}
+
+.label {
+    
+    color: #1A1A1A;
+    line-height: 1.4;
+}
+
+
+.card .bricks {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card .brick {
+  height: 52px;
+  width: 9px;
+  border-radius: 2px;
+  background: #e0e0e0;
+  margin: auto;
+}
+
+.card .brick-highlighted {
+  background-color: #FFD600 !important;
+}
+
+
+
+.progress-bars-container {
+    display: flex;
+    gap: 15px;
+    
+    align-items: end;
+    justify-content: center;
+    /* height: 150px; */
+}
+
+.progress-track {
+    width: 41px;
+    
+    background-color: #e0e0e0;
+    
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-fill {
+    width: 100%;
+    background-color: #FEEE50;
+    
+    position: absolute;
+    bottom: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+:root{
+  --size: 175px;        /* overall circle size */
+  --dot-size: 14px;    /* single dot diameter */
+  --radius: calc(var(--size) / 2 - var(--dot-size)); /* distance from center */
+  --gap-start-rotation: -90deg; /* rotate whole ring so 0% starts at top; tweak as needed */
+  --dot-gray: #dedede;
+  --dot-yellow: #ffd94d;
+  --center-color: #fff;
+}
+
+.stats-section{
+  display:flex;
+  /* gap:36px; */
+  justify-content:center;
+  align-items:center;
+  padding:10px;
+  
+}
+
+/* wrapper holds dots and content */
+.circle-wrapper{
+  position:relative;
+  width:var(--size);
+  height:var(--size);
+  display:inline-block;
+  --dots: 24; /* fallback */
+}
+
+/* container for dots (we populate it with JS) */
+.dots{
+  position:absolute;
+  inset:0;
+  display:block;
+  transform: rotate(var(--gap-start-rotation)); /* rotate whole ring */
+  pointer-events:none;
+}
+
+/* each dot is absolutely centered then rotated & translated outwards */
+.dot{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:var(--dot-size);
+  height:var(--dot-size);
+  border-radius:50%;
+  background:var(--dot-gray);
+  transform:
+    translate(-50%,-50%) 
+    rotate(calc(var(--i) * 360deg / var(--dots)))
+    translateY(calc(-1 * var(--radius)));
+  transform-origin:center center;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.02) inset;
+  transition: background .25s ease, transform .25s ease;
+}
+
+/* active dots are yellow */
+.dot.active{
+  background:var(--dot-yellow);
+}
+
+/* center content over the ring */
+.circle-content{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  text-align:center;
+  pointer-events:auto;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+.circle-content h2{
+  margin:0;
+  
+  font-weight: bold;
+  line-height:1;
+}
+
+.circle-content p{
+  margin:4px 0 0;
+  
+  color:#333;
+  line-height:1.1;
+}
+
+/* small responsive tweak */
+@media (max-width:420px){
+  :root{ --size:100px; --dot-size:10px; }
+  .stats-section{ gap:18px; }
+}
