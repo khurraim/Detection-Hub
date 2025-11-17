@@ -1,0 +1,133 @@
+ /* Overlay */
+    .overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.45);
+        backdrop-filter: blur(2px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    /* Popup container */
+    .popup {
+        background: #fff;
+        width: 550px;
+        max-width: 95%;
+        border-radius: 12px;
+        padding: 28px 32px;
+        position: relative;
+        box-shadow: 0 10px 35px rgba(0,0,0,0.18);
+        animation: fadeIn .25s ease-out;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-6px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Close icon */
+    .close-btn {
+        position: absolute;
+        right: 22px;
+        top: 18px;
+        cursor: pointer;
+        font-size: 22px;
+        color: #777;
+    }
+
+    h2 {
+        margin: 0;
+        font-size: 22px;
+        font-weight: 600;
+        color: #111;
+    }
+
+    .subtext {
+        margin-top: 4px;
+        margin-bottom: 20px;
+        color: #555;
+        font-size: 14px;
+    }
+
+    label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 6px;
+        margin-top: 16px;
+        color: #111;
+    }
+
+    label span {
+        color: #e11d48; /* red star */
+    }
+
+    .input {
+        width: 100%;
+        padding: 12px;
+        font-size: 14px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background: #f7f7f7;
+        outline: none;
+    }
+
+    .input::placeholder {
+        color: #9ca3af;
+    }
+
+    .help-text {
+        margin-top: 6px;
+        font-size: 13px;
+        color: #666;
+    }
+
+    /* Tags section */
+    .tag-suggest {
+        margin-top: 12px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .tag {
+        padding: 6px 12px;
+        background: #fff;
+        border-radius: 20px;
+        font-size: 13px;
+        cursor: pointer;
+        border: 1px solid #e5e7eb;
+        transition: 0.2s;
+    }
+
+    .tag:hover {
+        background: #e5e7eb;
+    }
+
+    /* Buttons */
+    .footer {
+        display: flex;
+        justify-content: flex-end;
+        gap: 12px;
+        margin-top: 28px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 14px;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    .cancel-btn {
+        background: #f3f4f6;
+        border: 1px solid #d1d5db;
+    }
+
+    .create-btn {
+        background: #2563eb;
+        border: none;
+        color: white;
+    }

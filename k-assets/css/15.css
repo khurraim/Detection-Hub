@@ -142,7 +142,7 @@
     background-color: #f9faff;
   }
 
-  select {
+  /* select {
     padding: 6px 12px;
     border: 1px solid #c8c8c8;
     border-radius: 6px;
@@ -151,7 +151,41 @@
     color: #333;
     outline: none;
     appearance: none;
-  }
+  } */
+
+  .condition-row select {
+            padding: 8px 32px 8px 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 14px;
+            color: #374151;
+            background-color: white;
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 8px center;
+            background-size: 16px;
+            border-color: #3b82f6;
+            min-width: 320px;
+        }
+
+        .condition-row select:focus {
+            outline: none;
+            border-color: #3b82f6;
+        }
+
+        /* Operator select styling - blue background */
+        .condition-row select.operator {
+            padding: 8px 32px 8px 16px;
+            background-color: #dbeafe;
+            color: #1e40af;
+            border: 1px solid #93c5fd;
+            font-weight: 500;
+            min-width: 140px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%231e40af'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+            background-position: right 8px center;
+        }
 
   .operator {
     background-color: #dce4ff;
@@ -176,7 +210,10 @@
     font-weight: 500;
   }
 
+    #table-rule-conditions  tbody tr td:first-child {
+      width: 1210px !important;
+    }
 
   #table-rule-conditions  tbody tr td:last-child {
-    width: 36px;
+    width: 86px !important;
   }

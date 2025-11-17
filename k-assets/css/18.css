@@ -213,17 +213,17 @@
             padding: 12px 16px;
             font-size: 14px;
             border-bottom: 2px solid #d0d0d0;
-            position: relative;
+            position: relative; 
             cursor: pointer;
         }
 
-        th::after {
+        /* th::after {
             content: '⌄';
             position: absolute;
             right: 8px;
             font-size: 16px;
             color: #666;
-        }
+        } */
 
         td {
             padding: 14px 16px;
@@ -232,12 +232,16 @@
             border-bottom: 1px solid #e8e8e8;
         }
 
+        tr {
+          height: 60px;
+        }
+
         tr:hover {
             background-color: #f9f9f9;
         }
 
         tr.highlighted {
-            background-color: #b3d4fc;
+            background-color: #396BF680;
         }
 
         tr.highlighted:hover {
@@ -302,6 +306,11 @@
             border-bottom: 1px solid #c0e090;
         }
 
+        .header-left {
+          width: 410px;
+          text-align: center;
+        }
+
         .header-left h2 {
             font-size: 16px;
             font-weight: 600;
@@ -311,6 +320,8 @@
         .header-right {
             display: flex;
             align-items: center;
+            justify-content: center;
+            width: 900px;
             gap: 12px;
         }
 
@@ -322,7 +333,7 @@
 
         .search-input {
             padding: 8px 12px;
-            border: 2px solid #999;
+            border: 1px solid #1A1A1A;
             border-radius: 6px;
             font-size: 14px;
             width: 250px;
@@ -330,18 +341,18 @@
         }
 
         .search-input::placeholder {
-            color: #999;
+            color: #1a1a1a;
         }
 
         .main-content {
             display: flex;
-            min-height: calc(100vh - 120px);
+            /* min-height: calc(100vh - 120px); */
         }
 
         .left-panel {
             background-color: #e8e8e8;
             padding: 24px;
-            width: 280px;
+            width: 410px;
         }
 
         .tag-list {
@@ -360,18 +371,22 @@
             font-weight: 500;
             color: #333;
             display: inline-block;
+            display: flex;
+            align-items: center;
+            border: 1px dashed #9E9E9E;
         }
 
         .remove-btn {
             background-color: #333;
             color: white;
             border: none;
-            padding: 10px 24px;
+            padding: 10px 14px;
             border-radius: 6px;
             font-size: 14px;
             font-weight: 500;
             cursor: pointer;
             transition: background-color 0.2s;
+            width: 130px;
         }
 
         .remove-btn:hover {
@@ -393,9 +408,9 @@
 
         .tag-item {
             background-color: #f8f8f8;
-            border: 2px solid #e0e0e0;
-            border-radius: 6px;
-            padding: 10px 12px;
+            border: 1px dashed #9E9E9E;
+            border-radius: 8px;
+            padding: 4px 6px;
             font-size: 14px;
             color: #333;
             display: flex;
@@ -403,6 +418,21 @@
             gap: 8px;
             cursor: pointer;
             transition: all 0.2s;
+            width: 180px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .tag-item .checkbox {
+            width: 14px;
+            height: 14px;
+            border: 1px solid #D2D5DA; 
+            border-radius: 3px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
         }
 
         .tag-item:hover {
@@ -418,7 +448,7 @@
         .checkbox {
             width: 18px;
             height: 18px;
-            border: 2px solid #999;
+            /* border: 2px solid #999; */
             border-radius: 3px;
             background-color: white;
             display: flex;
@@ -451,7 +481,7 @@
         }
 
         .add-btn {
-            background-color: #7cb342;
+            background-color: #689E30;
             color: white;
             border: none;
             padding: 10px 24px;
@@ -467,7 +497,7 @@
         }
 
         .create-btn {
-            background-color: #2196f3;
+            background-color: #396BF6;
             color: white;
             border: none;
             padding: 10px 24px;
@@ -490,7 +520,7 @@
         }
 
         .save-btn {
-            background-color: #333;
+            background-color: #1A1A1A;
             color: white;
             border: none;
             padding: 10px 32px;

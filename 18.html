@@ -127,11 +127,13 @@
                     </div>
 
                     <div class="main-content">
-                        <div class="left-panel">
+                        <div class="left-panel d-flex flex-column justify-between">
+
                             <div class="tag-list">
-                                <span class="tag">PI</span>
-                                <span class="tag">Motor</span>
+                                <span class="tag"><div class="checkbox"></div> &nbsp; &nbsp;PI</span>
+                                <span class="tag"> <div class="checkbox"></div> &nbsp; &nbsp;Motor</span>
                             </div>
+
                             <button class="remove-btn">Remove Tags</button>
                         </div>
 
@@ -306,7 +308,7 @@
                                 </div>
                             </div>
 
-                            <div class="button-group">
+                            <div class="button-group d-flex justify-between">
                                 <button class="add-btn">Add to Tags</button>
                                 <button class="create-btn">Create New Tag +</button>
                             </div>
@@ -335,12 +337,36 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Date</th>
-                                    <th>Old Value</th>
-                                    <th>New Value</th>
-                                    <th>Object</th>
-                                    <th>Event Type</th>
-                                    <th>User</th>
+                                    <th>
+                                        <div class="d-flex">
+                                            Date <img src="k-assets/images/18/ph_caret-up-down-fill.png" class="mx-3" alt="">
+                                        </div>  
+                                    </th>
+                                    <th>
+                                        <div class="d-flex">
+                                        Old Value <img src="k-assets/images/18/ph_caret-up-down-fill.png" class="mx-3" alt="">
+                                        </div>
+                                    </th>
+                                    <th>
+                                        <div class="d-flex">
+                                        New Value <img src="k-assets/images/18/ph_caret-up-down-fill.png" class="mx-3" alt="">
+                                        </div>
+                                    </th>
+                                    <th>
+                                        <div class="d-flex">
+                                        Object <img src="k-assets/images/18/ph_caret-up-down-fill.png" class="mx-3" alt="">
+                                        </div>
+                                    </th>
+                                    <th>
+                                        <d class="flex"></d>
+                                        Event Type <img src="k-assets/images/18/ph_caret-up-down-fill.png" class="mx-3" alt="">
+                                        </div>
+                                    </th>
+                                    <th>
+                                        <div class="d-flex">
+                                        User <img src="k-assets/images/18/ph_caret-up-down-fill.png" class="mx-3" alt="">
+                                        </div>
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -367,6 +393,14 @@
                                     <td>Condition 153</td>
                                     <td>Update Condition</td>
                                     <td>Minnie Mouse</td>
+                                </tr>
+                                <tr style="height: 128px; background: #fff;">
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
                                 </tr>
                             </tbody>
                         </table>
