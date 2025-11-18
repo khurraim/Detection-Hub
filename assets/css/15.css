@@ -6,16 +6,20 @@
 }
 
 .tab {
-    padding: 16px 24px;
-    cursor: pointer;
-    border-bottom: none;
-    background: #fff;
-    transition: background 0.2s;
-    font-size: 16px;
-    line-height: 18px;
-    border-right: 1px solid var(--secondary-text);
-    color: var(--dark-bg);
-    font-weight: 600;
+  padding: 14px 24px;
+  cursor: pointer;
+  border-bottom: none;
+  background: #fff;
+  transition: background 0.2s;
+  font-size: 16px;
+  line-height: 18px;
+  border-right: 1px solid var(--secondary-text);
+  color: var(--dark-bg);
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
 }
 
 .tab:hover {
@@ -23,9 +27,8 @@
 }
 
 .tab.active {
-  color: #fff;
-  font-weight: bold;
-  background: #396bf6;
+  color: #fff; 
+  background: #396BF6;
   color: #fff;
   box-shadow: 0px 0px 8px 2px var(--tab-inactive);
   z-index: 2;

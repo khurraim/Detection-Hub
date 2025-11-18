@@ -22,7 +22,9 @@
         <!-- Left Column In Header : Logo Only -->
         <div class="column-left">
             <div class="logo-container">
-                <img src="k-assets/images/logo.png" alt="No Header Logo">
+                <a href="index.html">
+                    <img src="k-assets/images/logo.png" alt="No Header Logo">
+                </a>
             </div>
         </div>
 
@@ -86,7 +88,16 @@
 
             <!-- Body Code Begins Here -->
 
-            <h2 class="w-100 ft-32 fw-500 text-left my-5">High Value Vehicle</h2>
+            <div class="demo-container w-100 mb-5">
+                <!-- As a link -->
+                <a href="14.html" class="back-button">
+                    <img src="k-assets/images/15/solar_arrow-to-top-left-bold.png" alt=""> 
+                    &nbsp;Back to Rules
+                </a>
+            </div>
+
+            <h2 class="w-100 ft-32 fw-500 text-left my-5">
+                High Value Vehicle</h2>
 
             <div class="d-flex justify-end w-100 mb-5 ">
                 <button class="new-rule-btn">New Rule</button>
@@ -96,7 +107,7 @@
 
             <div class="tabs w-100 d-flex justify-evenly text-center">
                 <div class="tab active w-100 rounded-t-2xl rounded-no-tr" data-tab="define-rules">Define Rules</div>
-                <div class="tab w-100" data-tab="rule-conditions">Rule Conditions</div>
+                <div class="tab w-100" data-tab="rule-conditions"><a href="16.html" style="text-decoration: none;">Rule Conditions</a></div>
                 <div class="tab w-100" data-tab="rule-tags">Rule Tags</div>
                 <div class="tab w-100 rounded-t-2xl rounded-no-tl" data-tab="audit-history">Audit History</div>
             </div>
@@ -288,22 +299,22 @@
             </div>
 
             <script>
-                // Tab switching logic
-                const tabs = document.querySelectorAll('.tab');
-                const panes = document.querySelectorAll('.tab-pane');
+                
+                // const tabs = document.querySelectorAll('.tab');
+                // const panes = document.querySelectorAll('.tab-pane');
 
-                tabs.forEach(tab => {
-                    tab.addEventListener('click', () => {
-                        // Remove active states
-                        tabs.forEach(t => t.classList.remove('active'));
-                        panes.forEach(p => p.classList.remove('active'));
+                // tabs.forEach(tab => {
+                //     tab.addEventListener('click', () => {
+                        
+                //         tabs.forEach(t => t.classList.remove('active'));
+                //         panes.forEach(p => p.classList.remove('active'));
 
-                        // Add active to clicked tab and related content
-                        tab.classList.add('active');
-                        document.getElementById(tab.getAttribute('data-tab')).classList.add('active');
-                    });
-                });
-            </script>
+                        
+                //         tab.classList.add('active');
+                //         document.getElementById(tab.getAttribute('data-tab')).classList.add('active');
+                //     });
+                // });
+             </script>
 
 
 

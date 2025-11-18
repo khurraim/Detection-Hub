@@ -17,8 +17,8 @@
 }
 
 .names-table th {
-    padding: 12px 24px;
-    text-align: left;
+    padding: 16px 24px;
+    
     line-height: 18px;
     font-size: 16px;
     font-weight: 500;
@@ -27,6 +27,7 @@
 .names-table th {
     background-color: #f8f9fa;
     font-weight: 600;
+    text-align: left;
 }
 
 .names-table tr {
@@ -35,17 +36,24 @@
 
 .names-table tbody tr td {
     padding: 7px 24px;
-    text-align: left;
+    text-align: center;
+    text-align: center;
+    vertical-align: middle; /* Added for better vertical alignment */
     line-height: 20px;
     font-size: 14px;
     font-weight: 500;
     border-bottom: 1px solid #E0E0E0;
+    
+}
+
+.names-table tbody tr td .anchor-links {
+    text-align: left;
 }
 
 .names-table tbody tr td:first-child {
     border-right: 1px solid #E0E0E0;
     width: 93px;
-    text-align: center;
+    
 }
 
 .names-table tbody tr td:last-child {
