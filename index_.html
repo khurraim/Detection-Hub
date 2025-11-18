@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Reset CSS : Clears Browser's Default Formatting , For Cross Browser Compatibility-->
+    <link rel="stylesheet" href="k-assets/css/reset.css">
+    <link rel="stylesheet" href="k-assets/css/base.css">
+    <link rel="stylesheet" href="k-assets/css/layout.css">
+    <link rel="stylesheet" href="k-assets/css/13.css">
+    <!-- <link rel="stylesheet" href="k-assets/css/footer.css"> -->
+</head>
+
+<body>
+
+    <!-- Header Begins Here -->
+    <header>
+
+        <!-- Left Column In Header : Logo Only -->
+        <div class="column-left">
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="k-assets/images/logo.png" alt="No Header Logo">
+                </a>
+            </div>
+        </div>
+
+        <!-- Right Column In Header : Search Bar Icons Profile -->
+        <div class="column-right">
+
+            <div class="search-container">
+                <div class="search-icon">
+                    <img src="k-assets/images/search-normal.png" alt="">
+                </div>
+                <input type="text" class="search-input" placeholder="Search...">
+            </div>
+
+            <div class="icons-container">
+                <img src="k-assets/images/hugeicons_notification-01.png" alt="" />
+                <img src="k-assets/images/ion_settings-sharp.png" alt="" />
+                <img src="k-assets/images/mingcute_question-line.png" alt="" />
+            </div>
+
+            <div class="profile-container">
+
+                <!-- Profile Avatar Icon -->
+                <img src="k-assets/images/Vector.png" alt="" />
+                <span>Sharan Quinn Grady</span>
+
+                <!-- Arrow Down Icon-->
+                <img src="k-assets/images/lsicon_down-filled.png" alt="" />
+                <img src="k-assets/images/notification-bing.png" alt="" />
+            </div>
+
+        </div>
+
+    </header>
+    <!-- Header Ends Here -->
+
+    <div class="body-container">
+
+
+        <div class="column-left">
+            <div class="sidebar-icons">
+
+                <a href="index.html"><img src="k-assets/images/Frame 1272627065.png" alt=""></a>
+                <a href="14.html"><img src="k-assets/images/Frame 1272627038.png" alt=""></a>
+                <a href="19.html"><img src="k-assets/images/Frame 1272627066.png" alt=""></a>
+
+                <hr />
+
+                <img src="k-assets/images/Frame 1272627067.png" alt="">
+                <img src="k-assets/images/Frame 1272627068.png" alt="">
+                <img src="k-assets/images/Frame 1272627071.png" alt="">
+                <img src="k-assets/images/Frame 1272627066.png" alt="">
+
+                <hr />
+
+                <img src="k-assets/images/Frame 1272627070.png" alt="">
+
+            </div>
+        </div>
+
+        <div class="column-right">
+
+            <div class="detection-hub-hero">
+                <div class="detection-hub-header">
+
+                    <div class="d-flex flex-row justify-center align-center my-5">
+                        <img src="k-assets/images/detection_hub_icon.png" alt="">
+                        <h1 class="ft-32 mt-3 mx-5">Detection Hub</h1>
+                    </div>
+
+                    <div class="button-group">
+                        <a href="14.html" style="text-decoration: none;">
+                        <button class="btn">
+                            Go to Rules
+                            <img src="k-assets/images/solar_round-arrow-right-bold.png" alt="">
+                        </button>
+                        </a>
+                        <a href="17.html" style="text-decoration: none;">
+                        <button class="btn">
+                            Go to Groups
+                            <img src="k-assets/images/solar_round-arrow-right-bold.png" alt="">
+                        </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4 Cards Section -->
+            <div class="cards-section">
+                <div class="cards-row">
+
+                    <div class="card">
+                        <div class="card-image d-flex">
+                            <img src="k-assets/images/Frame 2147224208.png" alt="">
+                            <h2 class="ft-20 mt-1 mx-3 fw-500">Recent Activity</h2>
+                        </div>
+
+                        <div class="spacer"></div>
+
+                        <div class="stats-section">
+                            <!-- data-value is percent (0-100). You can also use data-active to set count directly -->
+                            <div class="circle-wrapper" data-value="70" data-dots="22">
+                                <div class="dots"></div>
+                                <div class="circle-content">
+                                    <h2 class="ft-40">56</h2>
+                                    <p class="ft-16">Active<br />Rules</p>
+                                </div>
+                            </div>
+
+                            <div class="circle-wrapper" data-value="45" data-dots="22">
+                                <div class="dots"></div>
+                                <div class="circle-content">
+                                    <h2 class="ft-40">32</h2>
+                                    <p class="ft-16">Active<br />Groups</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <script>
+                            // Generate dots for every .circle-wrapper and apply active classes
+                            document.querySelectorAll('.circle-wrapper').forEach(wrapper => {
+                                const dotsContainer = wrapper.querySelector('.dots');
+                                const totalDots = parseInt(wrapper.dataset.dots || 24, 10);
+                                // data-value treated as percentage; fallback to data-active if set
+                                const percent = wrapper.dataset.value !== undefined ? Number(wrapper.dataset.value) : null;
+                                const activeCountFromAttr = wrapper.dataset.active ? Number(wrapper.dataset.active) : null;
+                                let activeCount = 0;
+                                if (percent !== null && !isNaN(percent)) {
+                                    activeCount = Math.round(totalDots * Math.max(0, Math.min(100, percent)) / 100);
+                                } else if (activeCountFromAttr !== null && !isNaN(activeCountFromAttr)) {
+                                    activeCount = Math.max(0, Math.min(totalDots, activeCountFromAttr));
+                                }
+
+                                // create dots
+                                for (let i = 0; i < totalDots; i++) {
+                                    const d = document.createElement('span');
+                                    d.className = 'dot';
+                                    d.style.setProperty('--i', i);
+                                    d.style.setProperty('--dots', totalDots);
+                                    // mark active for first activeCount items (you can change order if you want different start)
+                                    if (i < activeCount) d.classList.add('active');
+                                    dotsContainer.appendChild(d);
+                                }
+                            });
+                        </script>
+
+
+
+
+                    </div>
+
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="k-assets/images/black-circle.png" alt="">
+                        </div>
+                        <div class="spacer"></div>
+                        <div class="gradient-circle pt-5">
+                            <div class="number mt-5 ft-40 fw-400">4,2361</div>
+                            <div class="label ft-16">Claims scored</div>
+                        </div>
+
+                    </div>
+
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="k-assets/images/black-circle.png" alt="">
+                        </div>
+                        <div class="spacer"></div>
+                        <div class="number ft-40">3,242</div>
+                        <div class="label ft-16 fw-400">Risky Claims identified</div>
+                        <div class="bricks my-5">
+                            <div class="brick"></div>
+                            <div class="brick"></div>
+                            <div class="brick"></div>
+                            <div class="brick"></div>
+                            <div class="brick"></div>
+                            <div class="brick"></div>
+                            <div class="brick brick-highlighted"></div>
+                            <div class="brick brick-highlighted"></div>
+                            <div class="brick"></div>
+                            <div class="brick"></div>
+                            <div class="brick"></div>
+                            <div class="brick"></div>
+                            <div class="brick"></div>
+                            <div class="brick"></div>
+                            <div class="brick"></div>
+                        </div>
+                        <span class="percentage-span fw-700 ft-12">7.65%</span>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="k-assets/images/black-circle.png" alt="">
+                        </div>
+                        <div class="spacer"></div>
+                        <div class="number ft-40">755</div>
+                        <div class="label ft-16">of these claims retained</div>
+
+                        <div class="progress-bars-container my-5">
+                            <div class="progress-track" style="height: 15px;">
+                                <div class="progress-fill" style="height: 100%;"></div>
+                            </div>
+                            <div class="progress-track" style="height: 25px;">
+                                <div class="progress-fill" style="height: 50%;"></div>
+                            </div>
+                            <div class="progress-track" style="height: 35px;">
+                                <div class="progress-fill" style="height: 0%;"></div>
+                            </div>
+                            <div class="progress-track" style="height: 45px;">
+                                <div class="progress-fill" style="height: 0%;"></div>
+                            </div>
+                            <div class="progress-track" style="height: 55px;">
+                                <div class="progress-fill" style="height: 0%;"></div>
+                            </div>
+                        </div>
+
+                        <span class="percentage-span fw-700 ft-12">23.29%</span>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+            <footer>
+                <div class="icon-box d-flex">
+                    <div class="circle-box mr-3"></div>
+                    <div class="icon-box-content ">
+                        <h4 class="ft-14 mt-1 mb-1">kbs intelligence</h4>
+                        <p>KBBS (Aust) Pty Ltd ABN 31 100 028 322</p>
+                    </div>
+                </div>
+            </footer>
+
+
+
+        </div>
+
+
+    </div>
+
+
+</body>
+
+</html>
