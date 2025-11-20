@@ -104,10 +104,10 @@
 
 
 
-            <div class="tabs w-100 d-flex justify-evenly text-center">
+            <div class="tabs w-100 d-flex justify-evenly text-center mt-3">
                 <div class="tab  w-100 rounded-t-2xl rounded-no-tr" data-tab="define-rules"><a href="15.html" style="text-decoration: none;">Define Rules</a></div>
                 <div class="tab active w-100" data-tab="rule-conditions">Rule Conditions</div>
-                <div class="tab w-100" data-tab="rule-tags">Rule Tags</div>
+                <div class="tab w-100" data-tab="rule-tags"><a href="rule_tags.html" style="text-decoration: none; color: #1a1a1a;">Rule Tags</a></div>
                 <div class="tab w-100 rounded-t-2xl rounded-no-tl" data-tab="audit-history">Audit History</div>
             </div>
 
@@ -118,10 +118,10 @@
                     <table>
                         <thead>
                             <tr>
-                                <th>Edit Rule Icon</th>
-                                <th>Edit Rule Name</th>
-                                <th>Edit Rule Description</th>
-                                <th>Actions</th>
+                                <th class="padding-box" style="border-right: 1px solid #E0E0E0; width: 30%;">Edit Rule Icon</th>
+                                <th class="padding-box" style="border-right: 1px solid #E0E0E0; width: 30%;">Edit Rule Name</th>
+                                <th class="padding-box" style="border-right: 1px solid #E0E0E0; width: 30%;">Edit Rule Description</th>
+                                <th class="padding-box" style="border-right: 1px solid #E0E0E0; width: 30%;">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -181,17 +181,25 @@
                     <table id="table-rule-conditions">
                         <thead>
                             <tr>
-                                <th>Edit Group Definitions</th>
-                                <th>Actions</th>
+                                <th class="padding-box" style="border-right: 1px solid #E0E0E0; width: 30%; background: #fff;"></th>
+                                <th class="padding-box" style="border-right: 1px solid #E0E0E0; width: 30%;">
+                                    &nbsp;&nbsp;&nbsp;Edit Group Definitions
+                                </th>
+                                <th class="padding-box" style="border-right: 1px solid #E0E0E0; width: 30%;  box-shadow: 0px 0px 5.6px 0px rgba(0, 0, 0, 0.25), -4px 0px 5.6px 0px rgba(0, 0, 0, 0.25);">
+                                    &nbsp;&nbsp;&nbsp;Actions
+                                </th>
+                                <th class="padding-box" style="border-right: 1px solid #E0E0E0; width: 30%;"></th>
                             </tr>
                         </thead>
                         <tbody>
 
                             <tr class="py-5 px-3">
 
-                                <td>
+                                <td style="background: #fff;"></td>
 
-                                    <div class="d-flex justify-start align-center">
+                                <td  style="border-bottom: 1px solid #E0E0E0;" class="padding-box" style="border-right: 1px solid #E0E0E0;width: 90%;">
+
+                                    <div class="d-flex justify-start align-center py-5 px-3">
                                         <div class="condition-row">
                                             <select>
                                                 <option>Single vehicle accident</option>
@@ -221,22 +229,24 @@
 
                                 </td>
 
-
-
-                                <td>
+                                <td  style="border-bottom: 1px solid #E0E0E0; box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.25), -4px 0px 5.6px 0px rgba(0, 0, 0, 0.25);" class="padding-box" style="border-right: 1px solid #E0E0E0;width: 10%;">
                                     <div class="d-flex justify-center content-center">
                                         <img src="/k-assets/images/15/mingcute_delete-line.png" alt="">
 
                                     </div>
 
                                 </td>
+
+                                <td></td>
                             </tr>
 
                             <tr class="py-5 px-3">
 
-                                <td>
+                                <td></td>
 
-                                    <div class="d-flex justify-start align-center">
+                                <td  style="border-bottom: 1px solid #E0E0E0; width: 90%;" class="padding-box" style="border-right: 1px solid #E0E0E0;">
+
+                                    <div class="d-flex justify-start align-center py-5 px-3">
                                         <div class="condition-row">
                                             <select>
                                                 <option>Reserve Amount</option>
@@ -269,45 +279,40 @@
 
                                 </td>
 
-
-
-                                <td>
+                                <td  style="border-bottom: 1px solid #E0E0E0; width: 10%; box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.25), -4px 0px 5.6px 0px rgba(0, 0, 0, 0.25);" class="padding-box">
                                     <div class="d-flex justify-center content-center">
                                         <img src="/k-assets/images/15/mingcute_delete-line.png" alt="">
 
                                     </div>
 
                                 </td>
-                            </tr>
 
-                            <tr>
-                                <!-- <td></td> -->
-                                <td colspan="2">
-                                    <div class="spacer" style="height: 200px;"></div>
-                                    <div class="d-flex justify-end align-center" style="padding-right: 12px;">
-                                        <a href="16_create.html"><button class="new-rule-btn">Create New Condition &nbsp;+</button></a>
-                                    </div>
-                                </td>
-
-                            </tr>
-
-                            <!-- <tr>
                                 <td></td>
 
-                                <td>
-                                    <div class="d-flex justify-center content-center">
-                                        <button class="save-btn">Save</button>
-                                    </div>
-
-                                </td>
-                            </tr> -->
+                            </tr>
 
                             <tr>
+                                <td></td>
                                 <td colspan="2">
+                                    <div class="spacer" style="height: 175px;"></div>
                                     <div class="d-flex justify-end align-center" style="padding-right: 12px;">
+                                        <a href="16_create.html"><button class="new-rule-btn mb-5">Create New Condition &nbsp;+</button></a>
+                                    </div>
+                                    <div class="spacer" style="height: 25px;"></div>
+                                </td>
+                                <td></td>
+
+                            </tr>
+
+                            <tr class="padding-box">
+                                <td class=" rounded-l-xl rounded-no-tl"></td>
+                                <td></td>
+                                <td colspan="12" class="padding-box">
+                                    <div class="d-flex justify-end align-center py-2" style="padding-right: 12px;">
                                         <button class="save-btn">Save</button>
                                     </div>
                                 </td>
+                                <td  class="padding-box  rounded-r-xl rounded-no-tr"></td>
                             </tr>
 
                         </tbody>
@@ -327,27 +332,6 @@
                     <p>Content for Audit History will appear here.</p>
                 </div>
             </div>
-
-            <script>
-                
-                // const tabs = document.querySelectorAll('.tab');
-                // const panes = document.querySelectorAll('.tab-pane');
-
-                // tabs.forEach(tab => {
-                //     tab.addEventListener('click', () => {
-                        
-                //         tabs.forEach(t => t.classList.remove('active'));
-                //         panes.forEach(p => p.classList.remove('active'));
-
-                        
-                //         tab.classList.add('active');
-                //         document.getElementById(tab.getAttribute('data-tab')).classList.add('active');
-                //     });
-                // });
-            </script>
-
-
-
 
             <!-- Body Code Ends Here -->
 
@@ -382,15 +366,20 @@
             background: #fff;
         }
 
-        table {
-            background: #fff;
-            width: 96% !important;
-            margin: auto;
-        }
+        table tbody tr td:first-child,
+table tbody tr td:last-child,
+table thead tr th:first-child,
+table thead tr th:last-child {
+    width: 10px !important;
+    min-width: 10px !important;
+    max-width: 10px !important;
+    padding: 0 !important;
+}
 
-        table td {
-            border: none;
-        }
+/* Override for the last row's middle cells only */
+table tbody tr:last-child td:not(:first-child):not(:last-child) {
+    width: auto !important;
+}
     </style>
 
 </body>

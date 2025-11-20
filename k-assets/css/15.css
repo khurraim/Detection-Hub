@@ -9,13 +9,14 @@
     }
 
     .tab {
-      padding: 14px 24px;
+      padding: 20px 24px;
       cursor: pointer;
       border-bottom: none;
       background: #fff;
       transition: background 0.2s;
       font-size: 16px;
       line-height: 18px;
+      
     }
 
     .tab:hover {
@@ -24,15 +25,21 @@
 
     .tab.active {
       color: #fff;
-      font-weight: bold;
+      font-weight: normal;
       background: #396BF6;
+      box-shadow: 
+        4px 0px 5.6px 0px rgba(0, 0, 0, 0.25),
+        -4px 0px 5.6px 0px rgba(0, 0, 0, 0.25);
+        z-index: 00;
+
     }
 
     /* Tab Content */
     .tab-content {
       
-      border: 1px solid #ccc;
+      
       border-radius: 0 6px 6px 6px;
+      background: #fff;
     }
 
     .tab-pane {
@@ -47,25 +54,53 @@
     table {
       width: 100%;
       border-collapse: collapse;
+      margin: auto;
      
     }
 
+    thead tr {
+      margin: auto;
+    }
+
     th, td {
-      padding: 10px 12px;
-      border: 1px solid #ddd;
+      /* padding: 10px 12px; */
+        /* padding: 10px 40px 10px 12px;  */
+      /* border: 1px solid #ddd; */
       text-align: left;
     }
 
+    .padding-box {
+      padding: 10px 40px 10px 12px; 
+    }
+
+
+    thead {
+  background: #fff;
+  
+  
+  width: 100%;
+}
+
+thead tr {
+  width: 100%;
+}
+
+
+
     th {
       background: #E9E8E8;
-      text-transform: uppercase;
+      
+      
       font-size: 14px;
       letter-spacing: 0.5px;
       font-size: 16px;
-      font-weight: bold;
+      font-weight: 500;
       line-height: 18px;
       color: #1A1A1A;
+     
     }
+
+    
 
     tr:hover {
       background: #f9f9f9;
@@ -75,16 +110,17 @@
       background-color: #fff;
     }
 
-    table tbody tr td {
+    /* table tbody tr td {
       width: 404px;
-    }
+    } */
 
-    table tbody tr td:last-child {
+    /* table tbody tr td:last-child {
       width: 132px;
-    }
+    } */
 
     table tbody tr:last-child {
       background-color: #CCCCCC;
+      
     }
 
 
@@ -126,11 +162,11 @@
 
     .new-rule-btn {
       background: #396BF6;
-  color: #fff;
-  border-radius: 6px;
-  padding: 12px 16px;
-  border: none;
-  font-size: 14px;
+      color: #fff;
+      border-radius: 6px;
+      padding: 8px 16px;
+      border: none;
+      font-size: 14px;
     }
 
 
@@ -230,7 +266,7 @@
             border: none;
             border-radius: 6px;
             font-size: 20px;
-            font-weight: 500;
+            font-weight: 400;
             cursor: pointer;
             text-decoration: none;
             transition: background-color 0.2s ease;
