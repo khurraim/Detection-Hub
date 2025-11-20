@@ -232,45 +232,60 @@
 
                 <!-- Rule Tags Tab -->
                 <div class="tab-pane active" id="rule-tags">
-                    <table>
+                    <table  class="rounded-l-xl rounded-r-xl ">
                         <thead>
                             <tr>
-                                <th>Create Tag Name</th>
-                                <th>Create Tag Description</th>
-                                <th>Create Tag Color</th>
-                                <th>Assign Meta Tags</th>
+                                <th  style="background: #fff; "></th>
+                                <th   class="padding-box" style="border-right: 1px solid #E0E0E0; width: 25%;">
+                                    &nbsp;&nbsp;&nbsp;Create Tag Name
+                                </th>
+                                <th  class="padding-box" style="border-right: 1px solid #E0E0E0; width: 25%;">
+                                    &nbsp;&nbsp;&nbsp;Create Tag Description
+                                </th>
+                                <th  class="padding-box" style="border-right: 1px solid #E0E0E0; width: 25%;">
+                                    &nbsp;&nbsp;&nbsp;Create Tag Color
+                                </th>
+                                <th  class="padding-box" style="border-right: 1px solid #E0E0E0; width: 25%;">
+                                    &nbsp;&nbsp;&nbsp;Assign Meta Tags
+                                </th>
+                                <th  style="background: #fff; "></th>
                             </tr>
                         </thead>
                         <tbody>
 
                             <tr class="py-5 px-3">
 
-                                <td>
+                                <td  style="background: #fff; "></td>
 
-                                    <div class="d-flex justify-start align-center">
+                                <td style="border-right: 1px solid #E0E0E0; width: 25%;">
+
+                                    <div class="d-flex justify-start align-center py-5 mx-5">
                                         <!-- <img src="/k-assets/images/15/Vector (3).png" alt="" class="mx-2"> -->
-                                        <h2>Type Tag Name Here</h2>
-                                        <img src="/k-assets/images/15/mi_edit.png" alt="" class="mx-2">
+                                        <h2 class="ft-20 lh-20 mr-3">Type Tag Name Here</h2>
+                                        <a href="0A1 create_or_assign_meta_tag.html"><img src="/k-assets/images/15/mi_edit.png" alt="" class="mx-2"></a>
                                     </div>
 
                                 </td>
 
-                                <td>
-                                    <div class="d-flex justify-start align-center">
+                                <td style="border-right: 1px solid #E0E0E0; width: 25%;">
+                                    <div class="d-flex justify-start align-center mx-5">
                                         <p>This rule identifies Motor claims where there is a risk of a staged accident
                                             because no other vehicle was involved</p> <img
                                             src="/k-assets/images/15/mi_edit.png" alt="" class="mx-2">
                                     </div>
                                 </td>
-                                <td>
+
+                                <td style="border-right: 1px solid #E0E0E0; width: 25%;">
                                     <div class="d-flex justify-center align-center">
                                         <div class="color-circle mx-4"></div>
                                         <input type="text" name="" id="" value="#cc458f">
-                                        <img src="/k-assets/images/15/mi_edit.png" alt="" class="mx-4">
+                                        <a href="0A2create_tag_color.html"><img src="/k-assets/images/15/mi_edit.png" alt="" class="mx-4"></a>
                                     </div>
                                 </td>
-                                <td>
-                                    <div class="d-flex justify-center content-center">
+
+                                <td style="width: 25%;">
+
+                                    <div class="d-flex justify-between align-center mx-5 px-5 py-5">
                                         <div class="meta-tags-container">
                                             <div class="meta-tag">
                                                 <input type="checkbox" id="tag-pi" class="tag-checkbox">
@@ -291,18 +306,23 @@
                                     </div>
 
                                 </td>
+
+                                <td  style="background: #fff; "></td>
+
                             </tr>
 
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td>
+                            <tr class="padding-box">
+                                <td class="padding-box rounded-l-xl rounded-no-tl"></td>
+                                <td class="padding-box"></td>
+                                <td class="padding-box"></td>
+                                <td class="padding-box"></td>
+                                <td class="padding-box">
                                     <div class="d-flex justify-center content-center">
                                         <button class="save-btn">Save</button>
                                     </div>
 
                                 </td>
+                                <td class="padding-box  rounded-r-xl rounded-no-tr"></td>
                             </tr>
 
                         </tbody>
@@ -424,6 +444,22 @@
         .more-tags span:hover {
             text-decoration: underline;
         }
+
+
+        table tbody tr td:first-child,
+table tbody tr td:last-child,
+table thead tr th:first-child,
+table thead tr th:last-child {
+    width: 10px !important;
+    min-width: 10px !important;
+    max-width: 10px !important;
+    padding: 0 !important;
+}
+
+/* Override for the last row's middle cells only */
+table tbody tr:last-child td:not(:first-child):not(:last-child) {
+    width: auto !important;
+}
     </style>
 
 </body>

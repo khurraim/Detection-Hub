@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- Reset CSS : Clears Browser's Default Formatting , For Cross Browser Compatibility-->
+    <link rel="stylesheet" href="k-assets/css/reset.css" />
+    <link rel="stylesheet" href="k-assets/css/base.css" />
+    <link rel="stylesheet" href="k-assets/css/layout.css" />
+    <link rel="stylesheet" href="k-assets/css/18.css" />
+    <!-- <link rel="stylesheet" href="k-assets/css/footer.css"> -->
+  </head>
+
+  <!-- ===================POP STYLES AT ALL==================== -->
+  <style>
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backdrop-filter: blur(8px); /* background blur */
+      background: rgba(0, 0, 0, 0.25); /* slight dark layer */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999; /* on top of everything */
+    }
+
+    .meta-tags-modal {
+      background: #e8e8e8;
+      border-radius: 8px;
+      width: 100%;
+      max-width: 777px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+    }
+
+    /* Modal Header */
+    .modal-header {
+      background: #6b6b6b;
+      padding: 12px 20px;
+      color: #999;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    /* Blue Banner Section */
+    .blue-banner {
+      background: #155dfc;
+      padding: 17px 20px;
+      color: white;
+      font-size: 18px;
+    }
+
+    /* Input Section */
+    .input-section {
+      background: white;
+      padding: 16px 20px;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .input-field {
+      flex: 1;
+      padding: 10px 14px;
+      max-width: 436px;
+      border: 1px solid #d1d5dc;
+      border-radius: 8px;
+      font-size: 14px;
+      background: #f3f3f5;
+      outline: none;
+    }
+
+    .input-field::placeholder {
+      color: #717182;
+    }
+
+    .input-field:focus {
+      background: white;
+      border-color: #155dfc;
+    }
+
+    .btn-add-meta {
+      background: #155dfc;
+      color: white;
+      border: none;
+      height: 36px;
+      width: 203px;
+      padding: 8px 24px;
+      border-radius: 8px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    /* Tabs Section */
+    .tabs-container {
+      background: white;
+      padding: 20px;
+    }
+
+    .tabs-header {
+      display: flex;
+      background: #155dfc;
+    }
+
+    .tab {
+      flex: 1;
+      padding: 12px 14px;
+      color: white;
+      font-size: 14px;
+      cursor: pointer;
+      border: none;
+    }
+
+    .tab.active {
+      background: #155dfc;
+      font-weight: 400;
+      text-align: start;
+      font-size: 14px;
+    }
+
+    .tab:not(.active) {
+      background: #81a0fb;
+      font-weight: 400;
+      text-align: start;
+      font-size: 14px;
+    }
+
+    .search-box {
+      flex: 1;
+      margin: 0 12px;
+      padding: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 6px 10px;
+      border: none;
+      border-radius: 3px;
+      font-size: 12px;
+      outline: none;
+    }
+
+    .search-icon {
+      margin-right: 6px;
+      font-size: 14px;
+    }
+
+    /* Content Area */
+    .content-area {
+      display: flex;
+      min-height: 300px;
+      max-height: 350px;
+    }
+
+    .current-tags-section {
+      padding: 16px;
+      border-right: 1px solid #e0e0e0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .available-tags-section {
+      flex: 1;
+      background: white;
+      padding: 16px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Tag Chips */
+    .tag-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .tag-chip {
+      background-color: #155dfc;
+      border-radius: 6px;
+      padding: 4px 12px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #fff;
+      display: inline-block;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tag-chip input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+      accent-color: white;
+    }
+
+    /* Available Tags List */
+    .available-tags-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 8px;
+      flex: 1;
+      overflow-y: auto;
+      padding-right: 8px;
+    }
+
+    .hiiii {
+      background-color: #e9e8e8;
+      border: 1px dashed #9e9e9e;
+      border-radius: 8px;
+      padding: 4px 6px;
+      font-size: 14px;
+      color: #333;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      width: 180px;
+      text-align: center;
+      font-weight: bold;
+    }
+    .hiiii1 {
+      background-color: #b0c8f8;
+    }
+    .available-tags-list::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .available-tags-list::-webkit-scrollbar-track {
+      background: #f0f0f0;
+      border-radius: 4px;
+    }
+
+    .available-tags-list::-webkit-scrollbar-thumb {
+      background: #c0c0c0;
+      border-radius: 4px;
+    }
+
+    .tag-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px;
+      border-radius: 4px;
+      background: #f9f9f9;
+      transition: background 0.2s;
+    }
+
+    .tag-item:hover {
+      background: #f0f0f0;
+    }
+
+    .tag-item input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+      accent-color: #0052cc;
+    }
+
+    .tag-item label {
+      flex: 1;
+      font-size: 12px;
+      cursor: pointer;
+      color: #333;
+      user-select: none;
+    }
+
+    .tag-item .edit-btn {
+      width: 18px;
+      height: 18px;
+      background: none;
+      border: none;
+      color: #666;
+      cursor: pointer;
+      font-size: 14px;
+      padding: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: color 0.2s;
+    }
+
+    .tag-item .edit-btn:hover {
+      color: #0052cc;
+    }
+
+    .blue-tag {
+      background: #d4e4ff;
+    }
+
+    /* Bottom Buttons */
+    .bottom-buttons {
+      background: white;
+      padding: 16px;
+      display: flex;
+      gap: 12px;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    .btn-remove-tags {
+      background: #1a1a1a;
+      color: white;
+      border: none;
+      padding: 10px 22px;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-remove-tags:hover {
+      background: #333;
+    }
+
+    .btn-add-tags {
+      background: #0052cc;
+      color: white;
+      border: none;
+      padding: 10px 22px;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-left: auto;
+      transition: background 0.2s;
+    }
+
+    .btn-add-tags:hover {
+      background: #0040a3;
+    }
+
+    /* Save Button Container */
+    .save-button-container {
+      background: #e8e8e8;
+      padding: 16px 20px;
+      text-align: right;
+    }
+
+    .btn-save {
+      background: #1a1a1a;
+      color: white;
+      border: none;
+      padding: 10px 28px;
+      border-radius: 4px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .btn-save:hover {
+      background: #333;
+    }
+
+    div::-webkit-scrollbar {
+      width: 14px;
+    }
+
+    /* Background track */
+    div::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    div::-webkit-scrollbar-thumb {
+      background: #c9c9c9;
+    }
+
+    div::-webkit-scrollbar-button {
+      width: 143px;
+      height: 124px;
+      background: #e5e5e5;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    div::-webkit-scrollbar-button:single-button:vertical:decrement {
+      background-image: url("data:image/svg+xml;utf8,<svg fill='%23666' width='10' height='10' xmlns='http://www.w3.org/2000/svg'><polygon points='5,2 9,8 1,8'/></svg>");
+    }
+
+    /* BOTTOM arrow (▼) */
+    div::-webkit-scrollbar-button:single-button:vertical:increment {
+      background-image: url("data:image/svg+xml;utf8,<svg fill='%23666' width='10' height='10' xmlns='http://www.w3.org/2000/svg'><polygon points='1,2 9,2 5,8'/></svg>");
+    }
+
+    /* Disable horizontal arrow buttons */
+    div::-webkit-scrollbar-button:horizontal {
+      display: none;
+    }
+
+    /* ------------ FIREFOX ------------ */
+    div {
+      scrollbar-color: #c9c9c9 #e5e5e5;
+    }
+    .search__Icons {
+      position: absolute;
+      left: 14px;
+      height: 22px;
+      width: 22px;
+      top: 4px;
+    }
+    .tab__search {
+      padding: 8px 38px;
+      border: none;
+      outline: none;
+      border-radius: 6px;
+      font-size: 14px;
+      width: 230px;
+      background-color: white;
+    }
+  </style>
+  <body>
+    <!-- Header Begins Here -->
+    <header>
+      <!-- Left Column In Header : Logo Only -->
+      <div class="column-left">
+        <div class="logo-container">
+          <img src="k-assets/images/logo.png" alt="No Header Logo" />
+        </div>
+      </div>
+
+      <!-- Right Column In Header : Search Bar Icons Profile -->
+      <div class="column-right">
+        <div class="search-container">
+          <div class="search-icon">
+            <img src="k-assets/images/search-normal.png" alt="" />
+          </div>
+          <input type="text" class="search-input" placeholder="Search..." />
+        </div>
+
+        <div class="icons-container">
+          <img src="k-assets/images/hugeicons_notification-01.png" alt="" />
+          <img src="k-assets/images/ion_settings-sharp.png" alt="" />
+          <img src="k-assets/images/mingcute_question-line.png" alt="" />
+        </div>
+
+        <div class="profile-container">
+          <!-- Profile Avatar Icon -->
+          <img src="k-assets/images/Vector.png" alt="" />
+          <span>Sharan Quinn Grady</span>
+
+          <!-- Arrow Down Icon-->
+          <img src="k-assets/images/lsicon_down-filled.png" alt="" />
+          <img src="k-assets/images/notification-bing.png" alt="" />
+        </div>
+      </div>
+    </header>
+    <!-- Header Ends Here -->
+
+    <div class="body-container">
+      <div class="column-left">
+        <div class="sidebar-icons">
+          <img src="k-assets/images/Frame 1272627065.png" alt="" />
+          <img src="k-assets/images/Frame 1272627038.png" alt="" />
+          <img src="k-assets/images/Frame 1272627066.png" alt="" />
+
+          <hr />
+
+          <img src="k-assets/images/Frame 1272627067.png" alt="" />
+          <img src="k-assets/images/Frame 1272627068.png" alt="" />
+          <img src="k-assets/images/Frame 1272627071.png" alt="" />
+          <img src="k-assets/images/Frame 1272627066.png" alt="" />
+
+          <hr />
+
+          <img src="k-assets/images/Frame 1272627070.png" alt="" />
+        </div>
+      </div>
+
+      <div class="column-right">
+        <!-- Body Code Begins Here -->
+
+        <h2 class="w-100 ft-32 fw-500 text-left my-5">High Value Vehicle</h2>
+
+        <div class="d-flex justify-end w-100 mb-5">
+          <button class="new-rule-btn">New Rule</button>
+        </div>
+
+        <div class="tabs w-100 d-flex justify-evenly text-center">
+          <div
+            class="tab w-100 rounded-t-2xl rounded-no-tr"
+            data-tab="define-rules"
+          >
+            Define Rules
+          </div>
+          <div class="tab active w-100" data-tab="rule-conditions">
+            Rule Conditions
+          </div>
+          <div class="tab w-100" data-tab="rule-tags">Rule Tags</div>
+          <div
+            class="tab w-100 rounded-t-2xl rounded-no-tl"
+            data-tab="audit-history"
+          >
+            Audit History
+          </div>
+        </div>
+
+        <div class="tab-content w-100 mb-5">
+          <!-- Define Rules Tab -->
+          <div class="tab-pane" id="define-rules">
+            <table>
+              <thead>
+                <tr>
+                  <th>Edit Rule Icon</th>
+                  <th>Edit Rule Name</th>
+                  <th>Edit Rule Description</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="py-5 px-3">
+                  <td>
+                    <div class="d-flex justify-start align-center">
+                      <img
+                        src="/k-assets/images/15/Vector (3).png"
+                        alt=""
+                        class="mx-2"
+                      />
+                      <img
+                        src="/k-assets/images/15/mi_edit.png"
+                        alt=""
+                        class="mx-2"
+                      />
+                    </div>
+                  </td>
+
+                  <td>
+                    <div class="d-flex justify-start align-center">
+                      High Value Vehicle
+                      <img
+                        src="/k-assets/images/15/mi_edit.png"
+                        alt=""
+                        class="mx-2"
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex justify-start align-center">
+                      This rule identifies Motor claims where there is a risk of
+                      a staged accident because no other vehicle was involved
+                      <img
+                        src="/k-assets/images/15/mi_edit.png"
+                        alt=""
+                        class="mx-2"
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex justify-center content-center">
+                      <img
+                        src="/k-assets/images/15/mingcute_delete-line.png"
+                        alt=""
+                      />
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <div class="d-flex justify-center content-center">
+                      <button class="save-btn">Save</button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Rule Conditions Tab -->
+          <div class="tab-pane active" id="rule-conditions">
+            <table id="table-rule-conditions">
+              <thead>
+                <tr>
+                  <th>Edit Group Definitions</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="py-5 px-3">
+                  <td>
+                    <div class="d-flex justify-start align-center">
+                      <div class="condition-row">
+                        <select>
+                          <option>Single vehicle accident</option>
+                          <option>Multiple vehicle accident</option>
+                          <option>Third Party Claim</option>
+                          <option>Comprehensive Claim</option>
+                        </select>
+
+                        <select class="operator">
+                          <option selected>Is</option>
+                          <option>Is Not</option>
+                          <option>Contains</option>
+                          <option>Greater Than</option>
+                          <option>Less Than</option>
+                        </select>
+
+                        <select>
+                          <option>True</option>
+                          <option>False</option>
+                        </select>
+
+                        <div class="points">Points <span>50</span></div>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>
+                    <div class="d-flex justify-center content-center">
+                      <img
+                        src="/k-assets/images/15/mingcute_delete-line.png"
+                        alt=""
+                      />
+                    </div>
+                  </td>
+                </tr>
+
+                <tr class="py-5 px-3">
+                  <td>
+                    <div class="d-flex justify-start align-center">
+                      <div class="condition-row">
+                        <select>
+                          <option>Reserve Amount</option>
+                          <option>Fault Status</option>
+                          <option>Police Notified</option>
+                          <option>Level 2 Rejections</option>
+                          <option>Staff Member</option>
+                          <option selected>Claim Loss Category</option>
+                          <option>Catastrophe</option>
+                        </select>
+
+                        <select class="operator">
+                          <option selected>Is</option>
+                          <option>Is Not</option>
+                          <option>Contains</option>
+                          <option>Greater Than</option>
+                          <option>Less Than</option>
+                        </select>
+
+                        <select>
+                          <option>True</option>
+                          <option>False</option>
+                        </select>
+
+                        <div class="points">Points <span>50</span></div>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>
+                    <div class="d-flex justify-center content-center">
+                      <img
+                        src="/k-assets/images/15/mingcute_delete-line.png"
+                        alt=""
+                      />
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <!-- <td></td> -->
+                  <td colspan="2">
+                    <div
+                      class="d-flex justify-end align-center"
+                      style="padding-right: 12px"
+                    >
+                      <button class="new-rule-btn">Create New Condition</button>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- <tr>
+                                <td></td>
+
+                                <td>
+                                    <div class="d-flex justify-center content-center">
+                                        <button class="save-btn">Save</button>
+                                    </div>
+
+                                </td>
+                            </tr> -->
+
+                <tr>
+                  <td colspan="2">
+                    <div
+                      class="d-flex justify-end align-center"
+                      style="padding-right: 12px"
+                    >
+                      <button class="save-btn">Save</button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Rule Tags Tab -->
+          <div class="tab-pane" id="rule-tags">
+            <h2>Rule Tags</h2>
+            <p>Content for Rule Tags will appear here.</p>
+          </div>
+
+          <!-- Audit History Tab -->
+          <div class="tab-pane" id="audit-history">
+            <h2>Audit History</h2>
+            <p>Content for Audit History will appear here.</p>
+          </div>
+        </div>
+
+        <script>
+          // Tab switching logic
+          const tabs = document.querySelectorAll(".tab");
+          const panes = document.querySelectorAll(".tab-pane");
+
+          tabs.forEach((tab) => {
+            tab.addEventListener("click", () => {
+              // Remove active states
+              tabs.forEach((t) => t.classList.remove("active"));
+              panes.forEach((p) => p.classList.remove("active"));
+
+              // Add active to clicked tab and related content
+              tab.classList.add("active");
+              document
+                .getElementById(tab.getAttribute("data-tab"))
+                .classList.add("active");
+            });
+          });
+        </script>
+
+        <!-- Body Code Ends Here -->
+        <!-- ===============CSS is in the HEAD tag for POP=================-->
+        <div class="overlay">
+          <div class="meta-tags-modal">
+            <!-- Blue Banner -->
+            <div class="blue-banner">Create or Assign Meta-Tags</div>
+
+            <!-- Input Section -->
+            <div class="input-section">
+              <input
+                type="text"
+                class="input-field"
+                placeholder="Type a new Meta-Tag here"
+              />
+              <button class="btn-add-meta">Add to Meta-Tags</button>
+            </div>
+
+            <!-- Tabs and Content -->
+            <div class="tabs-container">
+              <!-- Tabs Header -->
+              <div class="tabs-header">
+                <button class="tab active">Current Meta Tags</button>
+                <button
+                  class="tab"
+                  style="
+                    background: #81a0fb;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                  "
+                >
+                  Available Tags
+                  <div class="search-wrap" style="position: relative">
+                    <div
+                      style="display: flex"
+                      class="search"
+                      role="search"
+                      aria-label="Search rules"
+                    >
+                      <img
+                        class="search__Icons"
+                        src="assets/images/search-normal.png"
+                        alt=""
+                      />
+                      <input
+                        class="tab__search"
+                        type="search"
+                        placeholder="Search for a Meta Tag"
+                        aria-label="Type to Search"
+                      />
+                    </div>
+                  </div>
+                </button>
+              </div>
+
+              <!-- Content Area -->
+              <div class="content-area">
+                <!-- Current Tags Section -->
+                <div class="current-tags-section" style="background: #e0e0e0">
+                  <div class="tag-chips">
+                    <div class="tag-chip">
+                      <input type="checkbox" checked />
+                      <span>PI</span>
+                    </div>
+                    <div class="tag-chip">
+                      <input type="checkbox" checked />
+                      <span>Motor</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Available Tags Section -->
+                <div class="available-tags-section">
+                  <div class="current-tags-section">
+                    <div class="tag-chips">
+                      <div class="tag-chip hiiii">
+                        <input type="checkbox" />
+                        <span>Tag Header</span>
+                      </div>
+                      <div class="tag-chip hiiii hiiii1">
+                        <input type="checkbox" checked />
+                        <span>Motor</span>
+                      </div>
+                      <div class="tag-chip hiiii hiiii1">
+                        <input type="checkbox" checked />
+                        <span>Tag Header</span>
+                      </div>
+                      <div class="tag-chip hiiii hiiii">
+                        <input type="checkbox" />
+                        <span>Tag Header</span>
+                      </div>
+                      <div class="tag-chip hiiii hiiii">
+                        <input type="checkbox" />
+                        <span>Tag Header</span>
+                      </div>
+                      <div class="tag-chip hiiii hiiii">
+                        <input type="checkbox" />
+                        <span>Tag Header</span>
+                      </div>
+                      <div class="tag-chip hiiii hiiii">
+                        <input type="checkbox" />
+                        <span>Tag Header</span>
+                      </div>
+                      <div class="tag-chip hiiii hiiii">
+                        <input type="checkbox" />
+                        <span>Tag Header</span>
+                      </div>
+                      <div class="tag-chip hiiii hiiii">
+                        <input type="checkbox" />
+                        <span>Tag Header</span>
+                      </div>
+                      <div class="tag-chip hiiii hiiii">
+                        <input type="checkbox" />
+                        <span>Tag Header</span>
+                      </div>
+                      <div class="tag-chip hiiii hiiii">
+                        <input type="checkbox" />
+                        <span>Tag Header</span>
+                      </div>
+                      <div class="tag-chip hiiii hiiii">
+                        <input type="checkbox" />
+                        <span>Tag Header</span>
+                      </div>
+                      <div class="tag-chip hiiii hiiii">
+                        <input type="checkbox" />
+                        <span>Tag Header</span>
+                      </div>
+                      <div class="tag-chip hiiii hiiii">
+                        <input type="checkbox" />
+                        <span>Tag Header</span>
+                      </div>
+                      <div class="tag-chip hiiii hiiii">
+                        <input type="checkbox" />
+                        <span>Tag Header</span>
+                      </div>
+                      <div class="tag-chip hiiii hiiii">
+                        <input type="checkbox" />
+                        <span>Tag Header</span>
+                      </div>
+                      <div class="tag-chip hiiii hiiii">
+                        <input type="checkbox" />
+                        <span>Tag Header</span>
+                      </div>
+                      <div class="tag-chip hiiii hiiii">
+                        <input type="checkbox" />
+                        <span>Tag Header</span>
+                      </div>
+                      <div class="tag-chip hiiii hiiii">
+                        <input type="checkbox" />
+                        <span>Tag Header</span>
+                      </div>
+                      <div class="tag-chip hiiii hiiii">
+                        <input type="checkbox" />
+                        <span>Tag Header</span>
+                      </div>
+                      <div class="tag-chip hiiii hiiii">
+                        <input type="checkbox" />
+                        <span>Tag Header</span>
+                      </div>
+                      <div class="tag-chip hiiii hiiii">
+                        <input type="checkbox" />
+                        <span>Tag Header</span>
+                      </div>
+                      <div class="tag-chip hiiii hiiii">
+                        <input type="checkbox" />
+                        <span>Tag Header</span>
+                      </div>
+                      <div class="tag-chip hiiii hiiii">
+                        <input type="checkbox" />
+                        <span>Tag Header</span>
+                      </div>
+                      <div class="tag-chip hiiii hiiii">
+                        <input type="checkbox" />
+                        <span>Tag Header</span>
+                      </div>
+                      <div class="tag-chip hiiii hiiii">
+                        <input type="checkbox" />
+                        <span>Tag Header</span>
+                      </div>
+                      <div class="tag-chip hiiii hiiii">
+                        <input type="checkbox" />
+                        <span>Tag Header</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Bottom Buttons -->
+              <div class="bottom-buttons">
+                <button class="btn-remove-tags">Remove Tags</button>
+                <button class="btn-add-tags">Add to Tags</button>
+              </div>
+            </div>
+
+            <!-- Save Button -->
+            <div class="save-button-container">
+              <button class="btn-save">Save</button>
+            </div>
+          </div>
+        </div>
+
+        <footer>
+          <div class="icon-box d-flex">
+            <div class="circle-box mr-3"></div>
+            <div class="icon-box-content">
+              <h4 class="ft-14 mt-1 mb-1">kbs intelligence</h4>
+              <p>KBBS (Aust) Pty Ltd ABN 31 100 028 322</p>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

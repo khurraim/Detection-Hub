@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- Reset CSS : Clears Browser's Default Formatting , For Cross Browser Compatibility-->
+    <link rel="stylesheet" href="k-assets/css/reset.css" />
+    <link rel="stylesheet" href="k-assets/css/base.css" />
+    <link rel="stylesheet" href="k-assets/css/layout.css" />
+    <link rel="stylesheet" href="k-assets/css/18.css" />
+    <!-- <link rel="stylesheet" href="k-assets/css/footer.css"> -->
+  </head>
+
+  <!-- ===================POP STYLES AT ALL==================== -->
+  <style>
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backdrop-filter: blur(8px);
+      background: rgba(0, 0, 0, 0.25);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    .rule-icon-popup-overlay {
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+      width: 100%;
+      max-width: 650px;
+      display: flex;
+      flex-direction: column;
+      max-height: 90vh;
+      overflow: hidden;
+    }
+
+    /* Blue header styling */
+    .rule-icon-popup-header {
+      background-color: #155dfc;
+      color: white;
+      padding: 16px 20px;
+      font-size: 18px;
+      font-weight: 500;
+      flex-shrink: 0;
+    }
+
+    /* Search section styling */
+    .rule-icon-popup-search-section {
+      padding: 24px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-shrink: 0;
+      background-color: white;
+      width: 500px;
+    }
+
+    .rule-icon-popup-search-wrapper {
+      flex: 1;
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .rule-icon-popup-search-icon {
+      position: absolute;
+      left: 12px;
+      font-size: 18px;
+      color: #999;
+      pointer-events: none;
+    }
+
+    .rule-icon-popup-search-input {
+      width: 100%;
+      padding: 8px 12px 8px 36px;
+      border: 2px solid #155dfc;
+      border-radius: 4px;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .rule-icon-popup-search-input:focus {
+      border-color: #155dfc;
+    }
+
+    .rule-icon-popup-search-text {
+      font-size: 14px;
+      color: #5a5a5a;
+      white-space: nowrap;
+    }
+
+    /* Icon grid section with scrollbar */
+    .rule-icon-popup-content {
+      flex: 1;
+      padding: 20px;
+      background-color: white;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+
+    .rule-icon-popup-content::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .rule-icon-popup-content::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    .rule-icon-popup-content::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 4px;
+    }
+
+    .rule-icon-popup-content::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+
+    .rule-icon-popup-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 12px;
+    }
+
+    .rule-icon-popup-icon-item {
+      display: flex;
+      justify-content: center;
+      height: 92px;
+      width: 92px;
+    }
+
+    .rule-icon-popup-icon-container {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1;
+      background-color: #f5f5f5;
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .rule-icon-popup-checkbox {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      width: 13px;
+      height: 13px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      background-color: white;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+    }
+
+    .rule-icon-popup-checkbox.checked {
+      background-color: #1f5ef5;
+      border-color: #1f5ef5;
+    }
+
+    .rule-icon-popup-checkbox.checked::after {
+      content: "✓";
+      color: white;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    /* Icon styling */
+    .rule-icon-popup-icon {
+      width: 60%;
+      height: 60%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .rule-icon-popup-svg {
+      width: 100%;
+      height: 100%;
+      fill: #1f5ef5;
+    }
+
+    /* Footer with Save button */
+    .rule-icon-popup-footer {
+      padding: 16px 20px;
+      background-color: #cccccc;
+      display: flex;
+      justify-content: flex-end;
+      flex-shrink: 0;
+    }
+
+    .rule-icon-popup-save-btn {
+      background-color: #1a1a1a;
+      color: white;
+      border: none;
+      padding: 8px 24px;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    div::-webkit-scrollbar {
+      width: 14px;
+    }
+
+    /* Background track */
+    div::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    div::-webkit-scrollbar-thumb {
+      background: #c9c9c9;
+    }
+
+    div::-webkit-scrollbar-button {
+      width: 143px;
+      height: 124px;
+      background: #e5e5e5;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    div::-webkit-scrollbar-button:single-button:vertical:decrement {
+      background-image: url("data:image/svg+xml;utf8,<svg fill='%23666' width='10' height='10' xmlns='http://www.w3.org/2000/svg'><polygon points='5,2 9,8 1,8'/></svg>");
+    }
+
+    div::-webkit-scrollbar-button:single-button:vertical:increment {
+      background-image: url("data:image/svg+xml;utf8,<svg fill='%23666' width='10' height='10' xmlns='http://www.w3.org/2000/svg'><polygon points='1,2 9,2 5,8'/></svg>");
+    }
+
+    div::-webkit-scrollbar-button:horizontal {
+      display: none;
+    }
+
+    div {
+      scrollbar-color: #c9c9c9 #e5e5e5;
+      
+    }
+  </style>
+  <body>
+    <!-- Header Begins Here -->
+    <header>
+      <!-- Left Column In Header : Logo Only -->
+      <div class="column-left">
+        <div class="logo-container">
+          <img src="k-assets/images/logo.png" alt="No Header Logo" />
+        </div>
+      </div>
+
+      <!-- Right Column In Header : Search Bar Icons Profile -->
+      <div class="column-right">
+        <div class="search-container">
+          <div class="search-icon">
+            <img src="k-assets/images/search-normal.png" alt="" />
+          </div>
+          <input type="text" class="search-input" placeholder="Search..." />
+        </div>
+
+        <div class="icons-container">
+          <img src="k-assets/images/hugeicons_notification-01.png" alt="" />
+          <img src="k-assets/images/ion_settings-sharp.png" alt="" />
+          <img src="k-assets/images/mingcute_question-line.png" alt="" />
+        </div>
+
+        <div class="profile-container">
+          <!-- Profile Avatar Icon -->
+          <img src="k-assets/images/Vector.png" alt="" />
+          <span>Sharan Quinn Grady</span>
+
+          <!-- Arrow Down Icon-->
+          <img src="k-assets/images/lsicon_down-filled.png" alt="" />
+          <img src="k-assets/images/notification-bing.png" alt="" />
+        </div>
+      </div>
+    </header>
+    <!-- Header Ends Here -->
+
+    <div class="body-container">
+      <div class="column-left">
+        <div class="sidebar-icons">
+          <img src="k-assets/images/Frame 1272627065.png" alt="" />
+          <img src="k-assets/images/Frame 1272627038.png" alt="" />
+          <img src="k-assets/images/Frame 1272627066.png" alt="" />
+
+          <hr />
+
+          <img src="k-assets/images/Frame 1272627067.png" alt="" />
+          <img src="k-assets/images/Frame 1272627068.png" alt="" />
+          <img src="k-assets/images/Frame 1272627071.png" alt="" />
+          <img src="k-assets/images/Frame 1272627066.png" alt="" />
+
+          <hr />
+
+          <img src="k-assets/images/Frame 1272627070.png" alt="" />
+        </div>
+      </div>
+
+      <div class="column-right">
+        <!-- Body Code Begins Here -->
+
+        <h2 class="w-100 ft-32 fw-500 text-left my-5">High Value Vehicle</h2>
+
+        <div class="d-flex justify-end w-100 mb-5">
+          <button class="new-rule-btn">New Rule</button>
+        </div>
+
+        <div class="tabs w-100 d-flex justify-evenly text-center">
+          <div
+            class="tab w-100 rounded-t-2xl rounded-no-tr"
+            data-tab="define-rules"
+          >
+            Define Rules
+          </div>
+          <div class="tab active w-100" data-tab="rule-conditions">
+            Rule Conditions
+          </div>
+          <div class="tab w-100" data-tab="rule-tags">Rule Tags</div>
+          <div
+            class="tab w-100 rounded-t-2xl rounded-no-tl"
+            data-tab="audit-history"
+          >
+            Audit History
+          </div>
+        </div>
+
+        <div class="tab-content w-100 mb-5">
+          <!-- Define Rules Tab -->
+          <div class="tab-pane" id="define-rules">
+            <table>
+              <thead>
+                <tr>
+                  <th>Edit Rule Icon</th>
+                  <th>Edit Rule Name</th>
+                  <th>Edit Rule Description</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="py-5 px-3">
+                  <td>
+                    <div class="d-flex justify-start align-center">
+                      <img
+                        src="/k-assets/images/15/Vector (3).png"
+                        alt=""
+                        class="mx-2"
+                      />
+                      <img
+                        src="/k-assets/images/15/mi_edit.png"
+                        alt=""
+                        class="mx-2"
+                      />
+                    </div>
+                  </td>
+
+                  <td>
+                    <div class="d-flex justify-start align-center">
+                      High Value Vehicle
+                      <img
+                        src="/k-assets/images/15/mi_edit.png"
+                        alt=""
+                        class="mx-2"
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex justify-start align-center">
+                      This rule identifies Motor claims where there is a risk of
+                      a staged accident because no other vehicle was involved
+                      <img
+                        src="/k-assets/images/15/mi_edit.png"
+                        alt=""
+                        class="mx-2"
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex justify-center content-center">
+                      <img
+                        src="/k-assets/images/15/mingcute_delete-line.png"
+                        alt=""
+                      />
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <div class="d-flex justify-center content-center">
+                      <button class="save-btn">Save</button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Rule Conditions Tab -->
+          <div class="tab-pane active" id="rule-conditions">
+            <table id="table-rule-conditions">
+              <thead>
+                <tr>
+                  <th>Edit Group Definitions</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="py-5 px-3">
+                  <td>
+                    <div class="d-flex justify-start align-center">
+                      <div class="condition-row">
+                        <select>
+                          <option>Single vehicle accident</option>
+                          <option>Multiple vehicle accident</option>
+                          <option>Third Party Claim</option>
+                          <option>Comprehensive Claim</option>
+                        </select>
+
+                        <select class="operator">
+                          <option selected>Is</option>
+                          <option>Is Not</option>
+                          <option>Contains</option>
+                          <option>Greater Than</option>
+                          <option>Less Than</option>
+                        </select>
+
+                        <select>
+                          <option>True</option>
+                          <option>False</option>
+                        </select>
+
+                        <div class="points">Points <span>50</span></div>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>
+                    <div class="d-flex justify-center content-center">
+                      <img
+                        src="/k-assets/images/15/mingcute_delete-line.png"
+                        alt=""
+                      />
+                    </div>
+                  </td>
+                </tr>
+
+                <tr class="py-5 px-3">
+                  <td>
+                    <div class="d-flex justify-start align-center">
+                      <div class="condition-row">
+                        <select>
+                          <option>Reserve Amount</option>
+                          <option>Fault Status</option>
+                          <option>Police Notified</option>
+                          <option>Level 2 Rejections</option>
+                          <option>Staff Member</option>
+                          <option selected>Claim Loss Category</option>
+                          <option>Catastrophe</option>
+                        </select>
+
+                        <select class="operator">
+                          <option selected>Is</option>
+                          <option>Is Not</option>
+                          <option>Contains</option>
+                          <option>Greater Than</option>
+                          <option>Less Than</option>
+                        </select>
+
+                        <select>
+                          <option>True</option>
+                          <option>False</option>
+                        </select>
+
+                        <div class="points">Points <span>50</span></div>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>
+                    <div class="d-flex justify-center content-center">
+                      <img
+                        src="/k-assets/images/15/mingcute_delete-line.png"
+                        alt=""
+                      />
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <!-- <td></td> -->
+                  <td colspan="2">
+                    <div
+                      class="d-flex justify-end align-center"
+                      style="padding-right: 12px"
+                    >
+                      <button class="new-rule-btn">Create New Condition</button>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- <tr>
+                                <td></td>
+
+                                <td>
+                                    <div class="d-flex justify-center content-center">
+                                        <button class="save-btn">Save</button>
+                                    </div>
+
+                                </td>
+                            </tr> -->
+
+                <tr>
+                  <td colspan="2">
+                    <div
+                      class="d-flex justify-end align-center"
+                      style="padding-right: 12px"
+                    >
+                      <button class="save-btn">Save</button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Rule Tags Tab -->
+          <div class="tab-pane" id="rule-tags">
+            <h2>Rule Tags</h2>
+            <p>Content for Rule Tags will appear here.</p>
+          </div>
+
+          <!-- Audit History Tab -->
+          <div class="tab-pane" id="audit-history">
+            <h2>Audit History</h2>
+            <p>Content for Audit History will appear here.</p>
+          </div>
+        </div>
+
+        <script>
+          // Tab switching logic
+          const tabs = document.querySelectorAll(".tab");
+          const panes = document.querySelectorAll(".tab-pane");
+
+          tabs.forEach((tab) => {
+            tab.addEventListener("click", () => {
+              // Remove active states
+              tabs.forEach((t) => t.classList.remove("active"));
+              panes.forEach((p) => p.classList.remove("active"));
+
+              // Add active to clicked tab and related content
+              tab.classList.add("active");
+              document
+                .getElementById(tab.getAttribute("data-tab"))
+                .classList.add("active");
+            });
+          });
+        </script>
+
+        <!-- Body Code Ends Here -->
+
+        <div class="overlay">
+          <!-- ===============CSS is in the HEAD tag for POP================= -->
+
+          <div class="rule-icon-popup-overlay">
+            <div class="rule-icon-popup-header">Select Rule Icon</div>
+
+            <div class="rule-icon-popup-search-section">
+              <div class="rule-icon-popup-search-wrapper">
+                <span class="rule-icon-popup-search-icon"
+                  ><img src="assets/images/search-normal.png" alt=""
+                /></span>
+                <input
+                  type="text"
+                  class="rule-icon-popup-search-input"
+                  placeholder="Search for an icon"
+                />
+              </div>
+              <span class="rule-icon-popup-search-text"
+                >or Select an icon below</span
+              >
+            </div>
+
+            <div class="rule-icon-popup-content">
+              <div class="rule-icon-popup-grid">
+                <!-- Row 1: 7 icons -->
+                <div class="rule-icon-popup-icon-item">
+                  <div class="rule-icon-popup-icon-container">
+                    <div class="rule-icon-popup-checkbox"></div>
+                    <div class="rule-icon-popup-icon">
+                      <img src="assets/images/box.svg" alt="" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="rule-icon-popup-icon-item">
+                  <div class="rule-icon-popup-icon-container">
+                    <div class="rule-icon-popup-checkbox"></div>
+                    <div class="rule-icon-popup-icon">
+                      <img src="assets/images/box.svg" alt="" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="rule-icon-popup-icon-item">
+                  <div class="rule-icon-popup-icon-container">
+                    <div class="rule-icon-popup-checkbox"></div>
+                    <div class="rule-icon-popup-icon">
+                      <img src="assets/images/box.svg" alt="" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="rule-icon-popup-icon-item">
+                  <div class="rule-icon-popup-icon-container">
+                    <div class="rule-icon-popup-checkbox"></div>
+                    <div class="rule-icon-popup-icon">
+                      <img src="assets/images/box.svg" alt="" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="rule-icon-popup-icon-item">
+                  <div class="rule-icon-popup-icon-container">
+                    <div class="rule-icon-popup-checkbox"></div>
+                    <div class="rule-icon-popup-icon">
+                      <img src="assets/images/box.svg" alt="" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="rule-icon-popup-icon-item">
+                  <div class="rule-icon-popup-icon-container">
+                    <div class="rule-icon-popup-checkbox"></div>
+                    <div class="rule-icon-popup-icon">
+                      <img src="assets/images/box.svg" alt="" />
+                    </div>
+                  </div>
+                </div>
+                <div class="rule-icon-popup-icon-item">
+                  <div class="rule-icon-popup-icon-container">
+                    <div class="rule-icon-popup-checkbox"></div>
+                    <div class="rule-icon-popup-icon">
+                      <img src="assets/images/box.svg" alt="" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="rule-icon-popup-icon-item">
+                  <div class="rule-icon-popup-icon-container">
+                    <div class="rule-icon-popup-checkbox"></div>
+                    <div class="rule-icon-popup-icon">
+                      <img src="assets/images/box.svg" alt="" />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Row 2: 7 icons -->
+                <div class="rule-icon-popup-icon-item">
+                  <div class="rule-icon-popup-icon-container">
+                    <div class="rule-icon-popup-checkbox"></div>
+                    <div class="rule-icon-popup-icon">
+                      <img src="assets/images/box.svg" alt="" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="rule-icon-popup-icon-item">
+                  <div class="rule-icon-popup-icon-container">
+                    <div class="rule-icon-popup-checkbox"></div>
+                    <div class="rule-icon-popup-icon">
+                      <img src="assets/images/box.svg" alt="" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="rule-icon-popup-icon-item">
+                  <div class="rule-icon-popup-icon-container">
+                    <div class="rule-icon-popup-checkbox"></div>
+                    <div class="rule-icon-popup-icon">
+                      <img src="assets/images/box.svg" alt="" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="rule-icon-popup-icon-item">
+                  <div class="rule-icon-popup-icon-container">
+                    <div class="rule-icon-popup-checkbox"></div>
+                    <div class="rule-icon-popup-icon">
+                      <img src="assets/images/box.svg" alt="" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="rule-icon-popup-icon-item">
+                  <div class="rule-icon-popup-icon-container">
+                    <div class="rule-icon-popup-checkbox"></div>
+                    <div class="rule-icon-popup-icon">
+                      <img src="assets/images/box.svg" alt="" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="rule-icon-popup-icon-item">
+                  <div class="rule-icon-popup-icon-container">
+                    <div class="rule-icon-popup-checkbox"></div>
+                    <div class="rule-icon-popup-icon">
+                      <img src="assets/images/box.svg" alt="" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="rule-icon-popup-icon-item">
+                  <div class="rule-icon-popup-icon-container">
+                    <div class="rule-icon-popup-checkbox"></div>
+                    <div class="rule-icon-popup-icon">
+                      <img src="assets/images/box.svg" alt="" />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Row 3: 7 icons -->
+                <div class="rule-icon-popup-icon-item">
+                  <div class="rule-icon-popup-icon-container">
+                    <div class="rule-icon-popup-checkbox"></div>
+                    <div class="rule-icon-popup-icon">
+                      <img src="assets/images/box.svg" alt="" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="rule-icon-popup-icon-item">
+                  <div class="rule-icon-popup-icon-container">
+                    <div class="rule-icon-popup-checkbox"></div>
+                    <div class="rule-icon-popup-icon">
+                      <img src="assets/images/box.svg" alt="" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="rule-icon-popup-icon-item">
+                  <div class="rule-icon-popup-icon-container">
+                    <div class="rule-icon-popup-checkbox"></div>
+                    <div class="rule-icon-popup-icon">
+                      <img src="assets/images/box.svg" alt="" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="rule-icon-popup-icon-item">
+                  <div class="rule-icon-popup-icon-container">
+                    <div class="rule-icon-popup-checkbox"></div>
+                    <div class="rule-icon-popup-icon">
+                      <img src="assets/images/box.svg" alt="" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="rule-icon-popup-icon-item">
+                  <div class="rule-icon-popup-icon-container">
+                    <div class="rule-icon-popup-checkbox"></div>
+                    <div class="rule-icon-popup-icon">
+                      <img src="assets/images/box.svg" alt="" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="rule-icon-popup-icon-item">
+                  <div class="rule-icon-popup-icon-container">
+                    <div class="rule-icon-popup-checkbox"></div>
+                    <div class="rule-icon-popup-icon">
+                      <img src="assets/images/box.svg" alt="" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="rule-icon-popup-icon-item">
+                  <div class="rule-icon-popup-icon-container">
+                    <div class="rule-icon-popup-checkbox"></div>
+                    <div class="rule-icon-popup-icon">
+                      <img src="assets/images/box.svg" alt="" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="rule-icon-popup-footer">
+              <button class="rule-icon-popup-save-btn"><a style="color: #fff; text-decoration: none;" href="15.html">Save</a></button>
+            </div>
+          </div>
+
+          <script>
+            document
+              .querySelectorAll(".rule-icon-popup-checkbox")
+              .forEach((checkbox) => {
+                checkbox.addEventListener("click", function (e) {
+                  e.stopPropagation();
+                  this.classList.toggle("checked");
+                });
+              });
+            document
+              .querySelectorAll(".rule-icon-popup-icon-container")
+              .forEach((container) => {
+                container.addEventListener("click", function () {
+                  const checkbox = this.querySelector(
+                    ".rule-icon-popup-checkbox"
+                  );
+                  checkbox.classList.toggle("checked");
+                });
+              });
+          </script>
+        </div>
+
+        <footer>
+          <div class="icon-box d-flex">
+            <div class="circle-box mr-3"></div>
+            <div class="icon-box-content">
+              <h4 class="ft-14 mt-1 mb-1">kbs intelligence</h4>
+              <p>KBBS (Aust) Pty Ltd ABN 31 100 028 322</p>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
