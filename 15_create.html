@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="k-assets/css/base.css">
     <link rel="stylesheet" href="k-assets/css/layout.css">
     <link rel="stylesheet" href="k-assets/css/15.css">
-    <link rel="stylesheet" href="k-assets/css/16_create.css">
     <!-- <link rel="stylesheet" href="k-assets/css/footer.css"> -->
 </head>
 
@@ -23,7 +22,9 @@
         <!-- Left Column In Header : Logo Only -->
         <div class="column-left">
             <div class="logo-container">
-                <img src="k-assets/images/logo.png" alt="No Header Logo">
+                <a href="index.html">
+                    <img src="k-assets/images/logo.png" alt="No Header Logo">
+                </a>
             </div>
         </div>
 
@@ -87,7 +88,16 @@
 
             <!-- Body Code Begins Here -->
 
-            <h2 class="w-100 ft-32 fw-500 text-left my-5">High Value Vehicle</h2>
+            <div class="demo-container w-100 mb-5">
+                <!-- As a link -->
+                <a href="14.html" class="back-button">
+                    <img src="k-assets/images/15/solar_arrow-to-top-left-bold.png" alt=""> 
+                    &nbsp;Back to Rules
+                </a>
+            </div>
+
+            <h2 class="w-100 ft-32 fw-500 text-left my-5">
+                High Value Vehicle</h2>
 
             <div class="d-flex justify-end w-100 mb-5 ">
                 <button class="new-rule-btn">New Rule</button>
@@ -96,15 +106,15 @@
 
 
             <div class="tabs w-100 d-flex justify-evenly text-center">
-                <div class="tab  w-100 rounded-t-2xl rounded-no-tr" data-tab="define-rules">Define Rules</div>
-                <div class="tab active w-100" data-tab="rule-conditions">Rule Conditions</div>
+                <div class="tab active w-100 rounded-t-2xl rounded-no-tr" data-tab="define-rules">Define Rules</div>
+                <div class="tab w-100" data-tab="rule-conditions"><a href="16.html" style="text-decoration: none;">Rule Conditions</a></div>
                 <div class="tab w-100" data-tab="rule-tags">Rule Tags</div>
                 <div class="tab w-100 rounded-t-2xl rounded-no-tl" data-tab="audit-history">Audit History</div>
             </div>
 
             <div class="tab-content w-100 mb-5">
                 <!-- Define Rules Tab -->
-                <div class="tab-pane " id="define-rules">
+                <div class="tab-pane active" id="define-rules">
 
                     <table>
                         <thead>
@@ -130,14 +140,13 @@
 
                                 <td>
                                     <div class="d-flex justify-start align-center">
-                                        High Value Vehicle <img src="/k-assets/images/15/mi_edit.png" alt=""
-                                            class="mx-2">
+                                        High Value Vehicle <img src="/k-assets/images/15/mi_edit.png" alt="" class="mx-2">
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="d-flex justify-start align-center">
-                                        This rule identifies Motor claims where there is a risk of a staged accident
-                                        because no other vehicle was involved
+                                    <div class="d-flex justify-between align-center">
+                                        <p class="pr-5">This rule identifies Motor claims where </br> there is a risk of a staged accident </br>
+                                        because no other vehicle was involved</p>
                                         <img src="/k-assets/images/15/mi_edit.png" alt="" class="mx-2">
                                     </div>
                                 </td>
@@ -167,7 +176,7 @@
                 </div>
 
                 <!-- Rule Conditions Tab -->
-                <div class="tab-pane active" id="rule-conditions">
+                <div class="tab-pane" id="rule-conditions">
 
                     <table id="table-rule-conditions">
                         <thead>
@@ -187,17 +196,10 @@
                                             <select>
                                                 <option>Single vehicle accident</option>
                                                 <option>Multiple vehicle accident</option>
-                                                <option>Third Party Claim</option>
-                                                <option>Comprehensive Claim</option>
+                                                <option>Hit and run</option>
                                             </select>
 
-                                            <select class="operator">
-                                                <option selected>Is</option>
-                                                <option>Is Not</option>
-                                                <option>Contains</option>
-                                                <option>Greater Than</option>
-                                                <option>Less Than</option>
-                                            </select>
+                                            <button class="operator">is</button>
 
                                             <select>
                                                 <option>True</option>
@@ -230,22 +232,12 @@
                                     <div class="d-flex justify-start align-center">
                                         <div class="condition-row">
                                             <select>
-                                                <option>Reserve Amount</option>
-                                                <option>Fault Status</option>
-                                                <option>Police Notified</option>
-                                                <option>Level 2 Rejections</option>
-                                                <option>Staff Member</option>
-                                                <option selected>Claim Loss Category</option>
-                                                <option>Catastrophe</option>
+                                                <option>Single vehicle accident</option>
+                                                <option>Multiple vehicle accident</option>
+                                                <option>Hit and run</option>
                                             </select>
 
-                                            <select class="operator">
-                                                <option selected>Is</option>
-                                                <option>Is Not</option>
-                                                <option>Contains</option>
-                                                <option>Greater Than</option>
-                                                <option>Less Than</option>
-                                            </select>
+                                            <button class="operator">is</button>
 
                                             <select>
                                                 <option>True</option>
@@ -272,16 +264,12 @@
                             </tr>
 
                             <tr>
-                                <!-- <td></td> -->
-                                <td colspan="2">
-                                    <div class="d-flex justify-end align-center" style="padding-right: 12px;">
-                                        <button class="new-rule-btn">Create New Condition</button>
-                                    </div>
-                                </td>
-
+                                <td></td>
+                                <td><button class="new-rule-btn">Create New Condition </button></td>
+                                
                             </tr>
 
-                            <!-- <tr>
+                            <tr>
                                 <td></td>
 
                                 <td>
@@ -289,14 +277,6 @@
                                         <button class="save-btn">Save</button>
                                     </div>
 
-                                </td>
-                            </tr> -->
-
-                            <tr>
-                                <td colspan="2">
-                                    <div class="d-flex justify-end align-center" style="padding-right: 12px;">
-                                        <button class="save-btn">Save</button>
-                                    </div>
                                 </td>
                             </tr>
 
@@ -319,22 +299,22 @@
             </div>
 
             <script>
-                // Tab switching logic
-                const tabs = document.querySelectorAll('.tab');
-                const panes = document.querySelectorAll('.tab-pane');
+                
+                // const tabs = document.querySelectorAll('.tab');
+                // const panes = document.querySelectorAll('.tab-pane');
 
-                tabs.forEach(tab => {
-                    tab.addEventListener('click', () => {
-                        // Remove active states
-                        tabs.forEach(t => t.classList.remove('active'));
-                        panes.forEach(p => p.classList.remove('active'));
+                // tabs.forEach(tab => {
+                //     tab.addEventListener('click', () => {
+                        
+                //         tabs.forEach(t => t.classList.remove('active'));
+                //         panes.forEach(p => p.classList.remove('active'));
 
-                        // Add active to clicked tab and related content
-                        tab.classList.add('active');
-                        document.getElementById(tab.getAttribute('data-tab')).classList.add('active');
-                    });
-                });
-            </script>
+                        
+                //         tab.classList.add('active');
+                //         document.getElementById(tab.getAttribute('data-tab')).classList.add('active');
+                //     });
+                // });
+             </script>
 
 
 
@@ -342,56 +322,58 @@
             <!-- Body Code Ends Here -->
 
             <div class="overlay">
-            <div class="modal">
-                <div class="modal-header">
-                    <h2 class="modal-title">Create New Condition</h2>
-                    <button class="close-btn"><a style="text-decoration: none; color: #1a1a1a;" href="16.html">×</a></button>
+                <div class="popup">
+
+                    <div class="close-btn"><a style="text-decoration: none;" href="15.html">✕</a></div>
+
+                    <h2 class="mb-3">Create New Rule</h2>
+                    <div class="subtext mb-5">
+                        Fill in the details below to create a new rule for your workflow.
+                    </div>
+
+                    <!-- Choose Rule Icon -->
+                    <label class="pt-5">Choose Rule Icon <span>*</span></label>
+                    <select class="input">
+                        <option>Select an icon that represents the purpose of this rule.</option>
+                    </select>
+                    <div class="help-text">
+                        Example icons: 🚗, ⚠️, 🔍, 📄
+                    </div>
+
+                    <!-- Rule Name -->
+                    <label class="pt-4">Rule Name <span>*</span></label>
+                    <input class="input" type="text" placeholder="Enter a clear and descriptive rule name.">
+                    <div class="help-text">Keep it short and meaningful.</div>
+
+                    <!-- Rule Tags -->
+                    <label class="pt-4">Rule Tags</label>
+                    <input class="input" type="text"
+                        placeholder="Add tags to categorize this rule (e.g., Motor, Fraud, High Value, Screening).">
+                    <div class="help-text">
+                        Tags help you group and search rules quickly. Press Enter to add a tag.
+                    </div>
+                    <div class="help-text pt-2">
+                        Suggested tags:
+                    </div>
+
+                    <div class="tag-suggest">
+                        <div class="tag">+ Motor</div>
+                        <div class="tag">+ Fraud</div>
+                        <div class="tag">+ High Value</div>
+                        <div class="tag">+ Screening</div>
+                        <div class="tag">+ Property</div>
+                        <div class="tag">+ Liability</div>
+                        <div class="tag">+ Accident</div>
+                        <div class="tag">+ Review Required</div>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="footer">
+                        <button class="btn cancel-btn"><a style="text-decoration: none; color: #1a1a1a;"  href="15.html">Cancel</a></button>
+                        <button class="btn create-btn"><a style="text-decoration: none; color: #fff;" href="15.html">Create Rule</a></button>
+                    </div>
+
                 </div>
-
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label class="form-label">Field</label>
-                        <select class="form-select">
-                            <option selected>Select field...</option>
-                            <option>Single vehicle accident</option>
-                            <option>Multiple vehicle accident</option>
-                            <option>Claim Loss Cause</option>
-                            <option>Reserve Amount</option>
-                            <option>Fault Status</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label">Operator</label>
-                        <select class="form-select operator-select">
-                            <option selected>Is</option>
-                            <option>Is Not</option>
-                            <option>Contains</option>
-                            <option>Greater Than</option>
-                            <option>Less Than</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label">Value</label>
-                        <select class="form-select">
-                            <option selected>Select value...</option>
-                            <option>True</option>
-                            <option>False</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label">Points</label>
-                        <input type="number" class="form-input" style="width: 93%;" placeholder="0" value="0">
-                    </div>
-                </div>
-
-                <div class="modal-footer">
-                    <button class="btn btn-cancel"><a style="text-decoration: none; color: #1a1a1a;" href="16.html">Cancel</a></button>
-                    <button class="btn btn-primary"><a style="text-decoration: none; color: #fff;"  href="16.html">Add Condition</a></button>
-                </div>
-            </div>
             </div>
 
             <footer>
@@ -411,6 +393,151 @@
 
     </div>
 
+    <style>
+        table tr td {
+            vertical-align: middle;
+        }
+
+        table tr td p {
+            line-height: 20px;
+        }
+
+
+
+         /* Overlay */
+    .overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.45);
+        backdrop-filter: blur(2px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    /* Popup container */
+    .popup {
+        background: #fff;
+        width: 550px;
+        max-width: 95%;
+        border-radius: 12px;
+        padding: 28px 32px;
+        position: relative;
+        box-shadow: 0 10px 35px rgba(0,0,0,0.18);
+        animation: fadeIn .25s ease-out;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-6px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Close icon */
+    .close-btn {
+        position: absolute;
+        right: 22px;
+        top: 18px;
+        cursor: pointer;
+        font-size: 22px;
+        color: #777;
+    }
+
+    h2 {
+        margin: 0;
+        font-size: 22px;
+        font-weight: 600;
+        color: #111;
+    }
+
+    .subtext {
+        margin-top: 4px;
+        margin-bottom: 20px;
+        color: #555;
+        font-size: 14px;
+    }
+
+    label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 6px;
+        margin-top: 16px;
+        color: #111;
+    }
+
+    label span {
+        color: #e11d48; /* red star */
+    }
+
+    .input {
+        width: 100%;
+        padding: 12px;
+        font-size: 14px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background: #f7f7f7;
+        outline: none;
+    }
+
+    .input::placeholder {
+        color: #9ca3af;
+    }
+
+    .help-text {
+        margin-top: 6px;
+        font-size: 13px;
+        color: #666;
+    }
+
+    /* Tags section */
+    .tag-suggest {
+        margin-top: 12px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .tag {
+        padding: 6px 12px;
+        background: #fff;
+        border-radius: 20px;
+        font-size: 13px;
+        cursor: pointer;
+        border: 1px solid #e5e7eb;
+        transition: 0.2s;
+    }
+
+    .tag:hover {
+        background: #e5e7eb;
+    }
+
+    /* Buttons */
+    .footer {
+        display: flex;
+        justify-content: flex-end;
+        gap: 12px;
+        margin-top: 28px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 14px;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    .cancel-btn {
+        background: #f3f4f6;
+        border: 1px solid #d1d5db;
+    }
+
+    .create-btn {
+        background: #2563eb;
+        border: none;
+        color: white;
+    }
+    </style>
 
 </body>
 
