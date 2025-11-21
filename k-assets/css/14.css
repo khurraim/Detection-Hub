@@ -126,8 +126,9 @@
     gap:10px;
     background: white;
     padding: 6px 10px;
-    border-radius: 10px;
-    border: 1px solid rgba(59,92,155,0.12);
+    border-radius: 5px;
+    /* border: 1px solid rgba(59,92,155,0.12); */
+    border: 1px solid #396BF6;
     box-shadow: 0 0 0 2px rgba(63,121,255,0.03) inset;
     width: 320px;
     max-width: 70%;
@@ -138,7 +139,7 @@
     border: 1px solid #396BF6;
   }
 
-  .search svg { width:18px; height:18px; opacity:0.6; flex:0 0 18px; }
+  .search svg { width:20px; height:20px; opacity:0.6; flex:0 0 18px; }
   .search input{
     border:0;
     outline:none;

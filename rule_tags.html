@@ -105,12 +105,16 @@
 
 
 
-            <div class="tabs w-100 d-flex justify-evenly text-center">
-                <div class="tab  w-100 rounded-t-2xl rounded-no-tr" data-tab="define-rules">Define Rules</div>
+            <div class="tabs w-100 d-flex justify-evenly text-center mt-3">
+                <div class="tab  w-100 rounded-t-2xl rounded-no-tr" data-tab="define-rules">
+                    <a href="15.html" style="text-decoration: none;">Define Rules</a>
+                </div>
                 <div class="tab w-100" data-tab="rule-conditions"><a href="16.html" style="text-decoration: none;">Rule
                         Conditions</a></div>
-                <div class="tab w-100 active" data-tab="rule-tags">Rule Tags</div>
-                <div class="tab w-100 rounded-t-2xl rounded-no-tl" data-tab="audit-history">Audit History</div>
+                <div class="tab w-100 active" data-tab="rule-tags"><a href="rule_tags.html" style="text-decoration: none; color: #fff;">Rule Tags</a></div>
+                <div class="tab w-100 rounded-t-2xl rounded-no-tl" data-tab="audit-history">
+                    <a href="rule_audit_history.html" style="text-decoration: none; color: #1a1a1a;">Audit History</a>
+                </div>
             </div>
 
             <div class="tab-content w-100 mb-5">
@@ -236,16 +240,16 @@
                         <thead>
                             <tr>
                                 <th  style="background: #fff; "></th>
-                                <th   class="padding-box" style="border-right: 1px solid #E0E0E0; width: 25%;">
+                                <th   class="padding-box" style="border-right: 1px solid #E0E0E0; width: 28%;">
                                     &nbsp;&nbsp;&nbsp;Create Tag Name
                                 </th>
-                                <th  class="padding-box" style="border-right: 1px solid #E0E0E0; width: 25%;">
+                                <th  class="padding-box" style="border-right: 1px solid #E0E0E0; width: 28%;">
                                     &nbsp;&nbsp;&nbsp;Create Tag Description
                                 </th>
-                                <th  class="padding-box" style="border-right: 1px solid #E0E0E0; width: 25%;">
+                                <th  class="padding-box" style="border-right: 1px solid #E0E0E0; width: 15%;">
                                     &nbsp;&nbsp;&nbsp;Create Tag Color
                                 </th>
-                                <th  class="padding-box" style="border-right: 1px solid #E0E0E0; width: 25%;">
+                                <th  class="padding-box" style="border-right: 1px solid #E0E0E0; width: 28%;">
                                     &nbsp;&nbsp;&nbsp;Assign Meta Tags
                                 </th>
                                 <th  style="background: #fff; "></th>
@@ -257,7 +261,7 @@
 
                                 <td  style="background: #fff; "></td>
 
-                                <td style="border-right: 1px solid #E0E0E0; width: 25%;">
+                                <td style="border-right: 1px solid #E0E0E0; width: 28%;">
 
                                     <div class="d-flex justify-start align-center py-5 mx-5">
                                         <!-- <img src="/k-assets/images/15/Vector (3).png" alt="" class="mx-2"> -->
@@ -267,15 +271,15 @@
 
                                 </td>
 
-                                <td style="border-right: 1px solid #E0E0E0; width: 25%;">
-                                    <div class="d-flex justify-start align-center mx-5">
-                                        <p>This rule identifies Motor claims where there is a risk of a staged accident
+                                <td style="border-right: 1px solid #E0E0E0; width: 28%;">
+                                    <div class="d-flex justify-between align-center mx-5">
+                                        <p >This rule identifies Motor claims where </br> there is a risk of a staged accident</br>
                                             because no other vehicle was involved</p> <img
                                             src="/k-assets/images/15/mi_edit.png" alt="" class="mx-2">
                                     </div>
                                 </td>
 
-                                <td style="border-right: 1px solid #E0E0E0; width: 25%;">
+                                <td style="border-right: 1px solid #E0E0E0; width: 15%;">
                                     <div class="d-flex justify-center align-center">
                                         <div class="color-circle mx-4"></div>
                                         <input type="text" name="" id="" value="#cc458f">
@@ -283,26 +287,28 @@
                                     </div>
                                 </td>
 
-                                <td style="width: 25%;">
+                                <td style="width: 28%;">
 
-                                    <div class="d-flex justify-between align-center mx-5 px-5 py-5">
+                                    <div class="d-flex justify-between align-center mx-3 px-3 py-5">
                                         <div class="meta-tags-container">
                                             <div class="meta-tag">
                                                 <input type="checkbox" id="tag-pi" class="tag-checkbox">
-                                                <label for="tag-pi" class="tag-label">PI</label>
+                                                <label for="tag-pi" class="tag-label text-center">PI</label>
                                             </div>
 
                                             <div class="meta-tag checked">
                                                 <input type="checkbox" id="tag-motor" class="tag-checkbox" checked>
-                                                <label for="tag-motor" class="tag-label">Motor</label>
-                                                <img src="/k-assets/images/15/mi_edit.png" alt="" class="tag-edit-icon">
+                                                <label for="tag-motor" class="tag-label text-center">Motor</label>
+                                                
                                             </div>
 
-                                            <div class="more-tags">
+                                            <div class="more-tags mb-4">
+                                                <div class="spacer" style="height: 25px;"></div>
                                                 <span>+14 more</span>
                                             </div>
                                         </div>
-                                        <img src="/k-assets/images/15/mi_edit.png" style="height: 20px; width: 20px;" alt="" class="mx-4">
+                                        <a href="0A1 create_or_assign_meta_tag.html"><img src="/k-assets/images/15/mi_edit.png" style="height: 20px; width: 20px;" alt="" class="mx-4"></a>
+                                        
                                     </div>
 
                                 </td>
@@ -317,12 +323,13 @@
                                 <td class="padding-box"></td>
                                 <td class="padding-box"></td>
                                 <td class="padding-box">
-                                    <div class="d-flex justify-center content-center">
+                                    <div class="d-flex justify-end content-center">
                                         <button class="save-btn">Save</button>
                                     </div>
-
                                 </td>
-                                <td class="padding-box  rounded-r-xl rounded-no-tr"></td>
+                                <td class="padding-box  rounded-r-xl rounded-no-tr">
+                                    
+                                </td>
                             </tr>
 
                         </tbody>
@@ -399,7 +406,7 @@
             align-items: center;
             gap: 10px;
             background-color: #3b82f6;
-            padding: 10px 16px;
+            padding: 5px 5px;
             border-radius: 8px;
             min-width: 140px;
         }
@@ -409,8 +416,8 @@
         }
 
         .tag-checkbox {
-            width: 20px;
-            height: 20px;
+            width: 15px;
+            height: 15px;
             cursor: pointer;
             accent-color: white;
         }

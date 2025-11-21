@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
     <!-- Reset CSS : Clears Browser's Default Formatting , For Cross Browser Compatibility-->
-    <link rel="stylesheet" href="k-assets/css/reset.css">
-    <link rel="stylesheet" href="k-assets/css/base.css">
-    <link rel="stylesheet" href="k-assets/css/layout.css">
+    <link rel="stylesheet" href="k-assets/css/reset.css" />
+    <link rel="stylesheet" href="k-assets/css/base.css" />
+    <link rel="stylesheet" href="k-assets/css/layout.css" />
     <link rel="stylesheet" href="k-assets/css/18.css" />
     <!-- <link rel="stylesheet" href="k-assets/css/footer.css"> -->
-</head>
+  </head>
 
-<!-- ===================POP STYLES AT ALL==================== -->
+  <!-- ===================POP STYLES AT ALL==================== -->
   <style>
     .overlay {
       position: fixed;
@@ -418,208 +417,270 @@
       background-color: white;
     }
   </style>
-
-<body>
-
+  <body>
     <!-- Header Begins Here -->
     <header>
+      <!-- Left Column In Header : Logo Only -->
+      <div class="column-left">
+        <div class="logo-container">
+          <img src="k-assets/images/logo.png" alt="No Header Logo" />
+        </div>
+      </div>
 
-        <!-- Left Column In Header : Logo Only -->
-        <div class="column-left">
-            <div class="logo-container">
-                <a href="index.html">
-                    <img src="k-assets/images/logo.png" alt="No Header Logo">
-                </a>
-            </div>
+      <!-- Right Column In Header : Search Bar Icons Profile -->
+      <div class="column-right">
+        <div class="search-container">
+          <div class="search-icon">
+            <img src="k-assets/images/search-normal.png" alt="" />
+          </div>
+          <input type="text" class="search-input" placeholder="Search..." />
         </div>
 
-        <!-- Right Column In Header : Search Bar Icons Profile -->
-        <div class="column-right">
-
-            <div class="search-container">
-                <div class="search-icon">
-                    <img src="k-assets/images/search-normal.png" alt="">
-                </div>
-                <input type="text" class="search-input" placeholder="Search...">
-            </div>
-
-            <div class="icons-container">
-                <img src="k-assets/images/hugeicons_notification-01.png" alt="" />
-                <img src="k-assets/images/ion_settings-sharp.png" alt="" />
-                <img src="k-assets/images/mingcute_question-line.png" alt="" />
-            </div>
-
-            <div class="profile-container">
-
-                <!-- Profile Avatar Icon -->
-                <img src="k-assets/images/Vector.png" alt="" />
-                <span>Sharan Quinn Grady</span>
-
-                <!-- Arrow Down Icon-->
-                <img src="k-assets/images/lsicon_down-filled.png" alt="" />
-                <img src="k-assets/images/notification-bing.png" alt="" />
-            </div>
-
+        <div class="icons-container">
+          <img src="k-assets/images/hugeicons_notification-01.png" alt="" />
+          <img src="k-assets/images/ion_settings-sharp.png" alt="" />
+          <img src="k-assets/images/mingcute_question-line.png" alt="" />
         </div>
 
+        <div class="profile-container">
+          <!-- Profile Avatar Icon -->
+          <img src="k-assets/images/Vector.png" alt="" />
+          <span>Sharan Quinn Grady</span>
+
+          <!-- Arrow Down Icon-->
+          <img src="k-assets/images/lsicon_down-filled.png" alt="" />
+          <img src="k-assets/images/notification-bing.png" alt="" />
+        </div>
+      </div>
     </header>
     <!-- Header Ends Here -->
 
     <div class="body-container">
+      <div class="column-left">
+        <div class="sidebar-icons">
+          <img src="k-assets/images/Frame 1272627065.png" alt="" />
+          <img src="k-assets/images/Frame 1272627038.png" alt="" />
+          <img src="k-assets/images/Frame 1272627066.png" alt="" />
 
+          <hr />
 
-        <div class="column-left">
-            <div class="sidebar-icons">
+          <img src="k-assets/images/Frame 1272627067.png" alt="" />
+          <img src="k-assets/images/Frame 1272627068.png" alt="" />
+          <img src="k-assets/images/Frame 1272627071.png" alt="" />
+          <img src="k-assets/images/Frame 1272627066.png" alt="" />
 
-                <img src="k-assets/images/Frame 1272627065.png" alt="">
-                <img src="k-assets/images/Frame 1272627038.png" alt="">
-                <img src="k-assets/images/Frame 1272627066.png" alt="">
+          <hr />
 
-                <hr />
+          <img src="k-assets/images/Frame 1272627070.png" alt="" />
+        </div>
+      </div>
 
-                <img src="k-assets/images/Frame 1272627067.png" alt="">
-                <img src="k-assets/images/Frame 1272627068.png" alt="">
-                <img src="k-assets/images/Frame 1272627071.png" alt="">
-                <img src="k-assets/images/Frame 1272627066.png" alt="">
+      <div class="column-right">
+        <!-- Body Code Begins Here -->
 
-                <hr />
+        <h2 class="w-100 ft-32 fw-500 text-left my-5">High Value Vehicle</h2>
 
-                <img src="k-assets/images/Frame 1272627070.png" alt="">
-
-            </div>
+        <div class="d-flex justify-end w-100 mb-5">
+          <button class="new-rule-btn">New Rule</button>
         </div>
 
-        <div class="column-right">
+        <div class="tabs w-100 d-flex justify-evenly text-center">
+          <div
+            class="tab w-100 rounded-t-2xl rounded-no-tr"
+            data-tab="define-rules"
+          >
+            Define Rules
+          </div>
+          <div class="tab active w-100" data-tab="rule-conditions">
+            Rule Conditions
+          </div>
+          <div class="tab w-100" data-tab="rule-tags">Rule Tags</div>
+          <div
+            class="tab w-100 rounded-t-2xl rounded-no-tl"
+            data-tab="audit-history"
+          >
+            Audit History
+          </div>
+        </div>
 
-            <!-- Body Code Begins Here -->
+        <div class="tab-content w-100 mb-5">
+          <!-- Define Rules Tab -->
+          <div class="tab-pane" id="define-rules">
+            <table>
+              <thead>
+                <tr>
+                  <th>Edit Rule Icon</th>
+                  <th>Edit Rule Name</th>
+                  <th>Edit Rule Description</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="py-5 px-3">
+                  <td>
+                    <div class="d-flex justify-start align-center">
+                      <img
+                        src="/k-assets/images/15/Vector (3).png"
+                        alt=""
+                        class="mx-2"
+                      />
+                      <img
+                        src="/k-assets/images/15/mi_edit.png"
+                        alt=""
+                        class="mx-2"
+                      />
+                    </div>
+                  </td>
 
-            <div class="demo-container w-100 mb-5">
-                <!-- As a link -->
-                <a href="14.html" class="back-button">
-                    <img src="k-assets/images/15/solar_arrow-to-top-left-bold.png" alt="">
-                    &nbsp;Back to Rules
-                </a>
-            </div>
+                  <td>
+                    <div class="d-flex justify-start align-center">
+                      High Value Vehicle
+                      <img
+                        src="/k-assets/images/15/mi_edit.png"
+                        alt=""
+                        class="mx-2"
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex justify-start align-center">
+                      This rule identifies Motor claims where there is a risk of
+                      a staged accident because no other vehicle was involved
+                      <img
+                        src="/k-assets/images/15/mi_edit.png"
+                        alt=""
+                        class="mx-2"
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex justify-center content-center">
+                      <img
+                        src="/k-assets/images/15/mingcute_delete-line.png"
+                        alt=""
+                      />
+                    </div>
+                  </td>
+                </tr>
 
-            <h2 class="w-100 ft-32 fw-500 text-left my-5">
-                High Value Vehicle</h2>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <div class="d-flex justify-center content-center">
+                      <button class="save-btn">Save</button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
-            <div class="d-flex justify-end w-100 mb-5 ">
-                <a href="15_create.html"><button class="new-rule-btn">New Rule</button></a>
-            </div>
+          <!-- Rule Conditions Tab -->
+          <div class="tab-pane active" id="rule-conditions">
+            <table id="table-rule-conditions">
+              <thead>
+                <tr>
+                  <th>Edit Group Definitions</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="py-5 px-3">
+                  <td>
+                    <div class="d-flex justify-start align-center">
+                      <div class="condition-row">
+                        <select>
+                          <option>Single vehicle accident</option>
+                          <option>Multiple vehicle accident</option>
+                          <option>Third Party Claim</option>
+                          <option>Comprehensive Claim</option>
+                        </select>
 
+                        <select class="operator">
+                          <option selected>Is</option>
+                          <option>Is Not</option>
+                          <option>Contains</option>
+                          <option>Greater Than</option>
+                          <option>Less Than</option>
+                        </select>
 
+                        <select>
+                          <option>True</option>
+                          <option>False</option>
+                        </select>
 
-            <div class="tabs w-100 d-flex justify-evenly text-center">
-                <div class="tab  w-100 rounded-t-2xl rounded-no-tr" data-tab="define-rules">Define Rules</div>
-                <div class="tab w-100" data-tab="rule-conditions"><a href="16.html" style="text-decoration: none;">Rule
-                        Conditions</a></div>
-                <div class="tab w-100 active" data-tab="rule-tags">Rule Tags</div>
-                <div class="tab w-100 rounded-t-2xl rounded-no-tl" data-tab="audit-history">Audit History</div>
-            </div>
+                        <div class="points">Points <span>50</span></div>
+                      </div>
+                    </div>
+                  </td>
 
-            <div class="tab-content w-100 mb-5">
-                <!-- Define Rules Tab -->
-                <div class="tab-pane " id="define-rules">
+                  <td>
+                    <div class="d-flex justify-center content-center">
+                      <img
+                        src="/k-assets/images/15/mingcute_delete-line.png"
+                        alt=""
+                      />
+                    </div>
+                  </td>
+                </tr>
 
+                <tr class="py-5 px-3">
+                  <td>
+                    <div class="d-flex justify-start align-center">
+                      <div class="condition-row">
+                        <select>
+                          <option>Reserve Amount</option>
+                          <option>Fault Status</option>
+                          <option>Police Notified</option>
+                          <option>Level 2 Rejections</option>
+                          <option>Staff Member</option>
+                          <option selected>Claim Loss Category</option>
+                          <option>Catastrophe</option>
+                        </select>
 
-                </div>
+                        <select class="operator">
+                          <option selected>Is</option>
+                          <option>Is Not</option>
+                          <option>Contains</option>
+                          <option>Greater Than</option>
+                          <option>Less Than</option>
+                        </select>
 
-                <!-- Rule Conditions Tab -->
-                <div class="tab-pane" id="rule-conditions">
+                        <select>
+                          <option>True</option>
+                          <option>False</option>
+                        </select>
 
-                    <table id="table-rule-conditions">
-                        <thead>
-                            <tr>
-                                <th>Edit Group Definitions</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+                        <div class="points">Points <span>50</span></div>
+                      </div>
+                    </div>
+                  </td>
 
-                            <tr class="py-5 px-3">
+                  <td>
+                    <div class="d-flex justify-center content-center">
+                      <img
+                        src="/k-assets/images/15/mingcute_delete-line.png"
+                        alt=""
+                      />
+                    </div>
+                  </td>
+                </tr>
 
-                                <td>
+                <tr>
+                  <!-- <td></td> -->
+                  <td colspan="2">
+                    <div
+                      class="d-flex justify-end align-center"
+                      style="padding-right: 12px"
+                    >
+                      <button class="new-rule-btn">Create New Condition</button>
+                    </div>
+                  </td>
+                </tr>
 
-                                    <div class="d-flex justify-start align-center">
-                                        <div class="condition-row">
-                                            <select>
-                                                <option>Single vehicle accident</option>
-                                                <option>Multiple vehicle accident</option>
-                                                <option>Hit and run</option>
-                                            </select>
-
-                                            <button class="operator">is</button>
-
-                                            <select>
-                                                <option>True</option>
-                                                <option>False</option>
-                                            </select>
-
-                                            <div class="points">
-                                                Points <span>50</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </td>
-
-
-
-                                <td>
-                                    <div class="d-flex justify-center content-center">
-                                        <img src="/k-assets/images/15/mingcute_delete-line.png" alt="">
-
-                                    </div>
-
-                                </td>
-                            </tr>
-
-                            <tr class="py-5 px-3">
-
-                                <td>
-
-                                    <div class="d-flex justify-start align-center">
-                                        <div class="condition-row">
-                                            <select>
-                                                <option>Single vehicle accident</option>
-                                                <option>Multiple vehicle accident</option>
-                                                <option>Hit and run</option>
-                                            </select>
-
-                                            <button class="operator">is</button>
-
-                                            <select>
-                                                <option>True</option>
-                                                <option>False</option>
-                                            </select>
-
-                                            <div class="points">
-                                                Points <span>50</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </td>
-
-
-
-                                <td>
-                                    <div class="d-flex justify-center content-center">
-                                        <img src="/k-assets/images/15/mingcute_delete-line.png" alt="">
-
-                                    </div>
-
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td></td>
-                                <td><button class="new-rule-btn">Create New Condition </button></td>
-
-                            </tr>
-
-                            <tr>
+                <!-- <tr>
                                 <td></td>
 
                                 <td>
@@ -628,128 +689,56 @@
                                     </div>
 
                                 </td>
-                            </tr>
+                            </tr> -->
 
-                        </tbody>
-                    </table>
+                <tr>
+                  <td colspan="2">
+                    <div
+                      class="d-flex justify-end align-center"
+                      style="padding-right: 12px"
+                    >
+                      <button class="save-btn">Save</button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
-                </div>
+          <!-- Rule Tags Tab -->
+          <div class="tab-pane" id="rule-tags">
+            <h2>Rule Tags</h2>
+            <p>Content for Rule Tags will appear here.</p>
+          </div>
 
-                <!-- Rule Tags Tab -->
-                <div class="tab-pane active" id="rule-tags">
-                    <table class="rounded-l-xl rounded-r-xl ">
-                        <thead>
-                            <tr>
-                                <th style="background: #fff; "></th>
-                                <th class="padding-box" style="border-right: 1px solid #E0E0E0; width: 27%;">
-                                    &nbsp;&nbsp;&nbsp;Create Tag Name
-                                </th>
-                                <th class="padding-box" style="border-right: 1px solid #E0E0E0; width: 27%;">
-                                    &nbsp;&nbsp;&nbsp;Create Tag Description
-                                </th>
-                                <th class="padding-box" style="border-right: 1px solid #E0E0E0; width: 20%;">
-                                    &nbsp;&nbsp;&nbsp;Create Tag Color
-                                </th>
-                                <th class="padding-box" style="border-right: 1px solid #E0E0E0; width: 27%;">
-                                    &nbsp;&nbsp;&nbsp;Assign Meta Tags
-                                </th>
-                                <th style="background: #fff; "></th>
-                            </tr>
-                        </thead>
-                        <tbody>
+          <!-- Audit History Tab -->
+          <div class="tab-pane" id="audit-history">
+            <h2>Audit History</h2>
+            <p>Content for Audit History will appear here.</p>
+          </div>
+        </div>
 
-                            <tr class="py-5 px-3">
+        <script>
+          // Tab switching logic
+          const tabs = document.querySelectorAll(".tab");
+          const panes = document.querySelectorAll(".tab-pane");
 
-                                <td style="background: #fff; "></td>
+          tabs.forEach((tab) => {
+            tab.addEventListener("click", () => {
+              // Remove active states
+              tabs.forEach((t) => t.classList.remove("active"));
+              panes.forEach((p) => p.classList.remove("active"));
 
-                                <td style="border-right: 1px solid #E0E0E0; width: 27%;">
+              // Add active to clicked tab and related content
+              tab.classList.add("active");
+              document
+                .getElementById(tab.getAttribute("data-tab"))
+                .classList.add("active");
+            });
+          });
+        </script>
 
-                                    <div class="d-flex justify-start align-center py-5 mx-5">
-                                        <!-- <img src="/k-assets/images/15/Vector (3).png" alt="" class="mx-2"> -->
-                                        <h2 class="ft-20 lh-20 mr-3">Type Tag Name Here</h2>
-                                        <a href="0A1 create_or_assign_meta_tag.html"><img
-                                                src="/k-assets/images/15/mi_edit.png" alt="" class="mx-2"></a>
-                                    </div>
-
-                                </td>
-
-                                <td style="border-right: 1px solid #E0E0E0; width: 27%;">
-                                    <div class="d-flex justify-start align-center mx-5">
-                                        <p>This rule identifies Motor claims where there is a risk of a staged accident
-                                            because no other vehicle was involved</p> <img
-                                            src="/k-assets/images/15/mi_edit.png" alt="" class="mx-2">
-                                    </div>
-                                </td>
-
-                                <td style="border-right: 1px solid #E0E0E0; width: 20%;">
-                                    <div class="d-flex justify-center align-center">
-                                        <div class="color-circle mx-4"></div>
-                                        <input type="text" name="" id="" value="#cc458f">
-                                        <a href="0A2create_tag_color.html"><img src="/k-assets/images/15/mi_edit.png"
-                                                alt="" class="mx-4"></a>
-                                    </div>
-                                </td>
-
-                                <td style="width: 27%;">
-
-                                    <div class="d-flex justify-between align-center mx-5 px-5 py-5">
-                                        <div class="meta-tags-container">
-                                            <div class="meta-tag">
-                                                <input type="checkbox" id="tag-pi" class="tag-checkbox">
-                                                <label for="tag-pi" class="tag-label">PI</label>
-                                            </div>
-
-                                            <div class="meta-tag checked">
-                                                <input type="checkbox" id="tag-motor" class="tag-checkbox" checked>
-                                                <label for="tag-motor" class="tag-label">Motor</label>
-                                                <img src="/k-assets/images/15/mi_edit.png" alt="" class="tag-edit-icon">
-                                            </div>
-
-                                            <div class="more-tags">
-                                                <span>+14 more</span>
-                                            </div>
-                                        </div>
-                                        <a href="0A1 create_or_assign_meta_tag.html"><img
-                                                src="/k-assets/images/15/mi_edit.png" style="height: 20px; width: 20px;"
-                                                alt="" class="mx-4"></a>
-
-                                    </div>
-
-                                </td>
-
-                                <td style="background: #fff; "></td>
-
-                            </tr>
-
-                            <tr class="padding-box">
-                                <td class="padding-box rounded-l-xl rounded-no-tl"></td>
-                                <td class="padding-box"></td>
-                                <td class="padding-box"></td>
-                                <td class="padding-box"></td>
-                                <td class="padding-box">
-                                    <div class="d-flex justify-end content-center">
-                                        <button class="save-btn">Save</button>
-                                    </div>
-                                </td>
-                                <td class="padding-box  rounded-r-xl rounded-no-tr">
-
-                                </td>
-                            </tr>
-
-                        </tbody>
-                    </table>
-                </div>
-
-                <!-- Audit History Tab -->
-                <div class="tab-pane" id="audit-history">
-                    <h2>Audit History</h2>
-                    <p>Content for Audit History will appear here.</p>
-                </div>
-            </div>
-
-            <!-- Body Code Ends Here -->
-
-             <!-- Body Code Ends Here -->
+        <!-- Body Code Ends Here -->
         <!-- ===============CSS is in the HEAD tag for POP=================-->
         <div class="overlay">
           <div class="meta-tags-modal">
@@ -950,130 +939,16 @@
           </div>
         </div>
 
-            <footer>
-                <div class="icon-box d-flex">
-                    <div class="circle-box mr-3"></div>
-                    <div class="icon-box-content ">
-                        <h4 class="ft-14 mt-1 mb-1">kbs intelligence</h4>
-                        <p>KBBS (Aust) Pty Ltd ABN 31 100 028 322</p>
-                    </div>
-                </div>
-            </footer>
-
-
-
-        </div>
-
-
+        <footer>
+          <div class="icon-box d-flex">
+            <div class="circle-box mr-3"></div>
+            <div class="icon-box-content">
+              <h4 class="ft-14 mt-1 mb-1">kbs intelligence</h4>
+              <p>KBBS (Aust) Pty Ltd ABN 31 100 028 322</p>
+            </div>
+          </div>
+        </footer>
+      </div>
     </div>
-
-    <style>
-        table tr td {
-            vertical-align: middle;
-        }
-
-        table tr td p {
-            line-height: 20px;
-        }
-
-        .tab {
-            font-weight: bold;
-        }
-
-        .tab a:visited {
-            color: #1a1a1a;
-        }
-
-        .color-circle {
-            background: #CD458F;
-            border-radius: 50%;
-            height: 30px;
-            width: 30px;
-        }
-
-        input {
-            border: 1px solid #D9D9D9;
-            border-radius: 4px;
-            text-align: center;
-            padding: 10px 20px;
-            width: 92px;
-        }
-
-        .meta-tags-container {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            align-items: flex-start;
-        }
-
-        .meta-tag {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            background-color: #3b82f6;
-            padding: 10px 16px;
-            border-radius: 8px;
-            min-width: 140px;
-        }
-
-        .meta-tag.checked {
-            background-color: #3b82f6;
-        }
-
-        .tag-checkbox {
-            width: 20px;
-            height: 20px;
-            cursor: pointer;
-            accent-color: white;
-        }
-
-        .tag-label {
-            color: white;
-            font-size: 16px;
-            font-weight: 500;
-            cursor: pointer;
-            flex: 1;
-        }
-
-        .tag-edit-icon {
-            width: 18px;
-            height: 18px;
-            cursor: pointer;
-            filter: brightness(0) invert(1);
-        }
-
-        .more-tags {
-            margin-top: 4px;
-        }
-
-        .more-tags span {
-            color: #3b82f6;
-            font-size: 16px;
-            font-weight: 500;
-            cursor: pointer;
-        }
-
-        .more-tags span:hover {
-            text-decoration: underline;
-        }
-
-
-        table tbody tr td:first-child,
-        table tbody tr td:last-child,
-        table thead tr th:first-child,
-        table thead tr th:last-child {
-            width: 10px !important;
-            min-width: 10px !important;
-            max-width: 10px !important;
-            padding: 0 !important;
-        }
-
-        /* Override for the last row's middle cells only */
-        table tbody tr:last-child td:not(:first-child):not(:last-child) {
-            width: auto !important;
-        }
-    </style>
-
-</body>
-
+  </body>
 </html>
