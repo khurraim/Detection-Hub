@@ -232,9 +232,9 @@
             border-bottom: 1px solid #e8e8e8;
         }
 
-        tr {
+        /* tr {
           height: 60px;
-        }
+        } */
 
         tr:hover {
             background-color: #f9f9f9;
