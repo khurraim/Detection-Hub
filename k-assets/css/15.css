@@ -9,12 +9,12 @@
     }
 
     .tab {
-      padding: 20px 24px;
+      padding: 26px;
       cursor: pointer;
       border-bottom: none;
       background: #fff;
       transition: background 0.2s;
-      font-size: 16px;
+      font-size: 18px;
       line-height: 18px;
       
     }
@@ -70,7 +70,7 @@
     }
 
     .padding-box {
-      padding: 10px 40px 10px 12px; 
+      padding: 15px 40px 15px 12px; 
     }
 
 
@@ -265,7 +265,7 @@ thead tr {
             color: #396BF6;
             border: none;
             border-radius: 6px;
-            font-size: 20px;
+            
             font-weight: 400;
             cursor: pointer;
             text-decoration: none;
