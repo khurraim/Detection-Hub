@@ -25,6 +25,7 @@ header {
 .column-right {
   display: flex;
   align-items: center;
+  width: 905px !important;
 }
 
 /* Search Bar Styles */
