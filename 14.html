@@ -122,7 +122,7 @@
                 Delete Rules
                 </button></a>
 
-                <a href="14_create.html">
+                <a href="15_create.html">
                 <button class="btn new-rule-button" title="New Rule">
                 New Rule
                 </button></a>
@@ -142,9 +142,9 @@
                 <thead>
                     <tr class="py-3 px-5">
                         <th class="rounded-t-2xl rounded-no-tr"></th>
-                        <th >Names</th>
-                        <th >Rule Tags</th>
-                        <th class="rounded-t-2xl rounded-no-tl">Actions</th>
+                        <th class="ft-18">Names</th>
+                        <th  class="ft-18">Rule Tags</th>
+                        <th class="rounded-t-2xl rounded-no-tl ft-18">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -452,6 +452,29 @@
 
     </div>
 
+    <style>
+        table thead th:last-child, 
+        table tr td:last-child  {
+            box-shadow: 
+            4px 0px 5.6px 0px rgba(0, 0, 0, 0.25),
+            -4px 0px 5.6px 0px rgba(0, 0, 0, 0.25);
+        }
+
+        table thead th:nth-child(2),
+        table tbody tr td:nth-child(2) {
+            border-right: 1px solid #E0E0E0;
+        }
+
+        .names-table tbody tr td:nth-child(2) img {
+            height: 17px;
+            width: 17px;
+        }
+
+        .names-table tbody td {
+            font-weight: 400;
+        }
+        
+    </style>
 
 </body>
 

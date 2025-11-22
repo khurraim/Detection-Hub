@@ -17,7 +17,7 @@
 }
 
 .names-table th {
-    padding: 16px 24px;
+    padding: 24px;
     
     line-height: 18px;
     font-size: 16px;
@@ -64,7 +64,7 @@
 .names-table .anchor-links a {
     color: #1A1A1A;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 20px;
     margin-right: 5px;
 }
@@ -84,15 +84,15 @@
 }
 
 .names-table tbody tr td img {
-  height: 17px;
-  width: 17px;
+  height: 26px;
+  width: 26px;
 }
 
 
 .names-table tbody tr td p {
   color: #396BF6;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 400;
   line-height: 20px;
 }
 
