@@ -298,7 +298,7 @@
 
 
         .header {
-            background-color: #d4f4a6;
+            /* background-color: #d4f4a6; */
             padding: 16px 24px;
             display: flex;
             justify-content: space-between;
@@ -307,6 +307,7 @@
         }
 
         .header-left {
+          
           width: 410px;
           text-align: center;
         }
@@ -318,6 +319,7 @@
         }
 
         .header-right {
+            
             display: flex;
             align-items: center;
             justify-content: center;
