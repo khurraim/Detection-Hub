@@ -100,6 +100,7 @@
            ============================================ */
   .definition-section {
     width: 100%;
+    background-color: #fff;
   }
 
   .section-header {
@@ -171,6 +172,7 @@
       border-right: 1px solid var(--secondary); */
     /* width: 100%; */
     box-sizing: border-box;
+    border-bottom: 1px solid #E0E0E0;
   }
 
   .row > div:first-child {
@@ -178,9 +180,9 @@
     flex-wrap: wrap; /* allows selects to wrap within the div if needed */
     gap: 8px;
     flex: 1 1 auto; /* allow it to shrink if needed */
-    padding: 24px; 
+    padding: 14px 24px; 
     justify-content: flex-start;
-    margin: auto 75px;
+    margin: auto 0px;
   }
 
 
@@ -192,29 +194,55 @@
     font-size: 13px;
     color: #333;
     min-width: 90px;
-    height: 40px;
+    height: 35px;
+    /* appearance: none; */
+
+  /* background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: 5px; */
+  
+  
+
   }
+
+  .arrow-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24' fill='black'><polygon points='12,6 9,10 15,10'/><polygon points='12,17 9,13 15,13'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 10px center; /* arrow on the right, vertically centered */
+    background-size: 24px 24px; /* adjust size as needed */
+  }
+
 
   select:focus {
     outline: none;
     border-color: var(--accent);
     box-shadow: 0 0 0 1px rgba(74, 144, 226, 0.2);
+    padding: 8px 9px 8px 46px;
   }
 
   .operator-select {
-    width: 59px;
+    width: 65px;
     background-color: var(--input-border);
+    height: 35px;
     border: 1px solid var(--secondary-text);
   }
 
   .field-select {
-    width: 180px;
+    width: 240px;
+    height: 35px;
   }
 
   .condition-select {
-    width: 90px;
+    width: 50px;
     /* background: var(--input-border); */
-    background: #B4C8F4;
+    /* background: #B4C8F4; */
+    
+  }
+
+  .bg-purple {
+    background: #B4C8F4; 
   }
 
   .value-select {
@@ -256,8 +284,10 @@
     align-items: center;
     justify-content: center;
     border-left: 1px solid var(--input-border);
-    box-shadow: 4px 0px 5.6px 0px rgba(0, 0, 0, 0.25),
-            -4px 0px 5.6px 0px rgba(0, 0, 0, 0.25);
+    /* box-shadow: 4px 0px 5.6px 0px rgba(0, 0, 0, 0.25),
+            -4px 0px 5.6px 0px rgba(0, 0, 0, 0.25); */
+    box-shadow: -2px 0 4.6px -2px rgba(0, 0, 0, 0.25);
+
   }
 
   .delete-btn img {
@@ -299,12 +329,18 @@
 
   .tab {
     font-weight: bold;
-    padding: 26px;
+    padding: 20px;
   }
 
   .tab a:visited {
     color: #1a1a1a;
   }
+
+  
+
+  /* .column-right {
+    max-width: 1440px;
+  } */
 
 
 
@@ -350,7 +386,7 @@
   </header>
   <!-- Header Ends Here -->
 
-  <div class="body-container">
+  <div class="body-container" style="height: auto;">
     <div class="column-left">
       <div class="sidebar-icons">
         <img src="assets/images/Frame 1272627065.png" alt="" />
@@ -383,7 +419,7 @@
 
         <!-- Page Header -->
         <div class="page-headers">
-          <h2 class=" my-5 ft-32" style="
+          <h2 class=" mt-2 mb-5 ft-24 fw-500" style="
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -416,11 +452,11 @@
              MAIN CONTENT
              ============================================ -->
 
-      <div class="tab-content w-100" style="padding: 0px; padding-bottom: 25px; border-radius: 0px;">
+      <div class="tab-content w-100" style="padding: 0px;  border-radius: 0px; border: none; background: none;">
         <div class="tab-pane active" id="define-rules">
           <!-- Definition Section -->
           <section class="definition-section">
-            <div class="section-header">
+            <div class="section-header fw-600">
               <span>Edit Group Definitions</span>
               <span class="section-actions">Actions</span>
             </div>
@@ -439,13 +475,13 @@
                     <option>OR</option>
                   </select>
                   <select class="operator-select"></select>
-                  <select class="field-select">
+                  <select class="field-select arrow-select">
                     <option>Claim Loss Cause</option>
                   </select>
-                  <select class="condition-select">
+                  <select class="condition-select arrow-select bg-purple">
                     <option>Is in</option>
                   </select>
-                  <select class="value-select">
+                  <select class="value-select arrow-select">
                     <option>
                       Damage whilst Driven, Damage Whilst Driven/Towed
                     </option>
@@ -469,13 +505,13 @@
                     <option>OR</option>
                   </select>
                   <select class="operator-select"></select>
-                  <select class="field-select">
+                  <select class="field-select arrow-select">
                     <option>Fault Status</option>
                   </select>
-                  <select class="condition-select">
+                  <select class="condition-select  arrow-select">
                     <option>Is in</option>
                   </select>
-                  <select class="value-select">
+                  <select class="value-select arrow-select">
                     <option>At Fault</option>
                   </select><select class="operator-select"></select>
                   </div>
@@ -491,13 +527,13 @@
                     <option>OR</option>
                   </select>
                   <select class="operator-select"></select>
-                  <select class="field-select">
+                  <select class="field-select arrow-select">
                     <option>Vehicle Style</option>
                   </select>
-                  <select class="condition-select">
+                  <select class="condition-select  arrow-select">
                     <option>Is in</option>
                   </select>
-                  <select class="value-select">
+                  <select class="value-select arrow-select">
                     <option>Boat</option>
                   </select><select class="operator-select"></select>
                   </div>
@@ -513,13 +549,13 @@
                     <option>OR</option>
                   </select>
                   <select class="operator-select"></select>
-                  <select class="field-select">
+                  <select class="field-select arrow-select">
                     <option>Claim</option>
                   </select>
-                  <select class="condition-select">
+                  <select class="condition-select  arrow-select ">
                     <option>Is in</option>
                   </select>
-                  <select class="value-select">
+                  <select class="value-select arrow-select">
                     <option>two</option>
                   </select><select class="operator-select"></select>
                   </div>
@@ -546,10 +582,12 @@
             display: flex;
             justify-content: flex-end;
             align-items: center;
-            width: 100%;
-            padding: 20px;
+            background: #CCCCCC;
+            /* padding: 20px; */
+            border-radius: 0px 0px 16px 16px;
+            height: 64px;
           ">
-            <button class="save-btn">Save</button>
+            <button class="save-btn mx-5">Save</button>
           </div>
 
         </div>
@@ -557,7 +595,7 @@
 
 
 
-      <footer>
+      <!-- <footer>
         <div class="icon-box d-flex">
           <div class="circle-box mr-3"></div>
           <div class="icon-box-content">
@@ -565,7 +603,7 @@
             <p>KBBS (Aust) Pty Ltd ABN 31 100 028 322</p>
           </div>
         </div>
-      </footer>
+      </footer> -->
     </div>
   </div>
 </body>

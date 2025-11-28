@@ -13,7 +13,7 @@ header {
   background: #1e1e1e;
   height: 55px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.75fr;
   padding: 14px 40px;
 }
 
