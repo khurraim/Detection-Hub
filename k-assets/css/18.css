@@ -9,7 +9,7 @@
     }
 
     .tab {
-      padding: 14px 24px;
+      padding: 20px;
       cursor: pointer;
       border-bottom: none;
       background: #fff;
@@ -31,7 +31,7 @@
     /* Tab Content */
     .tab-content {
       
-      border: 1px solid #ccc;
+      /* border: 1px solid #ccc; */
       border-radius: 0 6px 6px 6px;
     }
 
@@ -299,37 +299,47 @@
 
         .header {
             /* background-color: #d4f4a6; */
-            padding: 16px 24px;
+            /* padding: 16px 24px; */
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-bottom: 1px solid #c0e090;
+            align-items: stretch; 
+            
         }
 
         .header-left {
           
-          width: 410px;
+          width: 410px; 
+          /* flex: 0 0 410px; */
           text-align: center;
+          border-right: 1px solid #333;
+          padding: 8px 24px;
+          background: #D0F59E;
+          vertical-align: middle;
         }
 
         .header-left h2 {
+          margin-top: 10px;
             font-size: 16px;
-            font-weight: 600;
+            font-weight: 500;
             color: #333;
         }
 
         .header-right {
-            
+            flex: 1;
+            padding: 8px 24px;
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 900px;
+            /* width: 900px; */
             gap: 12px;
+            background: #abd575;
         }
 
         .header-right label {
             font-size: 16px;
-            font-weight: 600;
+            font-weight: 500;
             color: #333;
         }
 
@@ -339,11 +349,13 @@
             border-radius: 6px;
             font-size: 14px;
             width: 250px;
+            
             background-color: white;
         }
 
         .search-input::placeholder {
-            color: #1a1a1a;
+            color: #9E9E9E;
+            font-weight: 400;
         }
 
         .main-content {
@@ -352,9 +364,10 @@
         }
 
         .left-panel {
-            background-color: #e8e8e8;
+            background: #fff;
             padding: 24px;
             width: 410px;
+            border-right: 1px solid #333;
         }
 
         .tag-list {
@@ -367,8 +380,8 @@
         .tag {
             background-color: #d4f4a6;
             border: 2px solid #b8e080;
-            border-radius: 6px;
-            padding: 6px 12px;
+            border-radius: 8px;
+            padding: 4px 6px;
             font-size: 14px;
             font-weight: 500;
             color: #333;
@@ -382,13 +395,14 @@
             background-color: #333;
             color: white;
             border: none;
-            padding: 10px 14px;
-            border-radius: 6px;
+            padding: 8px 18px;
+            border-radius: 8px;
             font-size: 14px;
-            font-weight: 500;
+            font-weight: 600;
             cursor: pointer;
             transition: background-color 0.2s;
             width: 130px;
+            line-height: 20px;
         }
 
         .remove-btn:hover {
@@ -405,7 +419,7 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 12px;
-            margin-bottom: 24px;
+            margin-bottom: 48px;
         }
 
         .tag-item {
@@ -422,13 +436,13 @@
             transition: all 0.2s;
             width: 180px;
             text-align: center;
-            font-weight: bold;
+            font-weight: 500;
         }
 
         .tag-item .checkbox {
             width: 14px;
             height: 14px;
-            border: 1px solid #D2D5DA; 
+            border: 1px solid #1A1A1A; 
             border-radius: 3px;
             background-color: white;
             display: flex;
@@ -448,9 +462,9 @@
         }
 
         .checkbox {
-            width: 18px;
-            height: 18px;
-            /* border: 2px solid #999; */
+            width: 14px;
+            height: 14px;
+            border: 1px solid #1a1a1a;
             border-radius: 3px;
             background-color: white;
             display: flex;
@@ -486,10 +500,10 @@
             background-color: #689E30;
             color: white;
             border: none;
-            padding: 10px 24px;
-            border-radius: 6px;
+            padding: 8px 18px;
+            border-radius: 8px;
             font-size: 14px;
-            font-weight: 500;
+            font-weight: 600;
             cursor: pointer;
             transition: background-color 0.2s;
         }
@@ -502,10 +516,10 @@
             background-color: #396BF6;
             color: white;
             border: none;
-            padding: 10px 24px;
-            border-radius: 6px;
+            padding: 8px 18px;
+            border-radius: 8px;
             font-size: 14px;
-            font-weight: 500;
+            font-weight: 600;
             cursor: pointer;
             transition: background-color 0.2s;
         }
@@ -519,13 +533,14 @@
             padding: 16px 24px;
             display: flex;
             justify-content: flex-end;
+            border-radius: 0px 0px 16px 16px;
         }
 
         .save-btn {
             background-color: #1A1A1A;
             color: white;
             border: none;
-            padding: 10px 32px;
+            padding: 8px 18px;
             border-radius: 6px;
             font-size: 14px;
             font-weight: 500;
