@@ -351,6 +351,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       background-color: #fff;
+      padding: 0px 25px;
     }
 
     /* card look */
@@ -433,6 +434,10 @@
       background-color: var(--accent); 
       flex: 0 0 auto;
     }
+
+    .rules-table td {
+      border-left: none;
+    } 
 
     td input[type="checkbox"] {
       height: 24px;
@@ -611,7 +616,7 @@
 
           <div class="tables-section">
             <!-- Current Group Rules -->
-            <div class="table-wrapper">
+            <div class="table-wrapper" style="border-right: 1px solid #333;">
               <h3>Current Group Rules</h3>
               <table class="rules-table" style="margin-top: 0px">
                 <thead>
