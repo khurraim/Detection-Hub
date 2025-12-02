@@ -1,849 +1,965 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
 
-    <!-- Reset CSS : Clears Browser's Default Formatting , For Cross Browser Compatibility-->
-    <link rel="stylesheet" href="assets/css/reset.css" />
-    <link rel="stylesheet" href="assets/css/base.css" />
-    <link rel="stylesheet" href="assets/css/layout.css" />
-    <link rel="stylesheet" href="assets/css/15.css" />
-    <!-- <link rel="stylesheet" href="assets/css/footer.css"> -->
-  </head>
-  <style>
-    :root {
-      --primary: #2a2a2a;
-      --secondary: #e9e8e8;
-      --accent: #396bf6;
-      --text: #5a5a5a;
-      --border: #ffffff;
-      --dark-bg: #000000;
-      --secondary-text: #9e9e9e;
-      --input-bg: #ffffff;
-      --input-border: #d0d0d0;
-      --button-blue: #005fa3;
-      --button-hover: #004a82;
-      --tab-inactive: #c5c5c5;
-      --tab-border: #e0e0e0;
-    }
-    /* ============================================
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+
+  <!-- Reset CSS : Clears Browser's Default Formatting , For Cross Browser Compatibility-->
+  <link rel="stylesheet" href="assets/css/reset.css" />
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/layout.css" />
+  <link rel="stylesheet" href="assets/css/15.css" />
+  <!-- <link rel="stylesheet" href="assets/css/footer.css"> -->
+</head>
+<style>
+  :root {
+    --primary: #2a2a2a;
+    --secondary: #e9e8e8;
+    --accent: #396bf6;
+    --text: #5a5a5a;
+    --border: #ffffff;
+    --dark-bg: #000000;
+    --secondary-text: #9e9e9e;
+    --input-bg: #ffffff;
+    --input-border: #d0d0d0;
+    --button-blue: #005fa3;
+    --button-hover: #004a82;
+    --tab-inactive: #c5c5c5;
+    --tab-border: #e0e0e0;
+  }
+
+  /* ============================================
            BREADCRUMB & HEADER SECTION
            ============================================ */
-    .breadcrumb {
-      color: var(--accent);
-      text-decoration: none;
-      cursor: pointer;
-      font-weight: 400;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      font-size: 20px;
-      letter-spacing: 0px;
-    }
+  .breadcrumb {
+    color: var(--accent);
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 20px;
+    letter-spacing: 0px;
+  }
 
-    .breadcrumb-link {
-      color: var(--accent);
-      text-decoration: none;
-      cursor: pointer;
-      font-weight: 500;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
+  .breadcrumb-link {
+    color: var(--accent);
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
 
-    .breadcrumb-link:hover {
-      text-decoration: underline;
-    }
+  .breadcrumb-link:hover {
+    text-decoration: underline;
+  }
 
-    .page-headers {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 24px;
-      padding: 24px 0pxn;
-    }
+  .page-headers {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    padding: 24px 0pxn;
+  }
 
-    .page-title {
-      font-size: 32px;
-      /* font-weight: 600; */
-      color: var(--primary);
-    }
+  .page-title {
+    font-size: 32px;
+    /* font-weight: 600; */
+    color: var(--primary);
+  }
 
-    .edit-icon {
-      width: 33px;
-      height: 33px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: transparent;
-      outline: none;
-      border: none;
-    }
+  .edit-icon {
+    width: 33px;
+    height: 33px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    outline: none;
+    border: none;
+  }
 
-    .edit-icon:hover {
-      color: var(--text);
-    }
-    /* ============================================
+  .edit-icon:hover {
+    color: var(--text);
+  }
+
+  /* ============================================
            EDIT GROUP DEFINITIONS SECTION
            ============================================ */
-    .definition-section {
-      width: 100%;
-    }
+  .definition-section {
+    width: 100%;
+  }
 
-    .section-header {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 16px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+  .section-header {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-    .srch-inp {
-      color: var(--secondary-text);
-    }
-    .srch-inp::placeholder {
-      color: var(--secondary-text);
-    }
+  .srch-inp {
+    color: var(--secondary-text);
+  }
 
-    .section-actions {
-      font-size: 14px;
-      color: var(--text);
-      cursor: pointer;
-    }
+  .srch-inp::placeholder {
+    color: var(--secondary-text);
+  }
 
-    /* ============================================
+  .section-actions {
+    font-size: 14px;
+    color: var(--text);
+    cursor: pointer;
+  }
+
+  /* ============================================
            DEFINITION ROWS / TABLE
            ============================================ */
-    .container {
-      background-color: #fff;
-      border-radius: 6px;
-      padding: 20px;
-      margin: 0 auto;
-    }
+  .container {
+    background-color: #fff;
+    border-radius: 6px;
+    padding: 20px;
+    margin: 0 auto;
+  }
 
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 15px;
-    }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
 
-    .header-title {
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--text);
-    }
+  .header-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+  }
 
-    .header-actions {
-      font-size: 14px;
-      color: var(--secondary-text);
-    }
+  .header-actions {
+    font-size: 14px;
+    color: var(--secondary-text);
+  }
 
-    .rows-container {
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 15px;
-    }
+  .rows-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
 
-    .row {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      background-color: #fff;
-      border-bottom: 1px solid var(--secondary);
-      padding: 14px 10px;
-      border-left: 1px solid var(--secondary);
-      border-right: 1px solid var(--secondary);
-    }
+  .row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #fff;
+    border-bottom: 1px solid var(--secondary);
+    padding: 14px 10px;
+    border-left: 1px solid var(--secondary);
+    border-right: 1px solid var(--secondary);
+  }
 
-    select {
-      padding: 6px 8px;
-      border: 1px solid var(--accent);
-      border-radius: 12px;
-      background-color: #fff;
-      font-size: 13px;
-      color: var(--text);
-      min-width: 90px;
-      height: 40px;
-    }
+  select {
+    padding: 6px 8px;
+    border: 1px solid var(--accent);
+    border-radius: 12px;
+    background-color: #fff;
+    font-size: 13px;
+    color: var(--text);
+    min-width: 90px;
+    height: 40px;
+  }
 
-    select:focus {
-      outline: none;
-      border-color: var(--accent);
-    }
+  select:focus {
+    outline: none;
+    border-color: var(--accent);
+  }
 
-    .operator-select {
-      width: 59px;
-      background-color: var(--input-border);
-      border: 2px solid var(--secondary-text);
-    }
+  .operator-select {
+    width: 59px;
+    background-color: var(--input-border);
+    border: 2px solid var(--secondary-text);
+  }
 
-    .field-select {
-      width: 180px;
-    }
+  .field-select {
+    width: 180px;
+  }
 
-    .condition-select {
-      width: 90px;
-      background: var(--input-border);
-    }
+  .condition-select {
+    width: 90px;
+    background: var(--input-border);
+  }
 
-    .value-select {
-      flex: 1;
-      min-width: 280px;
-    }
+  .value-select {
+    flex: 1;
+    min-width: 280px;
+  }
 
-    /* ============================================
+  /* ============================================
            ICON BUTTONS
            ============================================ */
-    .icon-btn {
-      background: none;
-      border: none;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 32px;
-      height: 32px;
-      border-radius: 4px;
-      color: var(--secondary-text);
-      font-size: 16px;
-      transition: all 0.2s;
-    }
+  .icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    /* border-radius: 4px; */
+    color: var(--secondary-text);
+    font-size: 16px;
+    transition: all 0.2s;
+  }
 
-    .icon-btn:hover {
-      background-color: var(--hover);
-      color: var(--text);
-    }
+  .icon-btn:hover {
+    background-color: var(--hover);
+    color: var(--text);
+  }
 
-    .delete-btn {
-      width: 70px;
-      height: 32px;
-      border: none;
-      background-color: transparent;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-left: 1px solid var(--input-border);
-    }
+  .delete-btn {
+    width: 70px;
+    height: 32px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid var(--input-border);
+  }
 
-    .delete-btn img {
-      width: 24px;
-      height: 24px;
-    }
+  .delete-btn img {
+    width: 24px;
+    height: 24px;
+  }
 
-    /* ============================================
+  /* ============================================
            ADD BUTTON
            ============================================ */
-    .add-row-btn {
-      background-color: var(--accent);
-      color: #fff;
-      border: none;
-      border-radius: 6px;
-      font-size: 22px;
-      width: 64px;
-      height: 38px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+  .add-row-btn {
+    background-color: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 22px;
+    width: 64px;
+    height: 38px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-    .save-btn {
-      background-color: var(--text);
-      color: #fff;
-      border: none;
-      border-radius: 6px;
-      padding: 10px 20px;
-      font-size: 14px;
-      font-weight: 600;
-      cursor: pointer;
-    }
-    .tables-section {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
+  .save-btn {
+    background-color: var(--text);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+  }
 
-    .table-wrapper {
-      background: #fff;
-      padding: 1rem;
-      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
-    }
+  .tables-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 
-    .rules-table {
-      width: 100%;
-      border-collapse: collapse;
-    }
+  .table-wrapper {
+    background: #fff;
+    padding: 1rem;
+    /* box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1); */
+  }
 
-    .rules-table th,
-    .rules-table td {
-      padding: 8px;
-      border-bottom: 1px solid #eee;
-      text-align: left;
-    }
+  .rules-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
 
-    .rules-table th {
-      background-color: var(--secondary);
-      font-weight: 500;
-      padding: 12px 16px;
-    }
+  .rules-table th,
+  .rules-table td {
+    /* padding: 8px; */
+    border-bottom: 1px solid #eee;
+    text-align: left;
+    padding: 10px 12px;
+  }
 
-    .actions {
-      display: flex;
-      justify-content: space-evenly;
-    }
+  .rules-table td.actions {
+    
+    flex: 1;
+    justify-content: center;
+    
+    
+  } 
 
-    .icon-btn {
-      border: none;
-      background: none;
-      cursor: pointer;
-      font-size: 1rem;
-    }
+  .rules-table th {
+    background-color: var(--secondary);
+    font-weight: 600;
+    text-transform: capitalize;
+    padding: 12px 16px;
+  }
 
-    .remove-btn,
-    .add-btn,
-    .tag-btn,
-    .save-btn {
-      padding: 0.6rem 1.2rem;
-      border: none;
-      border-radius: 6px;
-      font-weight: 500;
-      cursor: pointer;
-    }
+  .actions {
+    display: flex;
+    justify-content: center;
+    
+  }
 
-    .remove-btn {
-      background: #eee;
-      margin-top: 0.75rem;
-    }
 
-    .add-btn {
-      background: #1a1a1a;
-      color: #fff;
-    }
+  .actions img {
+    width: 24px;
+    height: 24px;
+  }
 
-    .tag-btn {
-      background: #007bff;
-      color: #fff;
-    }
+  /* .actions button:first-child {
+    border-right: 1px solid #333;
+  } */
 
-    .save-btn {
-      background: #1a1a1a;
-      color: #fff;
-    }
+  .icon-btn {
+    flex: 1;
+    /* Each button takes equal space (50/50) */
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 1rem;
+  }
 
-    .table-buttons {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 1rem;
-    }
+  .remove-btn,
+  .add-btn,
+  .tag-btn,
+  .save-btn {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+  }
 
-    .footer-btn {
-      display: flex;
-      justify-content: flex-end;
-      margin-top: 1.5rem;
-    } /* ---------- GRID / PANELS (keeps your layout) ---------- */
-    .tables-section {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      background-color: #fff;
-      padding: 0px 25px;
-    }
+  .remove-btn {
+    background: #eee;
+    margin-top: 0.75rem;
+  }
 
-    /* card look */
-    .table-wrapper {
-      background-color: #fff;
-      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
-      padding: 0; /* headings will handle inner padding to match screenshot */
-      overflow: hidden;
-    }
+  .add-btn {
+    background: #1a1a1a;
+    color: #fff;
+  }
 
-    /* Render heading visually inside the card (consistent spacing) */
-    .table-wrapper h3 {
-      margin: 0;
-      padding: 12px 16px;
-      font-size: 16px;
-      text-align: center;
-      font-weight: 500;
-      color: var(--dark-bg);
-      background: var(--secondary);
-      border-bottom: 2px solid var(--primary);
-    }
+  .tag-btn {
+    background: #007bff;
+    color: #fff;
+  }
 
-    /* Slightly different heading tint for left (Current Group Rules) to feel greenish */
-    .tables-section > .table-wrapper:nth-child(1) h3 {
-      background-color: #d0f59e; /* very pale green background behind heading text */
-      color: var(--primary);
-    }
+  .save-btn {
+    background: #1a1a1a;
+    color: #fff;
+  }
 
-    /* ---------- TABLE STYLING ---------- */
-    .rules-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 14px;
-      background: #fff;
-    }
+  .table-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+  }
 
-    /* ---------- BOTTOM BUTTONS ---------- */
-    .remove-btn,
-    .add-btn,
-    .tag-btn,
-    .save-btn {
-      border: none;
-      border-radius: 6px;
-      font-weight: 500;
-      cursor: pointer;
-      font-size: 14px;
-      padding: 8px 24px;
-      box-shadow: none;
-      color: var(--secondary);
-    }
+  .footer-btn {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+  }
 
-    /* Remove button style (left panel) */
-    .remove-btn {
-      background-color: var(--secondary-text);
-      color: var(--secondary);
-      margin: 12px 16px;
-      display: inline-block;
-    }
+  /* ---------- GRID / PANELS (keeps your layout) ---------- */
+  .tables-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #fff;
+    padding: 0px 25px;
+  }
 
-    /* Right-panel buttons container */
-    .table-buttons {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      align-items: center;
-      padding: 12px 16px;
-    }
-    .blue-color {
-      color: var(--accent);
-      font-weight: bolder;
-    }
-    /* “Add to Rules” matches screenshot: black capsule */
-    .add-btn {
-      background-color: #1a1a1a; 
-      flex: 0 0 auto;
-    }
+  /* card look */
+  .table-wrapper {
+    background-color: #fff;
+    /* box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08); */
+    padding: 0;
+    /* headings will handle inner padding to match screenshot */
+    overflow: hidden;
+  }
 
-    /* “Create New Tag +” blue button */
-    .tag-btn {
-      background-color: var(--accent); 
-      flex: 0 0 auto;
-    }
+  /* Render heading visually inside the card (consistent spacing) */
+  .table-wrapper h3 {
+    margin: 0;
+    padding: 16px 24px;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 600;
+    color: var(--dark-bg);
+    background: var(--secondary);
+    border-bottom: 2px solid var(--primary);
+  }
 
-    .rules-table td {
-      border-left: none;
-    } 
+  /* Slightly different heading tint for left (Current Group Rules) to feel greenish */
+  .tables-section>.table-wrapper:nth-child(1) h3 {
+    background-color: #d0f59e;
+    /* very pale green background behind heading text */
+    color: var(--primary);
+  }
 
-    td input[type="checkbox"] {
-      height: 24px;
-      width: 24px;
-      accent-color: var(--accent); /* blue background + white tick */
-      border: 2px solid var(--text); /* black border */
-      cursor: pointer;
-    }
-    td span {
-      color: var(--accent);
-      font-weight: bold;
-    }
+  /* ---------- TABLE STYLING ---------- */
+  .rules-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    background: #fff;
+  }
 
-    .tab {
-            font-weight: bold;
-        }
+  /* ---------- BOTTOM BUTTONS ---------- */
+  .remove-btn,
+  .add-btn,
+  .tag-btn,
+  .save-btn {
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 8px 24px;
+    box-shadow: none;
+    color: var(--secondary);
+  }
 
-        .tab a:visited {
-            color: #1a1a1a;
-        }
-  </style>
-  <body>
-    <!-- Header Begins Here -->
-    <header>
-      <!-- Left Column In Header : Logo Only -->
-      <div class="column-left">
-        <div class="logo-container">
-          <a href="index.html">
-                    <img src="k-assets/images/logo.png" alt="No Header Logo">
-                </a>
+  /* Remove button style (left panel) */
+  .remove-btn {
+    background-color: var(--secondary-text);
+    color: var(--secondary);
+    margin: 12px 16px;
+    display: inline-block;
+  }
+
+  /* Right-panel buttons container */
+  .table-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: center;
+    padding: 12px 16px;
+  }
+
+  .blue-color {
+    /* color: var(--accent); */
+    color: #1a1a1a;
+    font-weight: 500;
+  }
+
+  /* “Add to Rules” matches screenshot: black capsule */
+  .add-btn {
+    background-color: #1a1a1a;
+    flex: 0 0 auto;
+  }
+
+  /* “Create New Tag +” blue button */
+  .tag-btn {
+    background-color: var(--accent);
+    flex: 0 0 auto;
+  }
+
+  .rules-table td {
+    border-left: none;
+    vertical-align: middle;
+  }
+
+  td input[type="checkbox"] {
+    height: 24px;
+    width: 24px;
+    accent-color: var(--accent);
+    /* blue background + white tick */
+    border: 2px solid var(--text);
+    /* black border */
+    cursor: pointer;
+  }
+
+  td span {
+    color: var(--accent);
+    font-weight: bold;
+  }
+
+  .tab {
+    font-weight: bold;
+  }
+
+  .tab a:visited {
+    color: #1a1a1a;
+  }
+
+
+  .buttons-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 25px;
+    background-color: #fff;
+  }
+
+  .remove-from-ruler-btn {
+    padding: 8px ;
+    border-radius: 6px;
+    background: #9e9e9e;
+    border: none;
+    color: #fff;
+  }
+
+  .add-to-rule-btn {
+    padding: 8px 24px;
+    border-radius: 6px;
+    background: #1a1a1a;
+    border: none;
+    color: #fff;
+  }
+
+  .create-new-tag-btn {
+    background: #396BF6;
+    padding: 8px 24px;
+    border-radius: 6px;
+    border: none;
+    color: #fff;
+  }
+
+  thead tr {
+    border-bottom: 2px solid #1a1a1a;
+  }
+
+  .tab {
+    padding: 26px;
+  }
+
+
+  .w-35 {
+    width: 35px;
+  }
+  
+  
+  
+</style>
+
+<body>
+  <!-- Header Begins Here -->
+  <header>
+    <!-- Left Column In Header : Logo Only -->
+    <div class="column-left">
+      <div class="logo-container">
+        <a href="index.html">
+          <img src="k-assets/images/logo.png" alt="No Header Logo">
+        </a>
+      </div>
+    </div>
+
+    <!-- Right Column In Header : Search Bar Icons Profile -->
+    <div class="column-right">
+      <div class="search-container">
+        <div class="search-icon">
+          <img src="assets/images/search-normal.png" alt="" />
         </div>
+        <input type="text" class="search-input" placeholder="Search..." />
       </div>
 
-      <!-- Right Column In Header : Search Bar Icons Profile -->
-      <div class="column-right">
-        <div class="search-container">
-          <div class="search-icon">
-            <img src="assets/images/search-normal.png" alt="" />
-          </div>
-          <input type="text" class="search-input" placeholder="Search..." />
-        </div>
-
-        <div class="icons-container">
-          <img src="assets/images/hugeicons_notification-01.png" alt="" />
-          <img src="assets/images/ion_settings-sharp.png" alt="" />
-          <img src="assets/images/mingcute_question-line.png" alt="" />
-        </div>
-
-        <div class="profile-container">
-          <!-- Profile Avatar Icon -->
-          <img src="assets/images/Vector.png" alt="" />
-          <span>Sharan Quinn Grady</span>
-
-          <!-- Arrow Down Icon-->
-          <img src="assets/images/lsicon_down-filled.png" alt="" />
-          <img src="assets/images/notification-bing.png" alt="" />
-        </div>
-      </div>
-    </header>
-    <!-- Header Ends Here -->
-
-    <div class="body-container">
-      <div class="column-left">
-        <div class="sidebar-icons">
-          <img src="assets/images/Frame 1272627065.png" alt="" />
-          <img src="assets/images/Frame 1272627038.png" alt="" />
-          <img src="assets/images/Frame 1272627066.png" alt="" />
-
-          <hr />
-
-          <img src="assets/images/Frame 1272627067.png" alt="" />
-          <img src="assets/images/Frame 1272627068.png" alt="" />
-          <img src="assets/images/Frame 1272627071.png" alt="" />
-          <img src="assets/images/Frame 1272627066.png" alt="" />
-
-          <hr />
-
-          <img src="assets/images/Frame 1272627070.png" alt="" />
-        </div>
+      <div class="icons-container">
+        <img src="assets/images/hugeicons_notification-01.png" alt="" />
+        <img src="assets/images/ion_settings-sharp.png" alt="" />
+        <img src="assets/images/mingcute_question-line.png" alt="" />
       </div>
 
-      <div class="column-right">
-        <!-- Body Code Begins Here -->
+      <div class="profile-container">
+        <!-- Profile Avatar Icon -->
+        <img src="assets/images/Vector.png" alt="" />
+        <span>Sharan Quinn Grady</span>
 
-        <div class="content-wrapper" style="width: 100%">
-          <!-- Breadcrumb -->
-          <nav class="breadcrumb">
-            <a
-              href="17.html"
-              class="breadcrumb-link"
-              style="color: #396bf6; padding: 8px 0px"
-              ><img
-                src="assets/images/back_arrow_icon.svg"
-                style="height: 24px; width: 24px"
-                alt=""
-              />
-              Back to Groups</a
-            >
-          </nav>
+        <!-- Arrow Down Icon-->
+        <img src="assets/images/lsicon_down-filled.png" alt="" />
+        <img src="assets/images/notification-bing.png" alt="" />
+      </div>
+    </div>
+  </header>
+  <!-- Header Ends Here -->
 
-          <!-- Page Header -->
-          <div class="page-headers" style="justify-content: space-between">
-            <h1
-              class="page-title my-5"
-              style="
+  <div class="body-container">
+    <div class="column-left">
+      <div class="sidebar-icons">
+        <img src="assets/images/Frame 1272627065.png" alt="" />
+        <img src="assets/images/Frame 1272627038.png" alt="" />
+        <img src="assets/images/Frame 1272627066.png" alt="" />
+
+        <hr />
+
+        <img src="assets/images/Frame 1272627067.png" alt="" />
+        <img src="assets/images/Frame 1272627068.png" alt="" />
+        <img src="assets/images/Frame 1272627071.png" alt="" />
+        <img src="assets/images/Frame 1272627066.png" alt="" />
+
+        <hr />
+
+        <img src="assets/images/Frame 1272627070.png" alt="" />
+      </div>
+    </div>
+
+    <div class="column-right">
+      <!-- Body Code Begins Here -->
+
+      <div class="content-wrapper" style="width: 100%">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb">
+          <a href="17.html" class="breadcrumb-link" style="color: #396bf6; padding: 8px 0px"><img
+              src="assets/images/back_arrow_icon.svg" style="height: 24px; width: 24px" alt="" />
+            Back to Groups</a>
+        </nav>
+
+        <!-- Page Header -->
+        <div class="page-headers" style="justify-content: space-between">
+          <h1 class="page-title ft-24 my-5" style="
                 display: flex;
                 justify-content: center;
                 align-items: center;
-              "
-            >
-              Damage Whilst Driven – At Fault – Motor PI
-              <button class="edit-icon" title="Edit">
-                <img
-                  src="assets/images/14/mi_edit.png"
-                  alst="Back"
-                  class="iconss"
-                />
-              </button>
-            </h1>
+              ">
+            Damage Whilst Driven – At Fault – Motor PI
+            <button class="edit-icon" title="Edit">
+              <img src="assets/images/14/mi_edit.png" alst="Back" class="iconss" />
+            </button>
+          </h1>
 
-            <div class="search-container" style="max-width: 550px !important">
-              <div class="search-icon">
-                <img
-                  src="assets/images/search-normal.png"
-                  style="position: relative; left: 40px"
-                  alt=""
-                />
-              </div>
-              <input
-                type="text"
-                style="
+          <div class="search-container" style="max-width: 550px !important">
+            <div class="search-icon">
+              <img src="assets/images/search-normal.png" style="position: relative; left: 40px" alt="" />
+            </div>
+            <input type="text" style="
                   padding: 8px 40px;
                   border-radius: 6px;
                   border: 1px solid var(--accent);
                   background: #fff;
-                "
-                class="search-input srch-inp"
-                placeholder="Type To Search..."
-              />
-            </div>
+                " class="search-input srch-inp" placeholder="Type To Search..." />
           </div>
         </div>
+      </div>
 
-        <div class="wraped" style="width: 100%">
-          <div
-            class="tabs w-100 d-flex justify-evenly text-center"
-            style="margin-bottom: 0px"
-          >
-            <div
-              class="tab w-100"
-              data-tab="define-rules"
-              style="border-radius: 16px 0px 0px 0px"
-            >
-              <a style="text-decoration: none;"  href="20.html">Define Group</a>
-            </div>
-            <div class="tab active w-100" data-tab="rule-conditions">
-              <a style="text-decoration: none; color: #fff; font-weight: bold;"  href="21.html">Group Rules</a>
-            </div>
-            <div class="tab w-100" data-tab="rule-tags">
-              <a style="text-decoration: none;"  href="22.html">Group Configuration</a>
-            </div>
-            <div class="tab w-100" data-tab="rule-tags">
-              <a style="text-decoration: none;"  href="group_tags.html">Group Tags</a>
-            </div>
-            <div
-              class="tab w-100"
-              data-tab="audit-history"
-              style="border-radius: 0px 16px 0px 0px"
-            >
-              <a style="text-decoration: none;"  href="audit_history.html">Group Audit History</a>
-            </div>
+      <div class="wraped" style="width: 100%">
+        <div class="tabs w-100 d-flex justify-evenly text-center" style="margin-bottom: 0px">
+          <div class="tab w-100" data-tab="define-rules" style="border-radius: 16px 0px 0px 0px">
+            <a style="text-decoration: none;" href="20.html">Define Group</a>
           </div>
-          <!-- ============================================
+          <div class="tab active w-100" data-tab="rule-conditions">
+            <a style="text-decoration: none; color: #fff; font-weight: bold;" href="21.html">Group Rules</a>
+          </div>
+          <div class="tab w-100" data-tab="rule-tags">
+            <a style="text-decoration: none;" href="22.html">Group Configuration</a>
+          </div>
+          <div class="tab w-100" data-tab="rule-tags">
+            <a style="text-decoration: none;" href="group_tags.html">Group Tags</a>
+          </div>
+          <div class="tab w-100" data-tab="audit-history" style="border-radius: 0px 16px 0px 0px">
+            <a style="text-decoration: none;" href="audit_history.html">Group Audit History</a>
+          </div>
+        </div>
+        <!-- ============================================
              MAIN CONTENT
              ============================================ -->
 
-          <div class="tables-section">
-            <!-- Current Group Rules -->
-            <div class="table-wrapper" style="border-right: 1px solid #333;">
-              <h3>Current Group Rules</h3>
-              <table class="rules-table" style="margin-top: 0px">
-                <thead>
-                  <tr>
-                    <th style="background: #fff"></th>
-                    <th style="background: #eef9df">Rule Name</th>
-                    <th style="background: #eef9df">Tags</th>
-                    <th style="background: #eef9df">Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><input type="checkbox" /></td>
-                    <td>High Value Vehicle</td>
-                    <td>
-                      Rule <span>|</span> Motor <span>|</span> High Value +4
-                    </td>
-                    <td class="actions">
-                      <button class="icon-btn">
-                        <img src="assets/images/14/mi_edit.png" alt="" />
-                      </button>
-                      <button class="icon-btn">
-                        <img src="assets/images/move_icon.svg" alt="" />
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><input type="checkbox" /></td>
-                    <td>Entity of Interest</td>
-                    <td>
-                      Rule <span>|</span> SPARK <span>|</span> Intelligence
-                    </td>
-                    <td class="actions">
-                      <button class="icon-btn">
-                        <img src="assets/images/14/mi_edit.png" alt="" />
-                      </button>
-                      <button class="icon-btn">
-                        <img src="assets/images/move_icon.svg" alt="" />
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><input type="checkbox" /></td>
-                    <td>Staged Accident Model</td>
-                    <td>
-                      Model <span>|</span> Motor <span>|</span> Staged Accident
-                    </td>
-                    <td class="actions">
-                      <button class="icon-btn">
-                        <img src="assets/images/14/mi_edit.png" alt="" />
-                      </button>
-                      <button class="icon-btn">
-                        <img src="assets/images/move_icon.svg" alt="" />
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><input type="checkbox" /></td>
-                    <td>Fatality Claim</td>
-                    <td>Rule <span>|</span> Information Only</td>
-                    <td class="actions">
-                      <button class="icon-btn">
-                        <img src="assets/images/14/mi_edit.png" alt="" />
-                      </button>
-                      <button class="icon-btn">
-                        <img src="assets/images/move_icon.svg" alt="" />
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><input type="checkbox" /></td>
-                    <td>Manual Referral</td>
-                    <td>Rule <span>|</span> Manual Referral</td>
-                    <td class="actions">
-                      <button class="icon-btn">
-                        <img src="assets/images/14/mi_edit.png" alt="" />
-                      </button>
-                      <button class="icon-btn">
-                        <img src="assets/images/move_icon.svg" alt="" />
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><input type="checkbox" /></td>
-                    <td>Sanction List Match</td>
-                    <td>Rule <span>|</span> Sanctions Screening</td>
-                    <td class="actions">
-                      <button class="icon-btn">
-                        <img src="assets/images/14/mi_edit.png" alt="" />
-                      </button>
-                      <button class="icon-btn">
-                        <img src="assets/images/move_icon.svg" alt="" />
-                      </button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-              <button class="remove-btn">Remove from Rules</button>
-            </div>
+        <div class="tables-section">
+          <!-- Current Group Rules -->
+          <div class="table-wrapper" style="border-right: 1px solid #333;">
+            <h3>Current Group Rules</h3>
+            <table class="rules-table" style="margin-top: 0px">
+              <thead>
+                <tr>
+                  <th style="background: #fff"></th>
+                  <th style="background: #eef9df">Rule Name</th>
+                  <th style="background: #eef9df">Tags</th>
+                  <th style="background: #eef9df" colspan="2">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="checkbox" /></td>
+                  <td>High Value Vehicle</td>
+                  <td>
+                    Rule <span>|</span> Motor <span>|</span> High Value +4
+                  </td>
+                  <td class="actions">
+                    <button class="icon-btn">
+                      <img src="assets/images/14/mi_edit.png" alt="" />
+                    </button>
+                    <!-- <button class="icon-btn">
+                      <img src="assets/images/move_icon.svg" alt="" />
+                    </button> -->
+                  </td>
+                  <td>
+                    <button class="icon-btn">
+                      <img src="assets/images/move_icon.svg" alt="" />
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" /></td>
+                  <td>Entity of Interest</td>
+                  <td>
+                    Rule <span>|</span> SPARK <span>|</span> Intelligence
+                  </td>
+                  <td class="actions">
+                    <button class="icon-btn">
+                      <img src="assets/images/14/mi_edit.png" alt="" />
+                    </button>
+                    <!-- <button class="icon-btn">
+                      <img src="assets/images/move_icon.svg" alt="" />
+                    </button> -->
+                  </td>
+                  <td>
+                    <button class="icon-btn">
+                      <img src="assets/images/move_icon.svg" alt="" />
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" /></td>
+                  <td>Staged Accident Model</td>
+                  <td>
+                    Model <span>|</span> Motor <span>|</span> Staged Accident
+                  </td>
+                  <td class="actions">
+                    <button class="icon-btn">
+                      <img src="assets/images/14/mi_edit.png" alt="" />
+                    </button>
+                    <!-- <button class="icon-btn">
+                      <img src="assets/images/move_icon.svg" alt="" />
+                    </button> -->
+                  </td>
+                  <td>
+                    <button class="icon-btn">
+                      <img src="assets/images/move_icon.svg" alt="" />
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" /></td>
+                  <td>Fatality Claim</td>
+                  <td>Rule <span>|</span> Information Only</td>
+                  <td class="actions">
+                    <button class="icon-btn">
+                      <img src="assets/images/14/mi_edit.png" alt="" />
+                    </button>
+                    <!-- <button class="icon-btn">
+                      <img src="assets/images/move_icon.svg" alt="" />
+                    </button> -->
+                  </td>
+                  <td>
+                    <button class="icon-btn">
+                      <img src="assets/images/move_icon.svg" alt="" />
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" /></td>
+                  <td>Manual Referral</td>
+                  <td>Rule <span>|</span> Manual Referral</td>
+                  <td class="actions">
+                    <button class="icon-btn">
+                      <img src="assets/images/14/mi_edit.png" alt="" />
+                    </button>
+                    <!-- <button class="icon-btn">
+                      <img src="assets/images/move_icon.svg" alt="" />
+                    </button> -->
+                  </td>
+                  <td>
+                    <button class="icon-btn">
+                      <img src="assets/images/move_icon.svg" alt="" />
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" /></td>
+                  <td>Sanction List Match</td>
+                  <td>Rule <span>|</span> Sanctions Screening</td>
+                  <td class="actions">
+                    <button class="icon-btn">
+                      <img src="assets/images/14/mi_edit.png" alt="" />
+                    </button>
+                    <!-- <button class="icon-btn">
+                      <img src="assets/images/move_icon.svg" alt="" />
+                    </button> -->
+                  </td>
+                  <td>
+                    <button class="icon-btn">
+                      <img src="assets/images/move_icon.svg" alt="" />
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- <button class="remove-btn">Remove from Rules</button> -->
+          </div>
 
-            <!-- Available Group Rules -->
-            <div class="table-wrapper">
-              <h3>Available Group Rules</h3>
-              <table class="rules-table" style="margin-top: 0px">
-                <thead>
-                  <tr>
-                    <th></th>
-                    <th>Rule Name</th>
-                    <th>Tags</th>
-                    <th>Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><input type="checkbox" /></td>
-                    <td class="blue-color">Building Insured over $1 Million</td>
-                    <td>
-                      Rule <span>|</span> Property <span>|</span> High Value
-                    </td>
-                    <td class="actions">
-                      <button class="icon-btn">
-                        <img src="assets/images/14/mi_edit.png" alt="" />
-                      </button>
-                      <button class="icon-btn">
-                        <img src="assets/images/move_icon.svg" alt="" />
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><input type="checkbox" /></td>
-                    <td class="blue-color">Estimate Increase</td>
-                    <td>Rule <span>|</span> Motor</td>
-                    <td class="actions">
-                      <button class="icon-btn">
-                        <img src="assets/images/14/mi_edit.png" alt="" />
-                      </button>
-                      <button class="icon-btn">
-                        <img src="assets/images/move_icon.svg" alt="" />
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><input type="checkbox" /></td>
-                    <td class="blue-color">Staged Event Model – Property</td>
-                    <td>
-                      Model <span>|</span> Property <span>|</span> Staged Event
-                    </td>
-                    <td class="actions">
-                      <button class="icon-btn">
-                        <img src="assets/images/14/mi_edit.png" alt="" />
-                      </button>
-                      <button class="icon-btn">
-                        <img src="assets/images/move_icon.svg" alt="" />
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td class="actions">
-                      <button class="icon-btn">
-                        <img src="assets/images/14/mi_edit.png" alt="" />
-                      </button>
-                      <button class="icon-btn">
-                        <img src="assets/images/move_icon.svg" alt="" />
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td class="actions">
-                      <button class="icon-btn">
-                        <img src="assets/images/14/mi_edit.png" alt="" />
-                      </button>
-                      <button class="icon-btn">
-                        <img src="assets/images/move_icon.svg" alt="" />
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td class="actions">
-                      <button class="icon-btn"></button>
-                      <button class="icon-btn"></button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+          <!-- Available Group Rules -->
+          <div class="table-wrapper">
+            <h3>Available Group Rules</h3>
+            <table class="rules-table" style="margin-top: 0px">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Rule Name</th>
+                  <th>Tags</th>
+                  <th colspan="2">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="checkbox" /></td>
+                  <td class="blue-color">Building Insured over $1 Million</td>
+                  <td>
+                    Rule <span>|</span> Property <span>|</span> High Value
+                  </td>
+                  <td class="actions"   >
+                    <button class="icon-btn">
+                      <img src="assets/images/14/mi_edit.png" alt="" />
+                    </button>
+                    
+                  </td>
+                  <td >
+                    <button class="icon-btn">
+                      <img src="assets/images/move_icon.svg" alt="" />
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" /></td>
+                  <td class="blue-color">Estimate Increase</td>
+                  <td>Rule <span>|</span> Motor</td>
+                  <td class="actions"  >
+                    <button class="icon-btn">
+                      <img src="assets/images/14/mi_edit.png" alt="" />
+                    </button>
+                    
+                  </td>
+                  <td>
+                    <button class="icon-btn">
+                      <img src="assets/images/move_icon.svg" alt="" />
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" /></td>
+                  <td class="blue-color">Staged Event Model – Property</td>
+                  <td>
+                    Model <span>|</span> Property <span>|</span> Staged Event
+                  </td>
+                  <td class="actions"   >
+                    <button class="icon-btn">
+                      <img src="assets/images/14/mi_edit.png" alt="" />
+                    </button>
+                    
+                  </td>
+                  <td>
+                    <button class="icon-btn">
+                      <img src="assets/images/move_icon.svg" alt="" />
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td class="actions"   >
+                    <button class="icon-btn">
+                      <img src="assets/images/14/mi_edit.png" alt="" />
+                    </button>
+                    
+                  </td>
+                  <td>
+                    <button class="icon-btn">
+                      <img src="assets/images/move_icon.svg" alt="" />
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td class="actions"   >
+                    <button class="icon-btn">
+                      <img src="assets/images/14/mi_edit.png" alt="" />
+                    </button>
+                    
+                  </td>
+                  <td>
+                    <button class="icon-btn">
+                      <img src="assets/images/move_icon.svg" alt="" />
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td class="actions" >
+                    <button class="icon-btn"></button>
+                    <button class="icon-btn"></button>
+                  </td>
+                  <td>
+                    <button class="icon-btn">
+                      <img src="assets/images/move_icon.svg" alt="" />
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
 
-              <div class="table-buttons" style="margin-top: 0px">
+            <!-- <div class="table-buttons" style="margin-top: 0px">
                 <button class="add-btn">Add to Rules</button>
                 <button class="tag-btn">Create New Tag +</button>
-              </div>
-            </div>
+              </div> -->
+
+
           </div>
         </div>
 
-        <!-- Body Code Ends Here -->
-        <!-- Footer -->
-        <div
-          class="footer"
-          style="
+
+        <div class="buttons-section">
+          <button class="remove-from-ruler-btn">Remove from ruler</button>
+          <button class="add-to-rule-btn">Add to Rule</button>
+          <button class="create-new-tag-btn">Create New Tag +</button>
+        </div>
+
+      </div>
+
+      <!-- Body Code Ends Here -->
+      <!-- Footer -->
+      <div class="footer" style="
             display: flex;
             justify-content: flex-end;
             align-items: center;
             width: 100%;
-            padding: 20px 12px;
+            padding: 15px 12px;
             box-sizing: border-box;
-          "
-        >
-          <button class="save-btn">Save</button>
-        </div>
-        <footer>
-          <div class="icon-box d-flex">
-            <div class="circle-box mr-3"></div>
-            <div class="icon-box-content">
-              <h4 class="ft-14 mt-1 mb-1">kbs intelligence</h4>
-              <p>KBBS (Aust) Pty Ltd ABN 31 100 028 322</p>
-            </div>
-          </div>
-        </footer>
+            background: #CCCCCC;
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 12px;
+            border-bottom-left-radius: 12px;
+          ">
+        <button class="save-btn">Save</button>
       </div>
+      <footer>
+        <div class="icon-box d-flex">
+          <div class="circle-box mr-3"></div>
+          <div class="icon-box-content">
+            <h4 class="ft-14 mt-1 mb-1">kbs intelligence</h4>
+            <p>KBBS (Aust) Pty Ltd ABN 31 100 028 322</p>
+          </div>
+        </div>
+      </footer>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
